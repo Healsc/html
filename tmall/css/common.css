@@ -1,0 +1,17 @@
+/* 所有边距为0 */
+*{
+    margin: 0;
+    padding: 0;
+}
+/* 去掉锚点的下划线 */
+a{
+    text-decoration: none;
+}
+/* 列表没有属性。去掉.或者数字 */
+li{
+    list-style: none;
+}
+/* 图片去掉边框 */
+img{
+    border: 0;
+}

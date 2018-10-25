@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #menu{
+            width: 500px;
+            height: 30px;
+        }
+        #menu li{
+            list-style: none;
+            width: 120px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            float: left;
+            background: #ff0000;
+            margin-right: 3px;
+        }
+        #menu > li:hover {
+            background: #cccccc;
+        }
+        #menu li a{
+            color: lime;
+            text-decoration: none;
+            display: block;
+        }
+        .submeun{
+            display: none;
+        }
+        #menu .submeun li{
+            cursor: pointer;
+        }
+        #menu .submeun li:hover{
+            background: #1122aa;
+        }
+        #menu > li:hover .submeun{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <ul id="menu">
+        <li>
+            <a href="">link one</a>
+            <ul class="submeun">
+                <li>子菜单1</li>
+                <li>子菜单2</li>
+                <li>子菜单3</li>
+            </ul>
+        </li>
+        <li>
+            <a href="">link two</a>
+        </li>
+        <li>
+            <a href="">link three</a>
+        </li>
+        <li>
+            <a href="">link four</a>
+        </li>
+    </ul>
+<h1>Heal</h1>
+</body>
+</html>

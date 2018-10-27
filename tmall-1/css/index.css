@@ -1,33 +1,26 @@
 #top{
     text-align: center;
-    background: rgb(61, 51, 208);
+    background: #3b38d2;
+
 }
 .top-img{
     display: block;
     margin: 0 auto;
 }
-
-
 #header{
     height: 32px;
     background: #f2f2f2;
     line-height: 32px;
 }
+
 #login-info{
     float: left;
 }
 #quick-menu{
     float: right;
 }
-#quick-menu li{
+#quick-menu > li{
     float: left;
-    margin-right: 15px;
+    margin-right:14px;
 }
-#login-info a:hover{
-    color: #cccccc;
-}
-#quick-menu a:hover{
-    color: #cccccc;
-}
-/*#quick-menu .iconfont{*/
-    /*color: #cccccc;*/
+

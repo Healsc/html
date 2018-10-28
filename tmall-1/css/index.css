@@ -23,4 +23,31 @@
     float: left;
     margin-right:14px;
 }
+#quick-menu .iconfont{
+    color: red;
+}
+#header a:hover{
+    color: red;
+}
+#quick-menu .split{
+    width: 1px;
+    height: 14px;
+    background: #cccccc;
+    margin-top: 9px;
+}
+.submenu {
+    display: none;
+}
+
+/*#menu .submenu li {*/
+/*cursor: pointer;*/
+/*}*/
+
+#menu .submenu li:hover {
+    background: orange;
+}
+
+#menu > li:hover .submenu {
+    display: block;
+}
 

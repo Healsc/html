@@ -14,6 +14,7 @@
     line-height: 32px;
     font-size: 12px;
     color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.30);;
 }
 
 #login-info{
@@ -30,7 +31,7 @@
 
 #sn-quick-menu > li{
     float: left;
-    padding: 0 12px;
+    padding: 0 16px;
     cursor: pointer;
     position: relative;
 }
@@ -53,9 +54,18 @@
     color: #f2f222;
 }
 
+#sn-quick-menu .triangle{
+    border-style: solid;
+    border-width: 0 1px;
+    border-color: transparent transparent transparent transparent;
+}
+#sn-quick-menu .triangle:hover{
+    background: #ffffff;
+    border-color:  transparent #eeeeee transparent #eeeeee;
+}
 #sn-quick-menu .triangle:hover a{
-color: #f2f222;
-text-decoration: underline;
+    color: #f2f222;
+    text-decoration: underline;
 }
 
 #sn-quick-menu .split {
@@ -96,7 +106,49 @@ text-decoration: underline;
     -o-transition: transform .5s ease;
     transition: transform .5s ease;
 }
+#sn-quick-menu .triangle .submenu{
+    position: absolute;
+    top: 32px;
+    left: -1px;
+    border-style: solid;
+    border-width: 0 1px 1px 1px;
+    border-color: #eeeeee;
+    background: #ffffff;
+    padding: 0 14px;
+    display: none;
+    width: 75px;
+}
+#sn-quick-menu .triangle a:hover{
+    color: #eeeeee;
+}
+#sn-quick-menu .triangle:hover .submenu{
+    display: block;
+}
 
+#sn-quick-menu .sn-qrcode{
+    width: 175px;
+    height: 175px;
+    position: absolute;
+    background: #0000ff;
+    top: 30px;
+    left: -36px;
+    display: none;
+}
+#sn-quick-menu .sn-qrcode::after{
+    content: '';
+    width: 0;
+    height: 0;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #0000ff transparent;
+    position: absolute;
+    left: 50%;
+    margin-left: -20px;
+    top: -10px;
+}
+#sn-quick-menu .mobile:hover .sn-qrcode{
+    display: block;
+}
 
 /*#sn-quick-menu .triangle:hover{*/
 /*background: #ffffff;*/

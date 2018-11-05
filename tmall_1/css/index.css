@@ -155,7 +155,7 @@
 }
 #logo-search{
     background: #FF0036;
-    height: 130px;
+    height: 134.44px;
 }
 #search{
     float: left;
@@ -206,6 +206,9 @@
 }
 #search .last{
     border: 0;
+}
+#main-nav .nav li{
+    float: left;
 }
 
 /*#sn-quick-menu .triangle:hover{*/

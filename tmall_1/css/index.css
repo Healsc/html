@@ -217,6 +217,9 @@
     margin-left: 240px;
     margin-top: 20px;
 }
+#main-nav .nav a:hover{
+    color: #FF0036;
+}
 #main-nav .nav-img{
     width: 100px;
     margin-top: 2px;
@@ -278,7 +281,7 @@
 #banner .category2 li{
     width: 152px;
     margin: 14px auto;
-    height: 25px;
+    height:30px;
     line-height: 20px;
 }
 
@@ -294,6 +297,14 @@
 }
 #banner .category2 li:hover a{
     color: #FF0036;
+}
+#side-bar{
+    width: 36px;
+    background: #000000;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
 }
 /*#sn-quick-menu .triangle:hover{*/
 /*background: #ffffff;*/

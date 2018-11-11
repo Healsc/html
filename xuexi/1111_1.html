@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div{
+            width: 200px;
+            height: 200px;
+            border: 10px solid;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .div::after{
+        content:'';
+        width: 200px;
+        height: 200px;
+        border: 10px solid;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        }
+        .div1{
+            border-color: #0000ff;
+        }
+        .div1::after{
+            border-color: #0000ff;
+            z-index: 1;
+            border-bottom-color: transparent;
+        }
+        .div2{
+            border-color: #000000;
+            left: 230px;
+        }
+        .div2::after{
+            border-color: #000000;
+            z-index: 1;
+            border-left-color: transparent;
+        }
+        .div3{
+            border-color: #ff0000;
+            left: 460px;
+        }
+        .div3::after{
+            border-color: #ff0000;
+            z-index: 3;
+            border-left-color: transparent;
+        }
+        .div4{
+            border-color: #ffff00;
+            top: 110px;
+            left: 110px;
+        }
+        .div4::after{
+            border-color: #ffff00;
+        }
+        .div5{
+            border-color: #00ff00;
+            top: 110px;
+            left: 340px;
+        }
+        .div5::after{
+            border-color: #00ff00;
+            z-index: 2;
+            border-top-color: transparent;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <div class="div div1"></div>
+        <div class="div div2"></div>
+        <div class="div div3"></div>
+        <div class="div div4"></div>
+        <div class="div div5"></div>
+    </div>
+
+</body>
+</html>

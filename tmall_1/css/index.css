@@ -227,7 +227,7 @@
 #banner .wrapper{
     text-align: center;
     position: relative;
-    background: rgb(255,192,203);
+    background: #ff48af;
 }
 #banner .category-tab{
     position: absolute;

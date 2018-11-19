@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var today = new Date();   //获取当天日期
+    var year = today.getFullYear();   //获取当天年份
+    if ((year % 4 == 0 && year % 100 != 0)||year % 400 == 0)
+        console.log('Yes');
+    else
+        console.log('No');
+</script>
+</body>
+</html>

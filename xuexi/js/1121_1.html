@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    var condition = true;
+    if (condition) {
+        alert("我将出现！");
+    }
+    condition = false;
+    if (condition) {
+        alert("我不会出现！");
+    } else {
+        alert("我会出现！");
+    }
+    condition ="some string";
+    if (condition) {
+        alert("可以直接对任何数据类型进行if判断,在判断时计算会自动将其转换成布尔值!");
+    }
+    var val = condition?"当为true时我将被返回":"当为false时我将被返回";
+    alert(val);//将输出"当为true时我将被返回"
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  /*  var num = 0;
+    var timer = setInterval(function () {
+        console.log(num++)
+        if(num  > 10){
+            clearInterval(timer);
+        }
+    },1000)
+*/
+    function intercal () {
+        console.log(1);
+        setTimeout(intercal,1000);
+    }
+    intercal();
+</script>
+</body>
+</html>

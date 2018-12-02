@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            width: 400px;
+            height: 300px;
+            border: 1px solid;
+            margin: 100px auto;
+        }
+
+        #tab {
+            height: 30px;
+            border-bottom: 1px solid #000;
+        }
+
+        #tab li {
+            width: 120px;
+            height: 30px;
+            background: #cccccc;
+            float: left;
+            list-style: none;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        #tab .tab-selected {
+            background: #000000;
+            color: #fff;
+
+        }
+
+        #content div {
+            display: none;
+        }
+
+        #content .content-selected {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <ul id="tab">
+        <li class="tab-selected">html</li>
+        <li>css</li>
+        <li>javascript</li>
+    </ul>
+    <div id="content">
+        <div class="content-selected">001</div>
+        <div>002</div>
+        <div>003</div>
+    </div>
+</div>
+
+<script>
+    var oTab = document.getElementById('tab')
+    var aLi = oTab.getElementsByTagName('li')
+    var oContent = document.getElementById('content')
+    var aDiv = oContent.getElementsByTagName('div')
+
+    for (var i = 0; i < aLi.length; ++i){
+        aDiv[i].index = i;
+        aLi[i].onclick = function () {
+            for (var j = 0;j < aLi.length; ++j){
+                aLi[j].className = '';
+                aDiv[j].className = '';
+            }
+            this.className = 'tab-selected '
+            aDiv[this.index].className = 'content-selected';
+            console.log(aDiv[this.index]);
+        };
+
+    }
+
+</script>
+</body>
+</html>

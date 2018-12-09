@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    #container{
+        width: 520px;
+        height: 280px;
+        margin: 100px auto;
+        position: relative;
+    }
+    #img img {
+        display: none;
+    }
+
+    #img .img-sel {
+        display: block;
+    }
+    #nav .nav-sel{
+        background: orange;
+    }
+    #nav li,#arrows span{
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        background: #000000;
+        color: #ffffff;
+        list-style: none;
+        cursor: pointer;
+        float: left;
+        margin-left: 5px;
+    }
+    #nav{
+        position: absolute;
+        right: 20px;
+        bottom: 10px;
+    }
+    #arrows{
+        position: absolute;
+        left: 20px;
+        bottom: 10px;
+    }
+
+</style>
+<body>
+    <div id="container">
+        <div id="img">
+            <img src="img/1.jpg" alt="" class="img-sel">
+            <img src="img/2.jpg" alt="">
+            <img src="img/3.jpg" alt="">
+            <img src="img/4.jpg" alt="">
+        </div>
+        <ul id="nav">
+            <li class="nav-sel">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div id="arrows">
+            <span id="left">&lt;</span>
+            <span id="right">&gt;</span>
+        </div>
+    </div>
+
+    <script>
+        var oImg = document.getElementById('img');
+        var aImg = oImg.getElementsByTagName('img');
+        var oNav = document.getElementById('nav');
+        var aLi = oNav.getElementsByTagName('li');
+        var nowIndex = 0;
+        var oLeft = document.getElementById('left');
+        var oRight = document.getElementById('right');
+        var timer = null;
+        var oContainer = document.getElementById('container');
+
+        for (var i = 0; i < aLi.length; i++) {
+            aLi[i].index = i;
+            aLi[i].onmouseover = function () {
+                nowIndex = this.index;
+                changeImg();
+            };
+        }
+        oLeft.onclick = oRight.onclick = function () {
+            if (this === oRight) {
+                nowIndex++;
+            } else {
+                nowIndex--;
+            }
+            if (nowIndex == aImg.length){
+                nowIndex = 0;
+            }
+            if (nowIndex == -1){
+                nowIndex = aImg.length - 1;
+            }
+            changeImg();
+            } ;
+        play();
+        oContainer.onmouseover = function () {
+            clearInterval(timer);
+        }
+        oContainer.onmouseout = function () {
+            play();
+        }
+        function changeImg() {
+            for (var i = 0; i < aLi.length; i++) {
+                aLi[i].className = '';
+                aImg[i].className = '';
+            }
+            aLi[nowIndex].className = 'nav-sel';
+            aImg[nowIndex].className = 'img-sel';
+        }
+        function play(){
+            timer = setInterval(function () {
+                oRight.onclick();
+            }, 1000);
+        }
+
+    </script>
+</body>
+</html>

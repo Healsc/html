@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #progress{
+            height: 50px;
+            background: #cccccc;
+            border-radius: 5px;
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 100px;
+        }
+        #bar{
+            height: 50px;
+            width: 50px;
+            border-radius:5px 0 0 5px ;
+            background: #ff22ff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="progress">
+        <div id="bar"></div>
+    </div>
+    <script>
+        var oProgress = document.getElementById('progress');
+        var oBar = document.getElementById('bar');
+        var step = 0;
+        function run() {
+            step++;
+            oBar.style.width = step + '%';
+            oBar.innerHTML = step + '%';
+            if (oBar.offsetWidth < oProgress.offsetWidth){
+                requestAnimationFrame(run)
+            }
+            if (oBar.offsetWidth = oProgress.offsetWidth){
+                oBar.style.borderRadius = '5px'
+            }
+        }
+        run();
+    </script>
+</body>
+</html>

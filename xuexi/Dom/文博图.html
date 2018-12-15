@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            border: 1px solid;
+            height: 500px;
+            width: 500px;
+            position: relative;
+            top: 100px;
+            left: 100px;
+        }
+        #bar{
+            width: 500px;
+            height: 100px;
+            position: absolute;
+
+        }
+        #bar li{
+            list-style: none;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            background: #000;
+            color: #e8e8e8;
+            float: left;
+            margin-right: 10px;
+
+        }
+        #nav {
+            position: absolute;
+            bottom: 20px;
+            padding-left: 10px;
+        }
+        #nav li{
+            list-style: none;
+            float: left;
+            width: 50px;
+            height: 30px;
+            background: #cccccc;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <ul id="bar">
+        <li>1</li>
+        <li>2</li>
+        <li class="bar3">3</li>
+        <li class="bar4">4</li>
+    </ul>
+    <ul id="nav">
+        <li>向左</li>
+        <li>向右</li>
+    </ul>
+
+    <script>
+        var oBar = document.getElementsByClassName('bar');
+
+        setInterval(function () {
+
+            oBar.style.left = oBar.offsetLeft - 10 + 'px';
+
+        },30)
+
+    </script>
+</div>
+</body>
+</html>

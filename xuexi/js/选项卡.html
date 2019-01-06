@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #meun li{
+            width: 100px;
+            height: 30px;
+            border: 1px solid ;
+            text-align: center;
+            line-height: 30px;
+            float: left;
+            list-style: none;
+            margin-left: 10px;
+        }
+        #container{
+            width: 350px;
+            height: 200px;
+            border: 1px solid ;
+        }
+     #cotent{
+         display: none;
+     }
+
+
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <ul id="meun">
+            <li class="container-sel">html</li>
+            <li>css</li>
+            <li>javascript</li>
+
+        </ul>
+        <div id="cotent">
+            <div class="cotent-sel">001</div>
+            <div>002</div>
+            <div>003</div>
+        </div>
+    </div>
+
+    <script>
+        var oLi = document.getElementsByTagName('li');
+        for ( var i = 0; i < oLi.length; ++i){
+          oLi[i].onclick = function () {
+              
+              this.style.background = '#ccc';
+          };
+        }
+    </script>
+</body>
+</html>

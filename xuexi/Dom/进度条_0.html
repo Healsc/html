@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>进度条</title>
+    <style>
+        #progress{
+            height: 30px;
+            background: #cccccc;
+            border-radius: 5px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 100px;
+        }
+        #bar{
+            height: 30px;
+            background: #ff22ff;
+            width: 50px;
+            -webkit-border-radius: 5px 0 0 5px;
+            -moz-border-radius: 5px 0 0 5px;
+            border-radius: 5px 0 0 5px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<div id="progress">
+    <div id="bar"></div>
+</div>
+<script>
+    var oProgress = document.getElementById('progress');
+    var oBar = document.getElementById('bar');
+    var step = 0;
+    var timer = setInterval(function () {
+         step++;
+         oBar.style.width = step + '%';
+         oBar.innerHTML = step + '%';
+
+         if(oBar.offsetWidth >= oProgress.offsetWidth)
+         {
+             clearInterval(timer);
+             oBar.style.borderRadius = '5px'
+         }
+    },50)
+
+
+
+
+</script>
+</body>
+</html>

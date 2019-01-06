@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #container{
+            position: relative;
+            border: 1px solid;
+            width: 820px;
+        }
+        #content{
+            height: 200px;
+            position: relative;
+        }
+        #content div{
+            width: 200px;
+            height: 200px;
+            background: #000;
+            color: #ffffff;
+            text-align: center;
+            line-height: 200px;
+            font-size: 50px;
+            float: left;
+            margin-right: 5px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="content">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+    <div id="nav">
+        <div>向左</div>
+        <div>向右</div>
+    </div>
+
+</div>
+<script>
+    var oContent = document.getElementById('content');
+    setInterval(function () {
+        oContent.style.left = oContent.offsetLeft - 10 + 'px';
+    },50)
+</script>
+</body>
+</html>

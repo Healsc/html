@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #move{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 222;
+            background: blue;
+            opacity: .3;
+            display: none;
+            cursor: pointer;
+        }
+        #small-img{
+            position: relative;
+        }
+        #big-img{
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: 400px;
+            overflow: hidden;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="small-img">
+        <img src="img/6.jpg" alt="" id="small">
+        <div id="move"></div>
+    </div>
+
+    <div id="big-img">
+        <img src="img/5.jpg" alt="" id="big">
+    </div>
+
+
+<script>
+    var oBox = document.getElementById('box');
+    var oMove = document.getElementById('move');
+    var oSmallImg = document.getElementById('small-img');
+    var oBigImg = document.getElementById('big-img');
+    oSmallImg.onmouseover = function(e){
+        oMove.style.display = 'block';
+        oBigImg.style.display = 'block';
+    };
+    oSmallImg.onmouseout = function(e){
+        oMove.style.display = 'none';
+        oBigImg.style.display = 'none';
+    };
+    oSmallImg.onmousemove = function(e){
+
+        var x = e.clientX;
+        var y = e.clientY;
+        var top = y - oMove.offsetHeight / 2;
+        oMove.style.top = y - oMove.offsetHeight / 2 + 'px';
+        oMove.style.left = x - oMove.offsetWidth / 2 + 'px';
+    };
+
+</script>
+</body>
+</html>

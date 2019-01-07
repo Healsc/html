@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #menu{
+        border: 1px solid;
+        width: 120px;
+        position: absolute;
+        background: #ffffff;
+        display: none;
+
+    }
+    #menu li{
+        list-style: none;
+        width: 120px;
+        height: 30px;
+        border-bottom: 1px dashed #cccccc;
+        text-align: center;
+        line-height: 30px;
+        cursor: pointer;           
+    }
+    #menu li:hover{
+        background: #cccccc;
+    }
+
+</style>
+
+<body>
+    <ul id="menu">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+<script>
+    var oMenu = document.getElementById('meun');
+    var aLi = oMenu.getElementsByTagName('li');
+    document.oncontextmenu = function(e){
+        e = e || window.event;
+        oMeun.style.display ='block';
+        oMeun.style.left = e.clientX + 'px';
+        oMeun.style.top = e.clientY + 'px';
+        return false;
+    }
+
+    
+        for (var i = 0; i < aLi.length; i++) {
+            aLi[i].onclick = function () {
+
+                alert(this.innerHTML); // this 对于当前对象的引用
+            };
+        }
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #small{
+            float: left;
+            position: relative;
+            width: 400px;
+            height: 400px;
+        }
+        #big{
+            float:left;
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+            display: none;
+        }
+        #move{
+            width: 200px;
+            height: 200px;
+            background: #cccccc;
+            opacity: .4;
+            -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        #big-img{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="small">
+        <img src="img/6.jpg" alt="">
+        <div id="move"></div>
+    </div>
+    <div id="big">
+        <img src="img/5.jpg" alt="" id="big-img">
+    </div>
+    <script>
+        var oMove = document.getElementById('move');
+        var oSmall = document.getElementById('small');
+        var oBig = document.getElementById('big');
+        var oBigImg = document.getElementById('big-img');
+
+
+        oSmall.onmouseover = function(){
+            oMove.style.display = 'block';
+            oBig.style.display = 'block';
+        };
+        oSmall.onmouseout = function(){
+            oMove.style.display = 'none';
+            oBig.style.display = 'none';
+        };
+        oSmall.onmousemove = function(e){
+            var left = e.clientX - oMove.offsetWidth / 2;
+            var top = e.clientY - oMove.offsetHeight / 2;
+
+            if(top < 0){
+                top = 0;
+            }
+            if (left < 0){
+                left = 0;
+            }
+            var xMax = oSmall.offsetWidth - oMove.offsetWidth;
+            var yMax = oSmall.offsetHeight - oMove.offsetHeight;
+            if (left > xMax){
+                left = xMax;
+            }
+            if (top > yMax){
+                top = yMax;
+            }
+            oMove.style.left = left + 'px';
+            oMove.style.top = top + 'px';
+
+            var xRate = left / xMax;
+            var yRate = top / yMax;
+
+          oBigImg.style.left = - xRate * (oBigImg.offsetWidth - oBig.offsetWidth) + 'px';
+          oBigImg.style.top = - yRate * (oBigImg.offsetWidth - oBig.offsetWidth) + 'px';
+
+        };
+
+    </script>
+</body>
+</html>

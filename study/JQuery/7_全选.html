@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+    </style>
+    <script src="JS/jquery-3.3.1.js"></script>
+</head>
+<body>
+<h1>你的爱好是？</h1>
+<input type="checkbox" name="hobby">足球
+<input type="checkbox" name="hobby">篮球
+<input type="checkbox" name="hobby">排球
+<input type="checkbox" name="hobby">羽毛球
+<br>
+<button id="all">全选</button>
+<button id="no">全不选</button>
+<button id="reverse">反选</button>
+<script>
+    $('#all').click(function(){
+        $('input[name="hobby"]').prop('checked',true)
+    })
+    $('#no').click(function () {
+        $('input[name="hobby"]').prop('checked',false)
+    })
+    $('#reverse').click(function () {
+        $('input[name="hobby"]:checkbox:checked').prop('checked',false);
+        $('input[name="hobby"]:checkbox:not(:checked)').prop('checked',true)
+    })
+
+    
+</script>
+</body>
+</html>

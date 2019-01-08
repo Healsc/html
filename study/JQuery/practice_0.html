@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="JS/jquery-3.3.1.js"></script>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    
+    </style>
+</head>
+<body>
+    <input type="text" value="姓名">
+
+    <script>
+        $('input').keyup(function(){
+            console.log(this.value);
+        })
+
+        $('input').focus(function(){
+            $('input').css('background','red')
+            $(this).val('');
+            
+           
+        })
+
+        $('input').blur(function(){
+            $('input').css('background','green')
+        
+        })
+    
+
+    </script>
+</body>
+</html>

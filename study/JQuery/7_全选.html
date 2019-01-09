@@ -31,10 +31,12 @@
     $('#no').click(function () {
         $('input[name="hobby"]').prop('checked',false)
     })
-    $('#reverse').click(function () {
-        $('input[name="hobby"]:checkbox:checked').prop('checked',false);
-        $('input[name="hobby"]:checkbox:not(:checked)').prop('checked',true)
-    })
+    $("#reverse").click(function(){
+        var $Checked = $("[name=hobby]:checkbox:checked");
+        var $unChecked = $("[name=hobby]:checkbox:not(:checked)");
+        $Checked.prop("checked",false);
+        $unChecked.prop("checked",true);
+      })
 
     
 </script>

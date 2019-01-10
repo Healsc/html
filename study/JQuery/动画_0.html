@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="JS/jquery-3.3.1.js"></script>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #box{
+        width: 400px;
+        height: 400px;
+        background: red;
+    }
+    
+    </style>
+</head>
+<body>
+    <button id="show">show</button>
+    <button id="hide">hide</button>
+    <button id="toggle">toggle</button>
+    <button id="fadeIn">fadeIn</button>
+    <button id="fadeOut">fadeOut</button>
+    <button id="fadeToggle">fadeToggle</button>
+    <button id="fadeTo">fadeTo</button>
+    <button id="slideUp">slideUp</button>
+    <button id="slideDowm">slideDowm</button>
+    <button id="animate">animate</button>
+    <div id="box"></div>
+    <script>
+        $('#show').click(function(){
+            $('#box').stop().show(2000);
+        })
+        $('#hide').click(function(){
+            $('#box').stop().hide(3000);
+        })
+        $('#toggle').click(function(){
+            $('#box').stop().toggle(1000);
+        })
+        $("#fadeIn").click(function(){
+        $("#box").stop().fadeIn(2000);
+        })
+        $('#fadeOut').click(function(){
+            $('#box').stop().fadeOut(2000)
+        })
+        $('#fadeToggle').click(function(){
+            $('#box').stop().fadeToggle(2000)
+        })
+        $('#fadeTo').click(function(){
+            $('#box').fadeTo(2000,.5)
+        })
+        $('#slideUp').click(function(){
+            $('#box').slideUp();
+        })
+        $('#slideDowm').click(function(){
+            $('#box').slideDown();
+        })
+        $('#animate').click(function(){
+            $('#box').stop().animate({
+                width:200,
+                height:200
+            },2000)
+        })
+    </script>
+</body>
+</html>

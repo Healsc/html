@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #contains{
+        max-width: 960px;
+        margin: 10px auto;
+    }
+    #top{
+        max-width: 960px;
+        height: 50px;
+        text-align: center;
+        line-height:50px;
+        margin: 10px auto;
+        background: #cccccc;
+    }
+    #nav{
+        max-width: 960px;
+        height: 50px;
+        text-align: center;
+        line-height:50px;
+        margin: 10px auto;
+        background: #cccccc;
+    }
+    #imgs{
+        width: 100%;
+    }
+    #imgs img{
+        width: 100%;
+    }
+    #bottom{
+        max-width: 960px;
+        height: 50px;
+        text-align: center;
+        line-height:50px;
+        margin: 10px auto;
+        background: #cccccc;
+    }
+    #paper{
+        max-width: 960px;
+        height: 300px;
+        margin: 10px auto;
+ 
+    }
+    .clearfix::after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+    #paper-left{
+        background: blue;
+        min-height: 300px;
+        float: left;
+        width: 65%;
+    }
+    #paper-right{
+        background: #ff0000;
+        min-height: 300px;
+        width: 30%;
+        float: right;
+        
+    }  
+    #paper div{
+        display: table;
+    }
+    #paper p{
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+    }
+    @media (max-width:600px){
+        #paper div{
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="contains">
+        <div id="top">页头</div>
+        <div id="nav">导航</div>
+        <div id="imgs">
+            <img src="./imgs/01_s.jpg" alt="">
+        </div>
+        <div id="paper" class="clearfix">
+            <div id="paper-left">
+                <p>
+                    jQuery 是一个高效、精简并且功能丰富的 JavaScript 工具库。器，这让诸如 HTML 文档遍历和操作、事件处理、动画和 Ajax操作更加简单。本中文文档适用jQuery 1.0 - jQuery 3.1，翻译至官方文档，并且跟随官方文档持续更新。如果你是一个 jQuery 新手，我们建议你先到jQuery 学要处理更改了 deferred（延迟），data（数据），show（显示）/hide（隐藏），并且删除一些已弃用的API。提供了一个jQuery Migrate 插件来帮助开发人员具有过渡升级到最新版本。更新详细信息是1.9 版本版本发布说明。
+                </p>
+            </div>
+           <div id="paper-right">
+                <p>
+                    这些方法用于注册事件处理器，用来处理页面上的任何 Ajax 请求，当某些事件触发后，这些事件处理器被调用。
+                </p>
+           </div>
+          
+        </div>
+        <div id="bottom">页尾</div>
+    </div>
+</body>
+</html>

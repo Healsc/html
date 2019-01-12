@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .swap{
+            max-width:  960px;
+            margin: 5px auto;
+        }
+        .header,.nav,.footer{
+            height: 30px;
+            background: #ccc;
+            text-align: center;
+            line-height: 30px;
+            margin-bottom: 5px;
+        }
+        /* .imgs{
+            width: 100%
+        } */
+        .imgs img{
+            width: 100%;
+        }
+        .text div{
+            display: table;
+        }
+        .text p{
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .text::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .text-left{
+            width: 60%;
+            float: left;
+            text-align:center;
+            background: #ff0000;
+            min-height: 180px;
+        }
+        .text-right{
+            width: 35%;
+            float:right;
+            text-align: center;
+            background: #ffff00;
+            min-height: 180px;
+        }
+        .footer{
+            margin-top:5px;
+        }
+        @media(max-width:600px){
+            .text div{
+                width: 100%;
+            }
+        }
+
+    
+    </style>
+</head>
+<body>
+    <div id="swap">
+        <div class="header">页头</div>
+        <div class="nav">导航</div>
+        <div class="imgs">
+            <img src="./imgs/01_s.jpg" alt="">
+        </div>
+        <div class="text">
+            <div class="text-left">
+                <p>
+                    rem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut, rhoncus vitae risus. Integer venenatis libero sit amet sapien dictum, quis bibendum mi volutpat. Cras pretium quam quis magna facilisis, eget feugiat nisi lacinia.
+                </p>
+            </div>
+            <div class="text-right">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut, rhoncus vitae risus. Integer venenatis libero sit amet sapien dictum, quis bibendum mi volutpat. Cras pretium quam quis magna facilisis, eget feugiat nisi lacinia.
+                </p>
+            </div>
+        </div>
+        <div class="footer">页脚</div>
+    </div>
+</body>
+</html>

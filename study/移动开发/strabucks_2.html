@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <style>
+    *{
+        margin:0;
+        padding: 0;
+    }
+    li{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+        color: #000000;
+    }
+    #container{
+       height: 100%;
+    }
+    
+    #nav{
+        float: left;
+        width: 35%;
+        height: 100%;     
+    }
+    .nav-header{
+        height: 80px;
+        position: relative;
+    }
+    .nav-header .menu > li{
+        float: left;
+        margin-left: 10px;
+    }
+    #nav img{
+        text-align: center
+    }
+    #nav .menu{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 70px;
+    }
+    #content{
+        float: right;
+        width: 65%;
+        background: #cccccc;
+        height: 100vh;
+    }
+    #nav .img-left{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 10px;
+    }
+    #nav .img-right{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 30px;
+    }
+    #nav .submenu{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 100%;
+        display: none;
+    }
+    #nav .submenu li {
+        margin-top:10px; 
+    }
+    #nav .nav-footer{
+        height: 600px;
+        position: relative;
+    }
+    #nav .fooer-text{
+        position: absolute;
+        font-size: 30px;
+        top: 40%;
+    }
+    #nav .footer-info{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+ 
+    #nav .nav-footer a{
+        color: #00A862;
+    }
+    @media(max-width:1025px){
+        #nav{
+            width: 100%;
+           
+        }
+        
+        #content{
+            width: 100%;
+        }
+
+    }
+    .active{
+        display: block;
+    }
+    </style>
+    <script src="./js/jquery-3.3.1.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div id="nav">
+            <div class="nav-header">
+                <a href="" class="img-left">
+                        <img src="https://www.starbucks.com.cn/assets/images/logo.svg" alt="">
+                </a>
+               
+                <ul class="menu">
+                    <li><a href="">门店</a></li>
+                    <li><a href="">我的账户</a></li>
+                    <li><a href="">菜单</a></li>
+                </ul>
+                <a href="" class="img-right">
+                    <img src="https://www.starbucks.com.cn/assets/icons/icon-hamburger.svg" alt="">
+                </a>
+                <ul class="submenu">
+                    <li><a href="http://">门店</a></li>
+                    <li><a href="http://">星享俱乐部</a></li>
+                    <li><a href="http://">菜单</a></li>
+                </ul>
+            </div>
+           
+            <div class="nav-footer">
+                <div class="fooer-text">心情惬意，来杯咖啡吧 ☕</div>
+            <div class="footer-info">
+                <a href="">登录</a>
+                <a href="">注册</a>
+              
+                
+            </div>
+            </div>
+        </div>
+        <div id="content"></div>
+    </div>
+    <script>
+   $('.img-right').click(function(){
+       console.log(123);
+       $('.submenu').addClass('active');
+   })
+    
+    </script>
+</body>
+</html>

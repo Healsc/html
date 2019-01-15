@@ -44,6 +44,16 @@ font-size: 62.5% !important;
         width: 30%;
     }
 }
+.overlay{
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .1s ease;
+}
 .nav .nav-content{
     height: 100%;
 }
@@ -119,24 +129,27 @@ font-size: 62.5% !important;
     background-color: #fff;
     border: 0;
 }
+.over-content{
+    width: 100%;
+    height: clac(100% - 90px);
+    display: table;
+    transform: scale(1.2);
+    transition: all .2s ease;
+}
+.over-body{
+    width: 100%;
+    height: 100%;
+    display: table-cell;
+    padding: 0 24px 0 84px;
+    vertical-align: middle;
+}
 .over-body ul li{
     font-size: 1.8rem;
     font-weight: 700;
 }
-.over-body{
-    width: 100%;
-    display: table;
-    padding: 0 24px 0 84px;
-    height: calc(100% - 90px);
-}
-.over-body ul{
-    width: 100%;
-    display: table-cell;
-    vertical-align: middle;
-}
-.over-body ul li{
-     
-}
+
+
+
 
 
 /* nav end */

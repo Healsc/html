@@ -33,7 +33,7 @@ a{
     background-color: #fff;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
   }
-  .overlay{
+/*   .overlay{
     background-color: #fff;
     position: fixed;
     width: 30%;
@@ -41,7 +41,7 @@ a{
     left: 0;
     bottom: 0;
   }
-}
+} */
 .nav .content{
   height: 100%;
 }

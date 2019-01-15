@@ -59,7 +59,7 @@ body{
     float: right;
     padding: 6px 0; 
 }
-.nav-content .nav-body{
+.nav .nav-body{
     height: calc(100% - 98px);
     display: table;
   }

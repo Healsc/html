@@ -121,19 +121,21 @@ font-size: 62.5% !important;
 }
 .over-body ul li{
     font-size: 1.8rem;
-    line-height: 120%;
     font-weight: 700;
 }
 .over-body{
-    display: tabler;
-    padding-left: 20px;
+    width: 100%;
+    display: table;
+    padding: 0 24px 0 84px;
+    height: calc(100% - 90px);
 }
 .over-body ul{
+    width: 100%;
     display: table-cell;
     vertical-align: middle;
 }
 .over-body ul li{
-    margin-top:20px; 
+     
 }
 
 

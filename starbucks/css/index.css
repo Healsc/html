@@ -12,6 +12,9 @@ a{
 body{
     background-color: #f7f7f7;
   }
+html{
+font-size: 62.5% !important;
+}
 .clearfix::after{
     content: "";
     display: block;
@@ -32,11 +35,20 @@ body{
         background: #fff;
         box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
     }
+    .overlay{
+        background: #ffffff;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 30%;
+    }
 }
 .nav .nav-content{
     height: 100%;
 }
 .nav .nav-header{
+    position: relative;
     padding: 24px;
 }
 .nav .nav-header .logo{
@@ -56,17 +68,20 @@ body{
     padding: 5px 10px 5px;
 }
 .nav .nav-header .icon{
-    float: right;
-    padding: 6px 0; 
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 28px 18px; 
 }
 .nav .nav-body{
-    height: calc(100% - 98px);
+    height: calc(100% - 90px);
     display: table;
   }
-.nav .nav-body .containert{
+.nav .nav-body .container{
     display: table-cell;
     vertical-align: middle;
-    padding-right:  0 24px 0 84px;
+    padding: 0 24px 0 84px;
+    
 }
 .nav .nav-body .body-text{
 
@@ -83,4 +98,43 @@ body{
     padding: 2px 12px;
     margin-left: 20px;
   }
+  .nav .btn-bar img{
+      vertical-align: middle;
+      margin-top: -2px;
+  }
+  .nav .overlay .over-header{
+      padding: 24px;
+  }
+  .nav .over .over-logo{
+      float: left;
+  }
+.nav .overlay .close{
+    background-image: url('https://www.starbucks.com.cn/assets/icons/icon-close.svg');
+    width: 48px;
+    height: 48px;
+    background-repeat: no-repeat;
+    background-position: center;
+    float: right;
+    padding: 28px 18px; 
+    background-color: #fff;
+    border: 0;
+}
+.over-body ul li{
+    font-size: 1.8rem;
+    line-height: 120%;
+    font-weight: 700;
+}
+.over-body{
+    display: tabler;
+    padding-left: 20px;
+}
+.over-body ul{
+    display: table-cell;
+    vertical-align: middle;
+}
+.over-body ul li{
+    margin-top:20px; 
+}
+
+
 /* nav end */

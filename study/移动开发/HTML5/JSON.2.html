@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+  var obj1 = {
+      name:"jinwu",
+      sex:"nan",
+      school:"neu",
+  }
+  var obj = {};
+  obj2 = JSON.stringify(obj1);
+  console.log(obj2);
+  //输出的是字符串
+  //{"name":"jinwu","sex":"nan","school":"neu"}
+
+  
+  console.log(JSON.parse(obj2));
+  //输出的是对象
+  //Object
+  //name: "jinwu"
+  //school: "neu"
+  //sex: "nan"
+  //__proto__: Object
+</script>
+</body>
+</html>

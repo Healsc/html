@@ -17,15 +17,22 @@
             age:"30",
         }
     }    
-    function clone(obj){
+  /*   function clone(obj){
         var thisobj = {};
-        for(var itme in obj1){
-            thisobj[itme] = clone(obj[itme])
+        for(var item in obj1){
+
+            if(typeof obj[item] == 'object'){
+                thisobj[item] = clone(obj[item])
+            }else{
+                thisobj[item] = obj[item]
+            }
+            
         }
         return thisobj;
     }
+    var obj2 = clone(obj1) */
     var obj2 = JSON.stringify(obj1);
-    
+    obj1.parnet.age = '40';
     console.log(JSON.parse(obj2));
     </script>
 </body>

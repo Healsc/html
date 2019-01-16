@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-3.3.1.js"></script>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }   
+    #wrap{
+        width: 500px;
+        position: relative;
+    } 
+    #container{
+        overflow: hidden;
+    }
+    #content{
+        width: 500px;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 20px;
+        margin-bottom: -20px
+    }
+    #left{
+        position: absolute;
+        top: 50px;
+        left: 20px;
+    }
+    #right{
+        position: absolute;
+        top:50px;
+        right: 20px;
+    }
+    li{
+        text-align: center;
+        font-size: 50px;
+        height: 100px;
+        width: 100px;
+        margin-right: 10px;
+        display: inline-block;
+        background: red;
+    }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="container">
+            <div id="content">
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                </ul>
+            </div>     
+        </div>
+        <button id="left">向左</button>
+        <button id="right">向右</button>
+    </div>
+    
+    <script>
+        $('#left').click(function(){
+            console.log(1)
+            run('left');
+        })
+        $('#right').click(function(){
+            console.log(2)
+            run('right');
+        })
+
+        function run(dir){
+            var scroll_left = $('#content').scrollLeft();
+            var scroll_num = dir == 'left' ? scroll_left-200 : scroll_left+200
+            $('#content').animate({
+                scrollLeft:scroll_num
+            },500,function(){
+                shownav();
+            })
+        }
+     
+        function shownav(){
+            var scroll_left = $('#content').scrollLeft();
+            var now_width = $('#content').width();
+            var scroll_width = $('#content').get(0).scrollWidth;
+            $('#left').show();
+            $('#right').show();
+            if(scroll_left == 0){
+                $('#left').hide();
+            }else if(scroll_left+now_width == scroll_width){
+                $('#right').hide();
+            }
+        }
+    </script>
+</body>
+</html>

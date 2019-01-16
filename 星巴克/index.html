@@ -113,41 +113,42 @@
       $(".overlay").removeClass("active");
       console.log(1)
     })
-  /*   $(".hero-btn").click(function(){
-      var trans = ++nowIndex* nowWidth;
-        $(".hreo-contetn").css({
-          transform:'translateX('+(-trans)+'px)',
-          transition:'all .3s ease'
-        })
-      if(nowIndex == 4){
-        setTimeout(function(){
-          $(".hreo-contetn").css({
-          transform:'translateX(0px)',
-          transition:"none"
-        })
-        nowIndex = 0; 
-        },300)
-      }
+
+    var nowwidth = 0;
+    var nowindex = 0;
+    $('.hero-btn').click(function(){
+      var trans = ++nowindex * nowwidth;
+      $('.hero-content').css({
+        transform :'translatX('+(-trans)+'px)',
+        transition:'all .3s ease',
+      })
     })
-    function run(){
-      var trans = nowIndex* nowWidth;
-      $(".hreo-contetn").css({
-          transform:'translateX('+(-trans)+'px)',
-          transition:'none'
-        })
+    if(nowindex == 4){
+      $('.hero-content').css({
+        transform:'translateX(0px)',
+        transition:'none',
+      })
+      nowindex = 0;
     }
-    returnWinWidth();
-    function returnWinWidth(){
-      nowWidth = $(document).width()
-      if(nowWidth>1024){
-        nowWidth = nowWidth*0.7;
+    function run(){
+      var trans = nowindex * nowwidth;
+      $('.hero-content').css({
+        transform:'translateX('+(-trans)+'px)',
+        transition:'none',
+      })
+    }
+    returnWinwidth();
+    function returnWinwidth(){
+      nowwidth = $(window).width();
+      if(nowwidth > 1024){
+        nowwidth = nowwidth * 0.7;
       }
-      $(".hreo-contetn").width(nowWidth*5);
+      $('.hero-content').width(nowwidth * 5);
     }
     $(window).resize(function(){
-      returnWinWidth();
+      returnWinwidth();
       run();
-    }) */
+    })
   </script>
 </body>
 

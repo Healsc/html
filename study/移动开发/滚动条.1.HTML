@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-3.3.1.js"></script>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+   #content div{
+       width: 100px;
+       height: 100px;
+       background: red;
+       display: inline-block;
+       margin-left: 10px;
+   }
+   #content{
+        width: 400px;
+        height: 120px;
+        overflow-x: auto;
+        white-space: nowrap;
+        margin-bottom: 20px;
+        overflow: hidden;
+   }
+   #container{
+        width: 400px;
+        position: relative;
+   }
+   #left{
+        position: absolute;
+        left: 30px;
+        top: 50%;
+   }
+   #right{
+        position:absolute ;
+        right: 30px;
+        top: 50%;
+   }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="content">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+        <div id="nav">
+            <button id="left">left</button>
+            <button id="right">right</button>
+        </div>
+    </div>
+<script>
+   $('#left').click(function(){
+       /* $('#content').animate({
+        scrollLeft:
+       }) */
+       run('left');
+   })
+   $('#right').click(function(){
+      /*  $('#content').animate({
+           scrollLeft:
+       }) */
+       run('right');
+   })
+
+   function run(dir){
+       var nowLeft = $('#content').scrollLeft();
+       var scrollNum = dir == 'left' ? nowLeft-200 : nowLeft+200
+       $('#content').animate({
+           scrollLeft:scrollNum
+       },500,function(){
+           showbtn();
+       })
+   }
+   function showbtn(){
+       var scroll_left = $('#content').scrollLeft();
+       var clien_width = $('#content').width();
+       var scroll_width = $('#content').get(0).scrollWidth;
+       $('#left').show();
+       $('#right').show();
+       if(scroll_left == 0){
+           $('#left').hide();
+       }else if(scroll_left + clien_width == scroll_width){
+           $('#right').hide();
+       }
+   }
+</script>
+</body>
+</html>

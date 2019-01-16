@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-3.3.1.js"></script>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+   #content div{
+       width: 100px;
+       height: 100px;
+       background: red;
+       display: inline-block;
+       margin-left: 10px;
+   }
+   #content{
+      width: 400px;
+      height: 120px;
+      overflow-x: auto;
+      white-space: nowrap;
+      margin-bottom: 20px;
+      overflow: hidden;
+   }
+ 
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="content">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+        <div id="nav">
+            <button id="left">left</button>
+            <button id="right">right</button>
+        </div>
+    </div>
+    <script>
+  
+    $('#right').click(function(){
+        run('right');
+    })
+    $('#left').click(function(){
+        run('left');
+    })
+    function run(dir){
+        var nowleft = $('#content').scrollLeft();
+        var scrollNum = dir == 'left' ? nowleft-200 : nowleft+200;
+        $('#content').animate({
+            scrollLeft:scrollNum
+        },1000,function(){
+            showbtn();
+        })
+    }
+    function showbtn(){
+        var scroll_Left = $('#content').scrollLeft();
+        var client_Width =$('#content').width();
+        var scroll_Width = $('#content').get(0).scrollWidth;
+        $('#right').show();
+        $('#left').show();
+        if(scroll_Left == 0){
+            $('#left').hide();
+        }
+        if(scroll_Left + client_Width == scroll_Width){
+            $('#right').hide();
+        }
+    }
+    $('#content').scroll(function(){
+        showbtn()
+    })
+    </script>
+</body>
+</html>

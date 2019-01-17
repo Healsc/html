@@ -19,7 +19,7 @@
     var oCan = document.getElementById("can");
     var context = oCan.getContext("2d");
     
-    oCan.onmousedown = (function(e){
+    oCan.onmousedown = function(e){
         context.beginPath();
         context.moveTo(e.clientX,e.clientY);
         context.strokeStyle = "white";
@@ -29,7 +29,7 @@
             console.log(e.clientX)
             console.log(e.clientY)
         }     
-    })
+    }
     document.onmouseup = function(){
 
         oCan.onmousemove = null;

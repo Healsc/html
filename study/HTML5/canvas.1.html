@@ -14,16 +14,22 @@
   </style>
 </head>
 <body>
-  <canvas id="can" width="800" height="800"></canvas>
+  <canvas id="can" width="400" height="400"></canvas>
   <script>
     var oCan = document.getElementById("can");
     var context = oCan.getContext("2d");
-    context.beginPath();
-    context.moveTo(100,100);
-    context.lineTo(200,200);
-    context.strokeStyle = "white";
-    context.lineWidth = "10";
-    context.stroke();
+    oCan.onmousedown = function(e){
+      context.beginPath();
+      context.moveTo(e.clientX,e.clientY)
+      context.strokeStyle = "white";
+      oCan.onmousemove = function(e){
+        context.lineTo(e.clientX,e.clientY);
+        context.stroke();
+      }
+    }
+    document.onmouseup = function(){    
+      oCan.onmousemove = null;
+    }
   </script>
 </body>
 </html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        setCookie('a','1','2');
+        /* delCookie('a'); */
+        console.log(getCookie('a'));
+        function setCookie(key,val,expires){
+            var timer = new Date();
+            timer.setDate(timer.getDate()+parseInt(expires));
+            //parseInt（） 解析一个字符串，返回一个整数
+            document.cookie = key+"="+val+";expires"+timer.toUTCString();
+        }
+       function delCookie(key){
+           var timer = new Date();
+           timer.setDate(timer.getDate()-1)
+           document.cookie = key+"=null;expires="+timer.toUTCString();
+           //toUTCString()方法根据时间时（UTC）把Date对象转成为字符串，并返回结果
+       }
+       function getCookie(key){
+           var nowCookie = document.cookie;
+           var arr = [];
+           arr = nowCookie.split(";");
+           for(var i = 0; i < arr.length; ++i){
+               if(arr[i].split("=")[0].trim() == key){
+                    //trim()删除字符串前后的空格
+                  return (arr[i].split("=")[1])                   
+               }
+           }
+
+       }
+         
+    </script>
+</body>
+</html>

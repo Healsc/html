@@ -14,7 +14,11 @@
          function setCookie(key,val,expires){
              var timer = new Date();
              timer.setDate(timer.getDate()+parseInt(expires))
+             //parseInt() 函数可解析一个字符串，并返回一个整数。
+
              document.cookie = key+"="+val+";expires="+timer.toUTCString();
+            //toUTCString() 方法可根据世界时 (UTC) 把 Date 对象转换为字符串，并返回结果。
+
          }
          function delCookie(key){
              var timer =new Date();
@@ -25,8 +29,12 @@
              var nowCookie = document.cookie;
              var arr = [];
              arr = nowCookie.split(";");
+             //split() 方法用于把一个字符串分割成字符串数组。
+
              for(var i = 0;i < arr.length;i++){
                  if(arr[i].split("=")[0].trim()==key){
+                     //trim删除字符串前后的空格
+                 
                      return (arr[i].split("=")[1]);
                  }
              }

@@ -1,0 +1,23 @@
+$color:'blue';
+.box{
+    color:$color;
+    .box{
+        width: 200px;
+    }
+}
+
+.div1{
+    background-color:$color;
+    &-content{
+        width: 100px;
+        height: 100px;
+    }
+}
+.clearfix{
+    color:black;
+    &::after{
+        content:"";
+        display: block;
+        clear:both;
+    }
+}

@@ -22,4 +22,26 @@
   clear: both;
 }
 
+.div11 {
+  width: 300px;
+  height: 200px;
+  color: #000;
+}
+
+.div12 {
+  width: 1px;
+  height: 20px;
+  color: #000;
+}
+
+.div13, .div14 {
+  width: 111px;
+  height: 222px;
+  background-color: #fff;
+}
+
+.div14 {
+  font-size: 10px;
+}
+
 /*# sourceMappingURL=c.css.map */

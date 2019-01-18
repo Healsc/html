@@ -21,3 +21,26 @@ $color:'blue';
         clear:both;
     }
 }
+
+@mixin name($w:10px,$h:20px) {
+   
+    width: $w;
+    height: $h;
+    color: #000;
+  }
+.div11{
+    @include name(300px,200px);
+}
+.div12{
+    @include name(1px);
+}
+.div13{
+    width: 111px;
+    height: 222px;
+    background-color: #fff;
+  }
+  .div14{
+    font-size: 10px;
+    @extend .div13
+  }
+  

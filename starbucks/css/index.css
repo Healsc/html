@@ -8,11 +8,49 @@ li{
 a{
     text-decoration:none;
 }
-
+html{
+    font-size: 62.5% !important;
+}
+body{
+    background-color: #f7f7f7;
+}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
 
 @media(min-width:1025px){
     .nav{
-        width:30%;
+        width: 30%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom:0;
     }
-    background-color:#ccc;
 }
+
+.nav{
+    background-color:#fff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
+}
+.nav .header{
+    padding: 24px;
+}
+.nav .logo{
+    float: left;
+}
+.nav .primary li{
+    float: left;
+    font-size: 1.6rem;
+    padding: 5px 10px 5px;
+    font-weight: 700;
+}
+.nav .icon{
+    float: right;
+    margin-top: 5px;
+}
+.nav .logo img{
+    width: 36px;
+}
+

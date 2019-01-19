@@ -54,3 +54,33 @@ body{
     width: 36px;
 }
 
+.nav .content{
+    height: 100%;
+}
+.nav .body{
+    height: calc(100% - 98px);
+    display: table;
+}
+
+.nav .body .container{
+    padding:  0 24px 0 84px;
+    display:table-cell;
+    vertical-align:middle;
+}
+.nav .body .bc-text{
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+.nav .btn-bar span{
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #00A862;
+}
+.nav .sign-in img{
+    vertical-align: middle;
+    margin-top: -2px;
+}
+.nav .body .register{
+    margin-left: 20px;
+}

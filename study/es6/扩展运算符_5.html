@@ -9,8 +9,18 @@
 <body>
     
     <script>
-        let str = 'abc';
-        
+        let str = 'hello world'
+        console.log(str.indexOf('a'));//-1
+        console.log(str.indexOf('world'))//6
+
+        console.log(str.includes('woo'));//false
+        console.log(str.includes('wo'));//true
+
+        console.log(str.startsWith('hello'));//true
+        console.log(str.startsWith('world'));//false
+
+        console.log(str.endsWith('hello'));//false
+        console.log(str.endsWith('ld'));//true
     </script>
 </body>
 </html>

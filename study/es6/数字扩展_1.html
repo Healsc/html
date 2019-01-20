@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let a = 10;
+        console.log(a.toString(2));//1010 十进制->二进制
+        console.log(a.toString(8));//12 十进制->八进制
+        //toString（n）只能把十进制转化成的别的进制
+        let b = 101;
+        console.log(parseInt(b,2));//5  二进制转成十进制
+
+        //二进制0B
+        //八进制0O
+        let m = 0B0101;
+        console.log(m);//5
+        let n = 0O011;
+        console.log(n);//9
+
+
+        //判断是数字
+        console.log(Number.isFinite(5));//true
+        console.log(Number.isFinite(null));//false
+        console.log(Number.isFinite("a"));//false
+        console.log(Number.isFinite(undefined));//false
+        console.log(Number.isFinite('5'));//false
+        console.log(Number.isFinite(NaN));//false
+
+
+        //判断不是数字
+        console.log(isNaN(5));//false
+        console.log(isNaN(NaN));//true
+
+        //判断整数
+        console.log(Number.isInteger(5));//true
+        console.log(Number.isInteger(5.5));//false
+
+        //判断安全数
+        let max = Math.pow(2,53);
+        console.log(Number.isSafeInteger(max));//false
+        console.log(Number.isSafeInteger(max-1));//true
+        console.log(Number.MAX_SAFE_INTEGER);//9007199254740991
+        console.log(Number.MIN_SAFE_INTEGER);//-9007199254740991
+
+        //Matj.trunc() 去除一个数字的小数部分，返回整数部分
+        console.log(Math.trunc(5.5));//5 
+        //判断一个数字是正数、负数、还是零
+        console.log(Math.sign(5));//1
+        console.log(Math.sign(0));//0
+        console.log(Math.sign(-2));//-1
+    </script>
+</body>
+</html>

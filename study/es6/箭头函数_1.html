@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function foo(a,b){
+            console.log(a+b);
+        }
+        foo(1,3);
+        let foo1 = (a,b) => {
+            console.log(a+b);
+        }
+        foo1(1,3);
+
+        var obj = {
+            name:"zs",
+            age:11,
+            showInfo:function(){
+                console.log(this.name);//zs
+                console.log(this);
+                //{name: "zs", age: 11, showInfo: ƒ}
+                //age: 11
+                //name: "zs"
+                //showInfo: ƒ ()
+                //__proto__: Object
+            }
+        }
+        obj.showInfo();
+
+        var obj2 = {
+            name:"ls",
+            age:12,
+            showInfo:() => {
+                console.log(this.name);// 
+                console.log(this);
+                //Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, parent: Window, …}
+            }
+        }
+        obj2.showInfo();
+    </script>
+</body>
+</html>

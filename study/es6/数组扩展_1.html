@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>01</li>
+        <li>02</li>
+        <li>03</li>
+    </ul>
+    <script>
+        var aLi = document.getElementsByTagName('li');
+        console.log(aLi);
+        //HTMLCollection(6) [li, li, li, li, li, li]
+        //0: li
+        //1: li
+        //2: li
+        //length: 3
+        //__proto__: HTMLCollection
+        var lis = document.querySelectorAll('li');
+        console.log(lis);
+        //NodeList(3) [li, li, li]
+        //0: li
+        //1: li
+        //2: li
+        //length: 3
+        //__proto__: NodeList
+        aLi = Array.from(aLi);
+        console.log(aLi);
+        //Array(3)
+        //0: li
+        //1: li
+        //2: li
+        //length: 3
+        //__proto__: Array(0)
+    </script>
+</body>
+</html>

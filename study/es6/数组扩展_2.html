@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   
+    <script>
+        let obj = {
+            "0":'商品1',
+            "1":'商品2',
+            "2":'商品3',
+            length:3
+        }
+        obj = Array.from(obj);
+        console.log(obj);
+        //(3) ["商品1", "商品2", "商品3"]
+        //0: "商品1"
+        //1: "商品2"
+        //2: "商品3"
+        //length: 3
+        //__proto__: Array(0)
+
+
+        console.log(Array.of(1,2,{name:'ls'},4,undefined));
+        /* (5) [1, 2, {…}, 4, undefined]
+        0: 1
+        1: 2
+        2: {name: "ls"}
+        3: 4
+        4: undefined
+        length: 5
+        __proto__: Array(0) */
+
+        let  arr = [1,2,3,4,5,6,7]
+        arr.copyWithin(1,5,7);
+        console.log(arr);
+        //[1, 6, 7, 4, 5, 6, 7]
+    </script>
+</body>
+</html>

@@ -9,7 +9,25 @@
 <body>
    
     <script>
-       
+       let arr = ['a','b','c','d'];
+       console.log(arr.includes('a'));//true
+       console.log(arr.includes('z'));//false
+
+        for(var val of arr){
+            console.log(val);
+        }
+        //a
+        //b
+        //c
+        //d
+
+        for(var [key,val] of arr.entries()){
+            console.log(val,key);
+        }
+        //a 0
+        //b 1
+        //c 2
+        //d 3 
     </script>
 </body>
 </html>

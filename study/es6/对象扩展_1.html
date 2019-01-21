@@ -21,6 +21,22 @@
 
         console.log(typeof undefined);//undefined
         console.log(typeof null);//object
+
+        let obj = {
+            name:"zs",
+            age:1,
+        }
+        let obj2 = {
+            age:10,
+        }
+        Object.assign(obj,obj2);
+        console.log(obj);//{name: "zs", age: 10}
+        obj.name = 'ls';
+        console.log(obj);//{name: "ls", age: 10}
+
+        if('name' in obj){
+            console.log('yes');//yes
+        }
     </script>
 </body>
 </html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function* helloWorldGenerator(){
+            yield 'hello';
+            yield 'world';
+            return 'ending';
+        }
+        let hw = helloWorldGenerator();
+        console.log(hw.next());
+        console.log(hw.next());
+        console.log(hw.next());
+        //generator.html:17 {value: "hello", done: false}
+        //generator.html:18 {value: "world", done: false}
+        //generator.html:19 {value: "ending", done: true}
+        
+    </script>
+</body>
+</html>

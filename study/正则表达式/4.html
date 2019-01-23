@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let reg  = /c*/;
+        let str = "ainiao";
+        let str2 = "cccainiao";
+        console.log(reg.test(str));//true
+        console.log(reg.exec(str));//["", index: 0, input: "ainiao", groups: undefined]
+        console.log(reg.test(str2));//true
+        console.log(reg.exec(str2));//["ccc", index: 0, input: "cccainiao", groups: undefined]
+    </script>
+</body>
+</html>

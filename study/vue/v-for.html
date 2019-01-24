@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+        <ul>
+            <li v-for="val in arr">{{val}}</li>
+        <!-- 1
+            2
+            3
+            4
+            5 -->
+            <li v-for="(val,index) in arr">{{val}}-{{index}}</li>
+        <!--  1-0
+            2-1
+            3-2
+            4-3
+            5-4 -->
+            <li v-for="(val,key,index) in obj">{{val}}-{{key}}-{{index}}</li>
+        <!--sz-name-0
+            12-age-1
+            zhongxue-school-2 -->
+        </ul>
+    </div>
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            data:{
+                msg:'hello world',
+                arr:[1,2,3,4,5],
+                obj:{
+                    name:'sz',
+                    age:'12',
+                    school:'zhongxue'
+                }
+            },
+        })
+    </script>
+</body>
+</html>

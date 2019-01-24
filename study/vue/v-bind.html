@@ -10,16 +10,20 @@
 <body>
     <div id="app">
         <div v-bind:style="divstyle">hello</div>
+        <img v-bind:src="'./img/'+imgSrc" alt="">
+        
     </div>
     <script>
         new Vue({
             el:"#app",
             data:{
                 divstyle:{
+
                     width:'100px',
                     height:'100px',
                     background:'red'
-                }
+                },
+                imgSrc:"01.jpg"
             }
 
         })

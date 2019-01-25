@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="text"><input type="button" value="搜索">
+        <br>
+        <input type="text"><input type="text"><input type="button" value="添加" v-on:click="add">
+        <br>
+        <table>
+            <thead>
+                <th>选择</th>
+                <th>商品名称</th>
+                <th>商品价格</th>
+                <th>操作</th>
+            </thead>
+            <tbody>
+                <tr v-for="(val,index) in products">
+                    <td><input type="checkbox"></td>
+                    <td>{{val.name}}</td>
+                    <td>{{val.price}}</td>
+                    <td><input type="button" value="删除" @click="delSel(val.id)"></td>
+                </tr>
+            </tbody>
+        </table>      
+        <div>
+            <button>删除选中</button>
+            <span>价格：{{}}</span>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                products:[
+                    {
+                        id:'1',
+                        name:"衣服",
+                        price:123,
+                        isSel:false,
+                    },
+                    {
+                        id:'2',
+                        name:"裤子",
+                        price:"456",
+                        isSel:false
+                    },
+                    {
+                        id:'3',
+                        name:"鞋子",
+                        price:234,
+                        isSel:false
+                    },
+                    {
+                        id:'4',
+                        name:"帽子",
+                        price:147,
+                        isSel:false
+                    },
+                    {
+                        id:'5',
+                        name:"手套",
+                        price:101,
+                        isSel:false
+                    }
+                ]
+            },
+            methods:{
+                delSel(id){
+                    var arr = [];
+                    arr = this.products.filter(function(val,index,arr){
+                        if(val.id != id)
+                        return arr;                    
+                    })
+                    this.products = arr;
+                }
+            },
+            computed:{
+                sun:function(){
+                    let sum = 0;
+                    return sum = sum +sel;
+                }
+            }
+            
+        })
+    </script>
+</body>
+</html>

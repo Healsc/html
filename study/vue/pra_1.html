@@ -14,11 +14,10 @@
 </head>
 <body>
     <div id="app">
-        <input type="text" v-model="serachText">
-        <input type="button" value="搜索" v-on:click="search">
-       
+        <input type="text" placeholder="搜索" v-model="searchText">
+        <input type="button" value="搜索" v-on:click="search">       
         <div>
-                <input type="text" placeholder="名称" v-model="name"><input type="number" placeholder="价格" v-model="price"><input type="button" @click="add"  value="添加">
+            <input type="text" placeholder="名称" v-model="name"><input type="number" placeholder="价格" v-model="price"><input type="button" @click="add"  value="添加">
         </div>
        
    
@@ -30,8 +29,8 @@
                 <th>操作</th>
             </thead>
             <tbody>
-                <tr v-for="(val,index) in products" v-bind:class="{active:val.isSel}">
-                    <td><input type="checkbox"></td>
+                <tr v-for="(val,index) in products" v-bind:class="{active:val.isSel}" v-on:click="val.isSel=!val.isSelq" v-bind:key="index">
+                    <td><input type="checkbox" v-model="checkArr" v-bind:value="val.id"></td>
                     <td>{{val.name}}</td>
                     <td>{{val.price}}</td>
                     <td><input type="button" value="删除" @click="delSel(val.id)"></td>
@@ -40,7 +39,7 @@
         </table>      
         <div>
             <button>删除选中</button>
-            <span>价格：{{}}</span>
+            <span>价格：{{sum}}</span>
         </div>
     </div>
     <script>
@@ -48,8 +47,9 @@
             el:"#app",
             data:{
                 name:'',
-                price:'',
+                price:0,
                 nowId:"5",
+                searchText:"",
                 products:[
                     {
                         id:'1',
@@ -102,11 +102,36 @@
                     this.products.push(obj)
                 },
                 search(){
-
+                    let _this = this;
+                    let arr = [];
+                    arr = this.products.filter(function(val,index){
+                        if(val.name.includes(_this.searchText)){
+                            return val;
+                        }
+                    })
+                    this.products = arr;
                 }
+        
             },
             computed:{
-                
+                sum(){
+                    let sumNum = 0;
+                    this.products.forEach(function(val,index){
+                        if(val.isSel){
+                        sumNum+=val.price;
+                        }
+                    })
+                    return sumNum;
+                },
+                checkArr(){
+                    let arr = [];
+                    this.products.forEach(function(val,index){
+                        if(val.isSel){
+                            arr.push(val.id)
+                        }
+                    })
+                    return arr;
+                }
             }
             
         })

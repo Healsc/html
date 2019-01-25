@@ -14,8 +14,8 @@
 </head>
 <body>
     <div id="app">
-        <input type="text">
-        <input type="button" value="搜索">
+        <input type="text" v-model="serachText">
+        <input type="button" value="搜索" v-on:click="search">
        
         <div>
                 <input type="text" placeholder="名称" v-model="name"><input type="number" placeholder="价格" v-model="price"><input type="button" @click="add"  value="添加">
@@ -101,12 +101,12 @@
                     }
                     this.products.push(obj)
                 },
+                search(){
+
+                }
             },
             computed:{
-                sun:function(){
-                    let sum = 0;
-                    return sum = sum +sel;
-                }
+                
             }
             
         })

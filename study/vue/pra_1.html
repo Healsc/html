@@ -7,15 +7,21 @@
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <style>
-        
+        .active{
+            background-color:#ddd;
+        }
     </style>
 </head>
 <body>
     <div id="app">
-        <input type="text"><input type="button" value="搜索">
-        <br>
-        <input type="text"><input type="text"><input type="button" value="添加" v-on:click="add">
-        <br>
+        <input type="text">
+        <input type="button" value="搜索">
+       
+        <div>
+                <input type="text" placeholder="名称" v-model="name"><input type="number" placeholder="价格" v-model="price"><input type="button" @click="add"  value="添加">
+        </div>
+       
+   
         <table>
             <thead>
                 <th>选择</th>
@@ -24,7 +30,7 @@
                 <th>操作</th>
             </thead>
             <tbody>
-                <tr v-for="(val,index) in products">
+                <tr v-for="(val,index) in products" v-bind:class="{active:val.isSel}">
                     <td><input type="checkbox"></td>
                     <td>{{val.name}}</td>
                     <td>{{val.price}}</td>
@@ -41,6 +47,9 @@
         new Vue({
             el:"#app",
             data:{
+                name:'',
+                price:'',
+                nowId:"5",
                 products:[
                     {
                         id:'1',
@@ -82,7 +91,16 @@
                         return arr;                    
                     })
                     this.products = arr;
-                }
+                },
+                add(){
+                    let obj = {
+                        id:++this.nowId,
+                        name:this.name,
+                        price:this.price,
+                        isSel:false
+                    }
+                    this.products.push(obj)
+                },
             },
             computed:{
                 sun:function(){

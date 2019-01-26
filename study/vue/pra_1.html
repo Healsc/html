@@ -29,7 +29,7 @@
                 <th>操作</th>
             </thead>
             <tbody>
-                <tr v-for="(val,index) in products" v-bind:class="{active:val.isSel}" v-on:click="val.isSel=!val.isSelq" v-bind:key="index">
+                <tr v-for="(val,index) in products" v-bind:class="{active:val.isSel}" v-on:click="val.isSel=!val.isSel" v-bind:key="index">
                     <td><input type="checkbox" v-model="checkArr" v-bind:value="val.id"></td>
                     <td>{{val.name}}</td>
                     <td>{{val.price}}</td>
@@ -38,7 +38,7 @@
             </tbody>
         </table>      
         <div>
-            <button>删除选中</button>
+            <button v-on:click="del">删除选中</button>
             <span>价格：{{sum}}</span>
         </div>
     </div>
@@ -110,8 +110,16 @@
                         }
                     })
                     this.products = arr;
+                },
+                del(){
+                    var arr = [];
+                    this.products.forEach(function(val,index){
+                        if(!val.isSel){
+                            arr.push(val)
+                        }
+                    })
+                    this.products = arr;
                 }
-        
             },
             computed:{
                 sum(){

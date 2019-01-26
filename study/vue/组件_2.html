@@ -9,7 +9,8 @@
 </head>
 <body>
     <div id="app">
-            <heal></heal>
+        <button @click="change">change</button>
+        <heal ></heal>
     </div>
     <script>
     Vue.component("heal",{
@@ -24,8 +25,16 @@
       
       `,
     });
+    Vue.component("fellow",{
+        template:`<h1>hello world</h1>`
+    })
     new Vue({
         el:"#app",
+        methods:{
+            change(){
+                this.changeCom = 'fellow'
+            }
+        }
     })
     </script>
 </body>

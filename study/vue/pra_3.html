@@ -6,6 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>todilist</title>
 </head>
+<style>
+  .active{
+    background-color:#ddd;
+  }
+</style>
 <body>
   <div id="app">
     <div>
@@ -24,8 +29,8 @@
         <th>商品价格</th>
         <th>操作</th>
       <tbody>
-        <tr v-for="(item,index) in products">
-          <td><input type="checkbox"></td>
+        <tr v-for="(item,index) in products" v-bind:class="{active:item.isSel}" v-on:click="item.isSel=!item.isSel" v-bind:key="index">
+          <td><input type="checkbox" v-model="checkArr" :value="item.id"></td>
           <td>{{item.name}}</td>
           <td>{{item.price}}</td>
           <td><input type="button" value="删除" v-on:click="del(item.id)"></td>
@@ -34,8 +39,8 @@
       </thead>
     </table>
     <div>
-      <input type="button" value="删除选中">
-      <span>价格：{{}}</span>
+      <input type="button" value="删除选中" v-on:click="delChe">
+      <span>价格：{{sum}}</span>
     </div>
   </div>
 
@@ -78,6 +83,15 @@
         nowId:"5",
       },
       methods:{
+        delChe(){
+          let thisArr = [];
+          this.products.forEach(function(val,index){
+            if(!val.isSel){
+              thisArr.push(val);
+            }
+          })
+          this.products = thisArr;
+        },
         del(id){
           let thisArr = [];
           thisArr = this.products.filter(function(val,index){
@@ -105,6 +119,26 @@
             isSel:false
           }
           this.products.push(obj);
+        },
+      },
+      computed:{
+        sum(){
+          let sumNum = 0;
+          this.products.forEach(function(val,index){
+            if(val.isSel){
+              sumNum+=val.price;
+            }
+          })
+          return sumNum;
+        },
+        checkArr(){
+          let arr = [];
+          this.products.forEach(function(val,index){
+            if(val.isSel){
+              arr.push(val.id);
+            }
+          })  
+          return arr
         }
       }
     })

@@ -7,39 +7,107 @@
   <title>todilist</title>
 </head>
 <body>
-  <div>
-      <input type="text" placeholder="搜索">
-      <input type="button" value="搜索">
-  </div>
-  <div>
-      <input type="text" placeholder="名称">
-      <input type="number" placeholder="0">
-      <input type="button" value="添加">
-  </div>
-  <table>
-    <thead>
-      <th>选择</th>
-      <th>商品名称</th>
-      <th>商品价格</th>
-      <th>操作</th>
-    <tbody>
-      <tr>
-        <td><input type="checkbox"></td>
-        <td></td>
-        <td></td>
-        <td><input type="button" value="删除"></td>
-      </tr>
-    </tbody>
-    </thead>
-  </table>
-  <div>
-    <input type="button" value="删除选中">
-    <span>价格：{{}}</span>
+  <div id="app">
+    <div>
+        <input type="text" placeholder="搜索" v-model="searchText">
+        <input type="button" value="搜索" v-on:click="search">
+    </div>
+    <div>
+        <input type="text" placeholder="名称" v-model="name">
+        <input type="number" placeholder="0" v-model="price">
+        <input type="button" value="添加" @click="add">
+    </div>
+    <table>
+      <thead>
+        <th>选择</th>
+        <th>商品名称</th>
+        <th>商品价格</th>
+        <th>操作</th>
+      <tbody>
+        <tr v-for="(item,index) in products">
+          <td><input type="checkbox"></td>
+          <td>{{item.name}}</td>
+          <td>{{item.price}}</td>
+          <td><input type="button" value="删除" v-on:click="del(item.id)"></td>
+        </tr>
+      </tbody>
+      </thead>
+    </table>
+    <div>
+      <input type="button" value="删除选中">
+      <span>价格：{{}}</span>
+    </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script>
-  
+    new Vue({
+      el:"#app",
+      data:{
+        products:[
+          {
+            id:"1",
+            name:"衣服",
+            price:123,
+            isSel:false,
+          },{
+            id:"2",
+            name:"裤子",
+            price:456,
+            isSel:false
+          },{
+            id:"3",
+            name:"鞋子",
+            price:789,
+            isSel:false,
+          },{
+            id:"4",
+            name:"帽子",
+            price:111,
+            isSel:false
+          },{
+            id:"5",
+            name:"手套",
+            price:222,
+            isSel:false
+          }
+        ],
+        searchText:"",
+        name:"",
+        price:"0",
+        nowId:"5",
+      },
+      methods:{
+        del(id){
+          let thisArr = [];
+          thisArr = this.products.filter(function(val,index){
+            if(val.id != id){
+              return val;
+            }
+          })
+          this.products = thisArr;
+        },
+        search(){
+          let thisArr = [];
+          let _this = this;
+          thisArr = this.products.filter(function(val,index){
+            if(val.name.includes(_this.searchText)){
+              return val;
+            }
+          })
+          this.products = thisArr;
+        },
+        add(){
+          let obj = {
+            id:++this.nowId,
+            name:this.name,
+            price:this.price,
+            isSel:false
+          }
+          this.products.push(obj);
+        }
+      }
+    })
   </script>
 </body>
 </html>

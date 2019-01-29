@@ -1,3 +1,6 @@
+html{
+    font-size: 100%;
+}
 /* 所有边距为0 */
 *{
     margin: 0;
@@ -16,7 +19,7 @@ img{
     border: 0;
 }
 .weapper{
-    width: 1230px;
+    width: 1226px;
     /*background: #ff0000;*/
     height: 100%;
     margin: 0 auto;

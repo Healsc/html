@@ -3,22 +3,18 @@
     height: 40px;
     background-color: #333333;
 }
-.topbar-nav li{
+.topbar a{
     text-align: center;
     line-height: 40px;
-    color: #b0b0b0;;
-    float: left;
+    color: #b0b0b0;
     font-size: 12px;
+}
+.topbar span{
+    color: #b0b0b0;;
 }
 .top-nav span{
-    float: left;
+    
 }
 .topbar .topbar-info{
-    float: right;
-}
-.topbar .topbar-info li{
-    float: left;
-    color: #b0b0b0;
-    line-height: 40px;
-    font-size: 12px;
+
 }

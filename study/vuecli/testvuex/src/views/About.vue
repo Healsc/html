@@ -6,6 +6,7 @@
     <h2>{{count1}}</h2>
     <button @click="add(10)">add</button>
     <button @click="addAction">add</button>
+    <button @click="$store.commit('reduce')">reduce</button>
   </div>
 </template>
 <script>

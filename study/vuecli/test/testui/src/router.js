@@ -5,6 +5,7 @@ import Home from './views/Home.vue'
 Vue.use(Router)
 
 export default new Router({
+  mode:'history',//去掉#号
   routes: [
     {
       path: '/',
@@ -27,6 +28,7 @@ export default new Router({
     {
       path: '/test1',
       name: 'test1',
+      alias:'/heal',//别名
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -38,11 +40,19 @@ export default new Router({
           component:() => import("./views/Test2.vue")
         },
         {
-          path:"/test3",
+          path:"/test3/:name/:age",
           name:"test3",
           component:() => import("./views/Test3.vue")
         }
       ]
     },
+    {
+      path:"/home",
+      redirect:"/",
+    },
+    {
+      path:"*",//固定就是*号
+      component:() => import("./views/Error404.vue")
+    }
   ]
 })

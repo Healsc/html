@@ -9,14 +9,14 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
+      path: '/',
+      name: 'movie',
+      component: () => import( './views/movie/Movie.vue')
+    },
+    {
       path: '/book',
       name: 'book',
       component: () => import( './views/book/Book.vue')
-    },
-    {
-      path: '/movie',
-      name: 'movie',
-      component: () => import( './views/movie/Movie.vue')
     },
     {
       path: '/music',
@@ -24,9 +24,9 @@ export default new Router({
       component: () => import( './views/music/Music.vue')
     },
     {
-      path: '/photo',
-      name: 'photo',
-      component: () => import( './views/photo/Photo.vue')
+      path: '/chat',
+      name: 'chat',
+      component: () => import( './views/chat/Chat.vue')
     }
   ]
 })

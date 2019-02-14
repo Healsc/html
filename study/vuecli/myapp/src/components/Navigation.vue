@@ -1,15 +1,12 @@
 <template>
     <div>
         <header>
-            <span class=header>首页</span>
-            <span></span>
+            <span>首页</span>
+            <h1>电影</h1>
         </header>
         <nav>
             <ul>
-                <li><router-link to="/movie">电影 |</router-link></li> 
-                <li><router-link to="/music">音乐 |</router-link></li> 
-                <li><router-link to="/book">书籍 |</router-link></li> 
-                <li><router-link to="/">图片 </router-link></li> 
+                <li @click="routerPush(item)" v-for="(item,index) in list" :key="index">{{item.name}}</li>
             </ul>
         </nav>
         <router-view/>
@@ -17,7 +14,30 @@
 </template>
 <script>
 export default {
-  name: 'Navigation'
+    data(){
+        return {
+            list:[
+            {
+                name:"电影",
+                routerPath:"/",
+            },{
+                name:"音乐",
+                routerPath:"/music",
+            },{
+                name:"书籍",
+                routerPath:"/book",
+            },{
+                name:"聊天",
+                routerPath:"/chat",
+            }
+        ]
+        }
+    },
+    methods:{
+        routerPush(obj){
+            this.$router.push(obj.routerPath);
+        }
+    }
 }
 </script>
 <style scoped>
@@ -26,23 +46,34 @@ export default {
         top: 0;
         height: 1rem;
         width: 100%;
-  
+        background-color: #ddd;
     }
-    .header{
-        font-size: 20px;
-        position: fixed;
-        left: 0;
+    header h1{
+        height: 1rem;
+        line-height: 1rem;
     }
-    ul{
+    header span{
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    nav{
         position: fixed;
         bottom: 0;
         height: 1rem;
-
+        width: 100%;
+        background-color:#ddd;
     }
-    ul li{
-        float: left;
-        font-size: 20px;
+    nav ul{
+        width: 100%;
     }
-     
+    nav li{
+        float:left;
+        width: 25%;
+        height: 1rem;
+        line-height: 1rem;
+    }
     
+  
 </style>

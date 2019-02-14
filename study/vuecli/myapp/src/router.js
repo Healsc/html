@@ -31,6 +31,10 @@ export default new Router({
     {
       path: '*',
       component: () => import( './views/Error.vue')
+    },{
+      path:"/bookdetail",
+      name:"bookdetail",
+      component:()=>import('./views/book/Bookdetail.vue')
     }
   ]
 })

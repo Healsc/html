@@ -1,7 +1,6 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
-   
     <h2>{{count}}</h2>
     <h2>{{count1}}</h2>
     <button @click="add(10)">add</button>

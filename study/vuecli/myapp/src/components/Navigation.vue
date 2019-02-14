@@ -1,12 +1,12 @@
 <template>
     <div :class="activeClass">
         <header>
-            <span>首页</span>
+            <span @click="routerPush(list[0])">首页</span>
             <h1>{{nowTitle}}</h1>
         </header>
         <nav>
             <ul>
-                <li @click="routerPush(item)" v-for="(item,index) in list" :key="index">{{item.name}}</li>
+                <li :class="{'active':item.className == activeClass}" @click="routerPush(item)" v-for="(item,index) in list" :key="index">{{item.name}}</li>
             </ul>
         </nav>
         <router-view/>
@@ -39,11 +39,23 @@ export default {
         ]
         }
     },
+    props:["navVal"],
     methods:{
         routerPush(obj){
             this.$router.push(obj.routerPath);
             this.nowTitle = obj.name;
             this.activeClass = obj.className;
+        }
+    },
+    computed: {
+        propsVal(){
+        return this.navVal.title
+        }
+  },
+    watch:{
+        propsVal(){
+            this.nowTitle = this.navVal.title;
+            this.activeClass = this.navVal.calssName;
         }
     }
 }
@@ -54,6 +66,7 @@ export default {
         top: 0;
         height: 1rem;
         width: 100%;
+        background-color:rgb(33, 150, 243);
     }
     header h1{
         height: 1rem;
@@ -70,15 +83,21 @@ export default {
         bottom: 0;
         height: 1rem;
         width: 100%;
+        background-color:rgb(33, 150, 243);
     }
     nav ul{
         width: 100%;
     }
     nav li{
+        color: #ddd;
         float:left;
         width: 25%;
         height: 1rem;
         line-height: 1rem;
+    }
+    nav li.active{
+        color: #fff;
+        font-size: 16px;
     }
     .movie header,.movie nav{
         background-color: rgb(33, 150, 243);

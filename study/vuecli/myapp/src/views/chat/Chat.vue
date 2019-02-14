@@ -5,7 +5,13 @@
 </template>
 <script>
 export default {
-    
+     created() {
+       let obj = {
+           title:"聊天",
+           className:"chat"
+       }
+       this.$emit("changeNav",obj)
+   }, 
 }
 </script>
 <style scoped>

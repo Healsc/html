@@ -1,8 +1,8 @@
 <template>
-    <div>
+    <div :class="activeClass">
         <header>
             <span>首页</span>
-            <h1>电影</h1>
+            <h1>{{nowTitle}}</h1>
         </header>
         <nav>
             <ul>
@@ -16,19 +16,25 @@
 export default {
     data(){
         return {
+            nowTitle:"电影",
+            activeClass:"movie",
             list:[
             {
                 name:"电影",
                 routerPath:"/",
+                className:"moevie",
             },{
                 name:"音乐",
                 routerPath:"/music",
+                className:"music"
             },{
                 name:"书籍",
                 routerPath:"/book",
+                className:"book"
             },{
                 name:"聊天",
                 routerPath:"/chat",
+                className:"chat"
             }
         ]
         }
@@ -36,6 +42,8 @@ export default {
     methods:{
         routerPush(obj){
             this.$router.push(obj.routerPath);
+            this.nowTitle = obj.name;
+            this.activeClass = obj.className;
         }
     }
 }
@@ -46,7 +54,6 @@ export default {
         top: 0;
         height: 1rem;
         width: 100%;
-        background-color: #ddd;
     }
     header h1{
         height: 1rem;
@@ -63,7 +70,6 @@ export default {
         bottom: 0;
         height: 1rem;
         width: 100%;
-        background-color:#ddd;
     }
     nav ul{
         width: 100%;
@@ -74,6 +80,16 @@ export default {
         height: 1rem;
         line-height: 1rem;
     }
-    
-  
+    .movie header,.movie nav{
+        background-color: rgb(33, 150, 243);
+    }
+    .music header,.music nav{
+        background-color: rgb(0, 150, 136);
+    }
+    .book header,.book nav{
+        background-color: rgb(121, 85, 72);
+    }
+    .chat header,.chat nav{
+        background-color: rgb(63, 81, 181);
+    }
 </style>

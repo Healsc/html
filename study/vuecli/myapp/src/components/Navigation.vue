@@ -4,9 +4,6 @@
             <span @click="routerPush(list[0])">首页</span>
             <h1>{{nowTitle}}</h1>
         </header>
-        <router-link to="/bookdetail">
-            书籍
-        </router-link>
         <nav>
             <ul>
                 <li :class="{'active':item.className == activeClass}" @click="routerPush(item)" v-for="(item,index) in list" :key="index">
@@ -60,7 +57,7 @@ export default {
     watch:{
         propsVal(){
             this.nowTitle = this.navVal.title;
-            this.activeClass = this.navVal.calssName;
+            this.activeClass = this.navVal.className;
         }
     }
 }

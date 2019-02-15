@@ -56,7 +56,6 @@ export default {
   },
     watch:{
         propsVal(){
-             console.log(this.navVal.className);
             this.nowTitle = this.navVal.title;
             this.activeClass = this.navVal.className;
         }

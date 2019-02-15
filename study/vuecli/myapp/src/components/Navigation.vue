@@ -1,15 +1,12 @@
 <template>
     <div :class="activeClass">
         <header>
-            <span @click="routerPush(list[0])">首页</span>
+            <span @click="routerPush(navList[0])">首页</span>
             <h1>{{nowTitle}}</h1>
-        </header>
-        <router-link to="/bookdetail">
-            书籍
-        </router-link>
+        </header>   
         <nav>
             <ul>
-                <li :class="{'active':item.className == activeClass}" @click="routerPush(item)" v-for="(item,index) in list" :key="index">
+                <li v-for="(item,index) in navList" :key="index" :class="{'active':item.className == activeClass}" @click="routerPush(item)">
                     {{item.name}}
                 </li>
             </ul>
@@ -23,11 +20,11 @@ export default {
         return {
             nowTitle:"电影",
             activeClass:"movie",
-            list:[
+            navList:[
             {
                 name:"电影",
                 routerPath:"/",
-                className:"moevie",
+                className:"movie",
             },{
                 name:"音乐",
                 routerPath:"/music",
@@ -59,8 +56,9 @@ export default {
   },
     watch:{
         propsVal(){
+             console.log(this.navVal.className);
             this.nowTitle = this.navVal.title;
-            this.activeClass = this.navVal.calssName;
+            this.activeClass = this.navVal.className;
         }
     }
 }

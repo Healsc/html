@@ -1,14 +1,16 @@
 <template>
-    <div>
-        <h1>chat</h1>
-    </div>
+  <div>
+    
+  </div>
 </template>
 <script>
 export default {
-    
-
+  created(){
+    let obj = {
+      title:"唠嗑",
+      className:"chat"
+    }
+    this.$emit("changeNav",obj)
+  }
 }
 </script>
-<style scoped>
-
-</style>

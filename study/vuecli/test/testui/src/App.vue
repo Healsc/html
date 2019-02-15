@@ -10,7 +10,10 @@
       <router-link to="/home">重定向/返回首页</router-link> |
       <router-link to="/heal">别名</router-link>
     </div>
-    <router-view/>
+    <transition name="fade">
+        <router-view/>
+    </transition>
+
   </div>
 </template>
 
@@ -22,5 +25,23 @@
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.fade-enter{
+  opacity: 0;
+}
+.fade-enterr-active{
+  transition:all 1s ease;
+}
+.fade-enter-to{
+  opacity: 1;
+}
+.fade-leave{
+  scale: 1
+}
+.fade-leave-active{
+  transition: all 3s ease;
+}
+.fade-leave-to{
+  scale: 2
 }
 </style>

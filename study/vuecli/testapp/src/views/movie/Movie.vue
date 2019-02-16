@@ -1,13 +1,18 @@
 <template>
   <div>
     <ul>
-        <li class="item-list clearfix"> 
-            <div class="list-left">1
-              <img src="" alt="">
+        <li class="item-list clearfix" v-for="(item,index) in dataList" :key="index">  
+            <div class="list-left">
+              <img :src="item.images.small" alt="">
             </div>
-            <div class="list-right">2
-              <h4>dianying</h4>
-              <span>dianyuan</span>
+            <div class="list-right">
+              <h4>{{item.title}}</h4>
+              <span v-for="(item,index) in item.casts" :key="index">{{item.name}}/</span>
+              <br>
+              <span>{{"导演："+item.directors[0].name}}</span>
+              <br>
+              <span>{{item.year+"年"}}</span>
+              
             </div>
         </li>
     </ul>
@@ -15,24 +20,31 @@
 </template>
 <script>
 export default {
+  data() {
+    return {
+      dataList:[],
+    }
+  },
   created(){
     let obj = {
       title:"电影",
       className:"movie"
     }
     this.$emit("changeNav",obj);
-
+    this.getData();
   },
   methods:{
       getData(){
           let proxy = 'https://bird.ioliu.cn/v2?url='
-          let url = 'https://m.douban.com/rexxar/api/v2/subject_collection/movie_showing/items?start=0&count=10'
+          let url = 'https://api.douban.com/v2/movie/in_theaters?city=广州&start=0&count=10'
           axios.get(proxy+url)
-          .then(()=>{
-         
+          .then((res)=>{
+            this.dataList = res.data.subjects;
+            console.log(res);
+            console.log(this.dataList);
           })
           .catch(()=>{
-             
+             console.log("失败");
           })
       }
   }

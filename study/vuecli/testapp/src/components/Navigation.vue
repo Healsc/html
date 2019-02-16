@@ -7,10 +7,6 @@
     
     <nav>
       <ul>
-        <!-- <li>电影</li>
-        <li>音乐</li>
-        <li>书籍</li>
-        <li>聊天</li> -->
         <li :class="{'active':item.className==activeClass}" v-for="(item,index) in btnList" :key="index" @click="routerPush(item)">{{item.name}}</li>
       </ul>
     </nav>

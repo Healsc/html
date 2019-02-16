@@ -1,9 +1,14 @@
 <template>
   <div>
     <ul>
-        <li class="item-list"> 
-            <div class="list-left">1</div>
-            <div class="list-right"></div>
+        <li class="item-list clearfix"> 
+            <div class="list-left">1
+              <img src="" alt="">
+            </div>
+            <div class="list-right">2
+              <h4>dianying</h4>
+              <span>dianyuan</span>
+            </div>
         </li>
     </ul>
   </div>
@@ -33,3 +38,30 @@ export default {
   }
 }
 </script>
+<style scoped>
+  ul{
+    padding: 10px;
+  }
+  .item-list{
+    border-bottom: 1px solid #333;
+    padding: 20px 0;
+  }
+  .item-list .list-left{
+    float: left;
+    width: 40%;
+    text-align: center;
+  }
+  .item-list .list-left img{
+    width: 80%;
+  }
+  .item-list .list-right{
+    float: right;
+    width: 55%;
+    padding-left: 5%；
+  }
+  .clearfix::after{
+    content:"";
+    display: block;
+    clear: both;
+  }
+</style>

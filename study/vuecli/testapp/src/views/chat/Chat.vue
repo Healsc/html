@@ -119,7 +119,7 @@ export default {
           question:this.msg,
           answer:res.data.data.answer
         }
-        console.log(res)
+        //console.log(res)
         this.chatList.push(obj)
       })
     }

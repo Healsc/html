@@ -11,8 +11,7 @@
               <br>
               <span>{{"导演："+item.directors[0].name}}</span>
               <br>
-              <span>{{item.year+"年"}}</span>
-              
+              <span>{{item.year+"年"}}</span>       
             </div>
         </li>
     </ul>

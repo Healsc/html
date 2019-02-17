@@ -33,7 +33,7 @@ export default {
       let scrollTop = document.documentElement.scrollTop;//当前滚动高度
       let scrollHeigth = document.documentElement.scrollHeight;//滚动条可滚动高度
       //console.log(clientHeight,scrollTop,scrollHeigth)
-      if(clientHeight+scrollTop>=scrollHeigth-10 && this.isLoading && this.dataList.length !=25){
+      if(clientHeight+scrollTop>=scrollHeigth-10 && this.dataList.length !=25){
         this.listStart+=10;
         console.log(this.listStart);
         this.getData()
@@ -63,13 +63,15 @@ export default {
           let proxy = 'https://bird.ioliu.cn/v2?url='
           let url = `https://api.douban.com/v2/movie/in_theaters?city=广州&start=${this.listStart}&count=10`
           this.isLoading = false;
+          console.log(1);
           axios.get(proxy+url)
           .then((res)=>{
             this.dataList = res.data.subjects;
             //console.log(res);
             //console.log(this.dataList);
-            this.listStart = this.listStart.concat(res.data.subjects);
+            this.dataList = this.dataList.concat(res.data.subjects);
             this.isLoading = true;
+            console.log(2)
           })
           .catch(()=>{
              console.log("失败");

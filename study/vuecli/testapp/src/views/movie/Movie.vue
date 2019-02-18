@@ -1,17 +1,19 @@
 <template>
   <div>
     <ul>
-        <li class="item-list clearfix" v-for="(item,index) in dataList" :key="index">  
+        <li @click="getDatail" class="item-list clearfix" v-for="(item,index) in dataList" :key="index">  
             <div class="list-left">
-              <img :src="item.images.small" alt="">
+              <!-- <img :src="item.images.small" alt=""> -->
             </div>
             <div class="list-right">
               <h4>{{item.title}}</h4>
-              <span v-for="(item,index) in item.casts" :key="index">{{item.name}}/</span>
+              <!-- <span v-for="(item,index) in item.casts" :key="index">{{item.name}}/</span> -->
+              <span v-for="(item,index) in item.actors" :key="index">{{item}}/</span>
               <br>
-              <span>{{"导演："+item.directors[0].name}}</span>
+              <span>{{item.info}}</span>
+              <!-- <span>{{"导演："+item.directors[0].name}}</span> -->
               <br>
-              <span>{{item.year+"年"}}</span>       
+              <!-- <span>{{item.year+"年"}}</span>  -->      
             </div>
         </li>
     </ul>
@@ -61,15 +63,17 @@ export default {
   methods:{
       getData(){
           let proxy = 'https://bird.ioliu.cn/v2?url='
-          let url = `https://api.douban.com/v2/movie/in_theaters?city=广州&start=${this.listStart}&count=10`
+          //let url = `https://api.douban.com/v2/movie/in_theaters?city=广州&start=${this.listStart}&count=10`
+          let url = 'https://m.douban.com/rexxar/api/v2/subject_collection/movie_showing/items?start=0&count=10'
           this.isLoading = false;
           console.log(1);
           axios.get(proxy+url)
           .then((res)=>{
-            this.dataList = res.data.subjects;
-            //console.log(res);
+            //this.dataList = res.data.subjects;
+            this.dataList = res.data.subject_collection_items;
+            console.log(res);
             //console.log(this.dataList);
-            this.dataList = this.dataList.concat(res.data.subjects);
+            //this.dataList = this.dataList.concat(res.data.subjects);
             this.isLoading = true;
             console.log(2)
           })

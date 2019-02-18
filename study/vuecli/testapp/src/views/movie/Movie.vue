@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul>
-        <li @click="getDatail" class="item-list clearfix" v-for="(item,index) in dataList" :key="index">  
+        <li @click="getDatil(item.id)" class="item-list clearfix" v-for="(item,index) in dataList" :key="index">  
             <div class="list-left">
               <!-- <img :src="item.images.small" alt=""> -->
             </div>
@@ -35,23 +35,13 @@ export default {
       let scrollTop = document.documentElement.scrollTop;//当前滚动高度
       let scrollHeigth = document.documentElement.scrollHeight;//滚动条可滚动高度
       //console.log(clientHeight,scrollTop,scrollHeigth)
-      if(clientHeight+scrollTop>=scrollHeigth-10 && this.dataList.length !=25){
+      if(clientHeight+scrollTop>=scrollHeigth-10 && this.dataList.length !=20){
         this.listStart+=10;
         console.log(this.listStart);
         this.getData()
       }
     }
   },
-/*   mounted() {
-    window.onscroll = () =>{
-      let clientHeight = document.documentElement.clientHeight;
-      let scrollTop = document.documentElement.scrollTop;
-      let scrollHeight = document.documentElement.scrollHeight;
-      if(clientHeight + scrollTop >= scrollHeight - 10){
-        this.dataList+=10;
-      }
-    }
-  }, */
    created(){
     let obj = {
       title:"电影",
@@ -64,14 +54,14 @@ export default {
       getData(){
           let proxy = 'https://bird.ioliu.cn/v2?url='
           //let url = `https://api.douban.com/v2/movie/in_theaters?city=广州&start=${this.listStart}&count=10`
-          let url = 'https://m.douban.com/rexxar/api/v2/subject_collection/movie_showing/items?start=0&count=10'
+          let url = 'https://m.douban.com/rexxar/api/v2/subject_collection/movie_showing/items?start=0&count=20'
           this.isLoading = false;
           console.log(1);
           axios.get(proxy+url)
           .then((res)=>{
             //this.dataList = res.data.subjects;
             this.dataList = res.data.subject_collection_items;
-            console.log(res);
+            //console.log(res);
             //console.log(this.dataList);
             //this.dataList = this.dataList.concat(res.data.subjects);
             this.isLoading = true;
@@ -80,6 +70,10 @@ export default {
           .catch(()=>{
              console.log("失败");
           })
+      },
+      getDatil(id){
+        this.$router.push({name:"moviedetail",params:{movieId:id}});
+        console.log(id)
       }
   }
 }

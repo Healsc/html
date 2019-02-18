@@ -72,8 +72,8 @@ export default {
           })
       },
       getDatil(id){
-        this.$router.push({name:"moviedetail",params:{movieId:id}});
-        console.log(id)
+        this.$router.push({name:"moviedetail",params:{movieId:id}})
+        //console.log(id)
       }
   }
 }

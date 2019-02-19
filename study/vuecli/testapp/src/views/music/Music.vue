@@ -1,6 +1,6 @@
 <template>
   <div>
-    <aplayer v-if="isShow" :showLrc="true" autoplay :music="musicList[0]" :list="musicList"/>
+    <aplayer v-if="isShow" :showLrc="true" :music="musicList[0]" :list="musicList"/>
   </div>
 </template>
 <script>
@@ -25,15 +25,15 @@ export default {
   },
   methods: {
     getData(){
-      axios.get("./data/musicdata.json")
+      axios.get("./data/musicdata.json")//public打包后会在跟目录下
       .then((res)=>{
         let arr = res.data.musicData;
         arr.forEach((element,index)=>{
-          arr[index].lrc = location.origin + location.pathname + element.lrc;
+         arr[index].lrc=location.origin+location.pathname+element.lrc
         });
         this.musicList = arr;
         this.isShow = true;
-        //console.log(arr)
+        console.log(arr)
       })
     }
   },

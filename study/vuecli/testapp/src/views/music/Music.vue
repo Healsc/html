@@ -1,6 +1,6 @@
 <template>
   <div>
-    <aplayer v-if="isShow" autoplay :music="musicList[0]" :list="musicList"/>
+    <aplayer v-if="isShow" :showLrc="true" autoplay :music="musicList[0]" :list="musicList"/>
   </div>
 </template>
 <script>
@@ -33,7 +33,7 @@ export default {
         });
         this.musicList = arr;
         this.isShow = true;
-        console.log(arr)
+        //console.log(arr)
       })
     }
   },

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/react.production.min.js"></script>
+    <script src="./js/react-dom.production.min.js"></script>
+    <script src="./js/browser.min.js"></script>
+</head>
+<body>
+    <div id="root">
+
+    </div>
+    <script type="text/babel">
+        class Change extends React.Component{
+            constructor(props){
+                super(props);
+            }
+            change(num){
+                this.props.changC(20)
+                console.log("change")
+            }
+            render(){
+                return (
+                    <button onClick={this.change.bind(this)}>change</button>
+                )
+            }
+        }
+        class Number extends React.Component{
+            constructor(props){
+                super(props);
+                this.state={
+                    count:1
+                };
+                this.changP = this.changeP.bind(this)
+            }
+            add(num){
+                this.setState({
+                    count: this.state.count+num
+                })
+            }
+            changeP(num){
+                this.setState({
+                    count:this.state.count + num
+                })
+            }
+            render(){
+             return(
+                <div>
+                    <h1>{this.state.count}</h1>    
+                    <button onClick={this.add.bind(this,10)}>add</button>
+                    <Change changC={this.changP}/>
+                </div>
+             )
+           
+            }
+        }
+        
+        ReactDOM.render(
+            <Number/>,
+            document.getElementById("root")
+         )
+    </script>
+</body>
+</html>

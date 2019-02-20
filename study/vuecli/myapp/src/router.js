@@ -11,7 +11,7 @@ export default new Router({
     {
       path: '/',
       name: 'movie',
-      component: () => import( './views/movie/Movie.vue')
+      component: () => import( '@/views/movie/Movie.vue')
     },
     {
       path: '/book',

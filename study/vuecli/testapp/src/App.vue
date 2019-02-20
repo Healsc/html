@@ -1,30 +1,28 @@
 <template>
   <div id="app">
-    <Navigation/>
-<!--     <navigation :navVal="activeNav"/>
-    <router-view @changeNav="change"/> -->
+    <navigation :navVal="activeNav"/>
+    <router-view @changeNav="change"/>
   </div>
 </template>
 <script>
-import Navigation from '@/components/Navigation.vue'
+import navigation from '@/components/Navigation.vue'
 export default {
-  data() {
+  data () {
     return {
-     /*  activeNav:{
+      activeNav:{
         title:"电影",
         className:"movie"
-      } */
+      }  
     }
   },
-  methods:{
-   /* change(obj){
-     this.activeNav.title=obj.title;
-     this.activeNav.className=obj.className;
-   } */
+  methods: {
+    change(obj){
+      this.activeNav.title = obj.title;
+      this.activeNav.className = obj.className;
+    }
   },
   components: {
-    Navigation
-    /* navigation */
+    navigation
   }
 }
 </script>

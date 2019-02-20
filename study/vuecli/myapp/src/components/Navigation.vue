@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
     <div :class="activeClass">
         <header>
             <span @click="routerPush(navList[0])">首页</span>
@@ -9,15 +10,26 @@
                 <li v-for="(item,index) in navList" :key="index" :class="{'active':item.className == activeClass}" @click="routerPush(item)">
                     {{item.name}}
                 </li>
+=======
+    <div>
+        <header class="header">
+            <span>首页</span>
+            <h1>电影</h1>
+        </header>
+        <nav class="nav">
+            <ul>
+                <li v-on:click="routerPush(item)" v-for="(item,index) in navList" :key=index>{{item.name}}</li>
+>>>>>>> 26b2b5da26324dbfb6f776d4246f5c398be825a6
             </ul>
         </nav>
-        <router-view/>
     </div>
 </template>
+
 <script>
 export default {
-    data(){
+    data() {
         return {
+<<<<<<< HEAD
             nowTitle:"电影",
             activeClass:"movie",
             navList:[
@@ -39,78 +51,74 @@ export default {
                 className:"chat"
             }
         ]
+=======
+            navList:[
+                {
+                    name:"电影",
+                    routerPath:"/",
+                    activeClass:"movie",
+                },{
+                    name:"音乐",
+                    routerPath:"/music",
+                    activeClass:"music",
+                },{
+                    name:"书籍",
+                    routerPath:"/book",
+                    activeClass:"book",
+                },{
+                    name:"唠嗑",
+                    routerPath:"/chat",
+                    activeClass:"chat",
+                }
+            ]
+>>>>>>> 26b2b5da26324dbfb6f776d4246f5c398be825a6
         }
     },
-    props:["navVal"],
-    methods:{
+    methods: {
         routerPush(obj){
             this.$router.push(obj.routerPath);
-            this.nowTitle = obj.name;
-            this.activeClass = obj.className;
+            console.log(123)
         }
     },
-    computed: {
-        propsVal(){
-        return this.navVal.title
-        }
-  },
-    watch:{
-        propsVal(){
-            this.nowTitle = this.navVal.title;
-            this.activeClass = this.navVal.className;
-        }
-    }
 }
 </script>
-<style scoped>
-    header{
+
+<style scope>
+    .header{
+        height: 1rem;
+        width: 100%;
+        background-color: #ddd;
         position: fixed;
         top: 0;
-        height: 1rem;
-        width: 100%;
-        background-color:rgb(33, 150, 243);
     }
-    header h1{
+    .header span{
+        position: absolute;
+        left: 0.25rem;
+        height: 1rem;
+        line-height:1rem;
+        color: #fff;
+    }
+    .header h1{
         height: 1rem;
         line-height: 1rem;
+        color: #fff;
     }
-    header span{
-        position: absolute;
-        left: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-    nav{
+    .nav{
+        height:1rem;
+        width: 100%;
+        background-color: aqua;
         position: fixed;
         bottom: 0;
-        height: 1rem;
-        width: 100%;
-        background-color:rgb(33, 150, 243);
     }
-    nav ul{
+    .nav ul{
         width: 100%;
     }
-    nav li{
-        color: #ddd;
-        float:left;
+    .nav ul li{
         width: 25%;
+        float: left;
+        text-align: center;
         height: 1rem;
-        line-height: 1rem;
-    }
-    nav li.active{
+        line-height:1rem;
         color: #fff;
-        font-size: 16px;
-    }
-    .movie header,.movie nav{
-        background-color: rgb(33, 150, 243);
-    }
-    .music header,.music nav{
-        background-color: rgb(0, 150, 136);
-    }
-    .book header,.book nav{
-        background-color: rgb(121, 85, 72);
-    }
-    .chat header,.chat nav{
-        background-color: rgb(63, 81, 181);
     }
 </style>

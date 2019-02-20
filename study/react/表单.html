@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/react.production.min.js"></script>
+    <script src="./js/react-dom.production.min.js"></script>
+    <script src="./js/browser.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        class Testfrom extends React.Component{
+            constructor(props){
+                super(props);
+                this.state={
+                    inp:""
+                }
+            }
+            change(event){
+                this.setState({
+                    inp:event.target.value
+                })
+            }
+            check(event){
+                this.setState({
+                   
+                    inp:event.target.checked
+                })
+                console.log(event.target.checked);
+            }
+      
+            submit(event){
+                console.log(this.refs);
+                event.preventDefault();
+            }
+            render(){
+                return(
+                    <div>
+                        {this.state.inp}
+                        <br/>
+                        <form onSubmit={this.submit.bind(this)}>
+                            <input ref="input1" type="text"/>
+                            <br/>
+                            <input ref="input1" type="text"/>
+                            <br/>
+                            <input type="text" onChange={this.change.bind(this)}/>    
+                            <br/>
+                            <select onChange={this.change.bind(this)}>
+                                <option value="hello">hello</option>    
+                                <option value="world">world</option>
+                            </select>
+                            <br/>
+                            <input type="checkbox" onChange={this.check.bind(this)} checked={this.state.isChecked}></input>
+                            <br/>
+                            <button>sub</button>
+                            <br/>
+                        </form>
+                       
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Testfrom/>,
+            document.getElementById('root')
+        )
+    </script>
+</body>
+</html>

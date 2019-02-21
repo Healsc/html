@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+    .table{
+        margin-top: 30px
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <button>添加</button>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">待办事项</th>
+                <th scope="col">待办时间</th>
+                <th scope="col">预计用时</th>
+                <th scope="col">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <th scope="row">
+                    <input type="checkbox" value="" id="1">
+                </th>
+                <td>上课</td>
+                <td>2018-09-04</td>
+                <td>2</td>
+                <td> <button>删除</button></td>
+                </tr>
+                <tr>
+                <th scope="row">
+                    <input type="checkbox" value="" id="2">
+                </th>
+                <td>吃饭</td>
+                <td>2019-02-01</td>
+                <td>3</td>
+                <td><button>删除</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <button>删除选中</button>
+        <span>总共用时：</span>
+    </div>
+</body>
+</html>

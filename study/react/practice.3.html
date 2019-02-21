@@ -15,7 +15,8 @@
       bottom:0;
       left:0;
       right:0;
-      background-color: rgba(0,0,0,.3)
+      background-color: rgba(0,0,0,.3);
+      display: none;
     }
     .dia-box{
       position: absolute;
@@ -24,7 +25,7 @@
       transform: translate(-50%);
       height: 300px;
       width: 500px;
-      display: none;
+
     }
     .dia-header{
       background-color:rgba(0,0,0,.8);
@@ -49,37 +50,41 @@
   <div id="root"></div>
   <script type="text/babel"> 
 
-    class DiaBtn extends React.Component{
-      constructor(props){
+  class DiaBtn extends React.Component{
+      constructor(props) {
         super(props);
       }
       show(){
         this.props.showDia(true,this.props.name)
-        console.log(1)
       }
       render(){
         return(
-          <button onClick={this.show.bind(this)}>{this.props.name}</button>
+          <div>
+            <button onClick={this.show.bind(this)}>{this.props.name}</button>  
+          </div>
         )
       }
-    }
+    }  
 
 
     class DiaContent extends React.Component{
       constructor(props){
         super(props);
       }
+      closeDia(){
+        this.props.hideDia(false)
+      }
       render(){
         let style={
           display:this.props.isShow?'block':'none'
         }
-        console.log(this.props.isShow)
+       //console.log(this.props.isShow)
         return(
           <div class="dia-bg" style={style}>
             <div class="dia-box">
                 <div class="dia-header">
                   <div></div>
-                  <div>X</div>
+                  <div onClick={this.closeDia.bin(this)}>X</div>
                 </div>
                 <div class="dia-body">
                   
@@ -99,16 +104,17 @@
         }
       }
       changeShow(state,name){
-        this.setState={
+        this.setState({
           isShow:state,
           name:name
-        }
+        })
+        console.log(state)
       }
       render(){
         return(
           <div>
-            <DiaBtn showDia={this.changeShow} name={'登录'}/>
-            <DiaBtn showDia={this.changeShow} name={'注册'}/>
+            <DiaBtn showDia={this.changeShow.bind(this)} name={'登录'}/>
+            <DiaBtn showDia={this.changeShow.bind(this)} name={'注册'}/>
             <DiaContent isShow={this.state.isShow}/>
           </div>
         )

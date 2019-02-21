@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/react.production.min.js"></script>
+    <script src="./js//react-dom.production.min.js"></script>
+    <script src="./js/browser.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function Foo(){
+            return <div>hello world</div>
+        }
+        class Foo2 extends React.Component{
+            constructor(props){
+                super(props);
+
+            }
+            render(){
+                return(
+                    <div>hi</div>
+                )
+            }
+        }
+        class FooP extends React.Component{
+            constructor(props){
+                super(props);
+                this.state={
+                    isShow:'foo'
+                }
+            }
+            render(){
+                return(
+                    <div>
+                        {this.state.isShow=='foo'?<Foo/> : <Foo2/>}
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <FooP/>,
+            document.getElementById('root')
+        )
+    </script>
+</body>
+</html>

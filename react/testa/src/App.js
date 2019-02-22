@@ -1,28 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Class1 from './components/Class1'
+import Class2 from './components/Class2'
+import { BrowserRouter as Router, Route, Link ,Redirect} from "react-router-dom";
 
 const Test = ()=><h1>hello world</h1>
+const Class3 = ({match})=>{
+  return (
+    <div>
+      <h1>class3</h1>
+      <h2>{match.params.id}</h2>
+    </div>
+  )
+}
 class App extends Component {
   render() {
 
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Router>
+          <div>
+              <Test/>
+              <Link to="/">class1</Link>|
+              <Link to="/class2/sunc">class2</Link>|
+              <Link to={'/class3/100'}>class3</Link>|
+              <Link to="/render">render</Link>
+              <Route exact path={'/'} component={Class1}/>
+              <Route path={'/class2/:id'} component={Class2}/>
+              <Route path={'/class3/:id'} component={Class3}/>
+              <Route path={'/render'} render={()=><Redirect to="/"/>}/>
+          </div> 
+        </Router>
       </div>
     );
   }

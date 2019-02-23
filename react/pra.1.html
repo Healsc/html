@@ -13,74 +13,63 @@
 <body>
   <div id="root"></div>
   <script type="text/babel"> 
-    class Foo extends React.Component{
-      constructor(props) {
+    class TodoList extends React.Component{
+      constructor(props){
         super(props);
-        this.state={
-            list:[
-              {
-                name:"上课"，
-                time:"2018-09-05",
-                useTime:2
-              },
-              {
-                name:"吃饭"，
-                time:"2018-09-05",
-                useTime:3
-              }
-            ]
-        }
       }
       render(){
-        return (
-          <div>
-            <div class="container"> 
-                <input type="text"/> 
-                <input type="text"/>  
-                <input type="text"/>
-                <button>添加</button>         
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">待办事项</th>
-                        <th scope="col">待办时间</th>
-                        <th scope="col">预计用时</th>
-                        <th scope="col">操作</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <th scope="row">
-                        <input type="checkbox"/>
-                        </th>
-                        <td>上课</td>
-                        <td>2018-09-04</td>
-                        <td>2</td>
-                        <td> <button>删除</button></td>
-                        </tr>
-                        <tr>
-                        <th scope="row">
-                        <input type="checkbox"/>
-                        </th>
-                        <td>吃饭</td>
-                        <td>2019-02-01</td>
-                        <td>3</td>
-                        <td><button>删除</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <button>删除选中</button>
-                <span>总共用时：</span>
+        return(
+          <div className="container">
+            <div>
+              <TodoForm/>
+            </div>
+            <div>
+              <TodoTable/>
             </div>
           </div>
-        ) 
+        )
       }
     }
-
+    class TodoForm extends React.Component{
+      constructor(props){
+        super(props);
+      }
+      render(){
+        return(
+          <div>
+            <form>
+              <div class="form-row">
+                <div class="col">
+                  <input type="text" name="info" class="form-control" placeholder="待办事项" />
+                </div>
+                <div class="col">
+                  <input type="date" name="time" class="form-control"  />
+                </div>
+                <div class="col">
+                  <input type="text" name="count" class="form-control" placeholder="待办用时" />
+                </div>
+                <button type="submit" class="btn btn-primary">添加</button>
+              </div>
+           </form>
+          </div>
+        )
+      }
+    }
+    class TodoTable extends React.Component{
+      constructor(props){
+        super(props);
+      }
+      render(){
+        return(
+          <div>
+            hello
+          </div>
+        )
+      }
+    }
     ReactDOM.render(
-      <div><Foo/></div>,
-      document.getElementById("root")
+      <TodoList/>,
+      document.getElementById('root')
     )
   </script>
 </body>

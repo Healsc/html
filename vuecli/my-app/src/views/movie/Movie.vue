@@ -14,7 +14,7 @@
     </ul>
     <div class="loading" v-show="!isLoading">
       <div class="loading-content">
-        <img src="../../assets/img/loading.gif" alt="">
+        <!-- <img src="../../assets/img/loading.gif" alt=""> -->
       </div>
     </div>
   </div>

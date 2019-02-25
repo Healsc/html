@@ -7,6 +7,7 @@ import Class4 from './components/Class4'
 import Class5 from './components/Class5'
 import Class6 from './components/Class6'
 import Class7 from './components/Class7'
+import Class8 from './components/Class8'
 import { 
   BrowserRouter as Router, 
   Route, 
@@ -42,7 +43,8 @@ class App extends Component {
               <Link to='/class4'>class4</Link>|
               <Link to="/class5">class5</Link>|
               <Link to="/class6">class6</Link>|
-              <Link to="/class7">class7</Link>
+              <Link to="/class7">class7</Link>|
+              <Link to="/class8">Class8</Link>
               <Switch>
                 <Route exact path={'/'} component={Class1}/>
                 <Route path={'/class2/:id'} component={Class2}/>
@@ -52,6 +54,7 @@ class App extends Component {
                 <Route path='/class5' component={Class5}/>
                 <Route path='/class6' component={Class6}/>
                 <Route path='/class7' component={Class7}/>
+                <Route path="/class8" component={Class8}/>
                 <Route component={Error404}/>
               </Switch>
           </div> 

@@ -63,7 +63,7 @@ export default class Class4 extends Component {
                 <Link to="/page1">子链接1</Link>|
                 <Link to="/page2">子链接2</Link>
                 <MenuLink to="/page3" lable="自定义链接1"/>
-                <MenuLink to="page4" lable="自定义链接2"/>
+                <MenuLink to="/page4" lable="自定义链接2"/>
                 <RouterChange/>
                 <Route path='/page1' component={Page1}/>
                 <Route path='/page2' component={Page2}/>

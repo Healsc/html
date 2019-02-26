@@ -2,7 +2,7 @@ import {combineReducers} from 'redux';
 const count = (state=0,action)=>{
     switch(action.type){
         case 'ADD':
-            return state+1;
+            return state+action.step;
         default:
             return state;
     }

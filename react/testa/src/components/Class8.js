@@ -1,55 +1,44 @@
-import React ,{Component} from 'react'
-import {
-    BrowserRouter as Router,
-    Route,
-    Link,
-    Prompt
-} from 'react-router-dom'
-const One =()=><h1>One</h1>
-const Two =()=><h1>Two</h1>
-class Form extends Component {
-    constructor(props) {
-      super(props);
-      this.state={
-        val:''
-      }
+import React, { Component } from 'react'
+import axios from 'axios'
+export default class Class8 extends Component {
+    constructor(props){
+        super(props);
+        this.state={
+            dataList:[]
+        }
     }
-    change(e){
-        this.setState({
-            val:e.target.value
+    componentDidMount(){
+        let url = 'https://api.myjson.com/bins/9inum';
+        let url1 = 'https://www.heal.com/getData';
+        let url2 = 'https://www.heal.com/getData2';
+        let url3 = 'https://www.heal.com/getData3'
+        axios.get(url3)
+        .then((res)=>{
+            //console.log(res)
+            this.setState({
+                dataList:res.data.data
+            })
         })
     }
-    render(){
-        return(
+    render() {
+        //console.log(this.state.dataList)
+        let com = null;
+        let nowList = this.state.dataList;
+        com = nowList.map((item,index)=>{
+            return(
+                <div key={item.id}>
+                    <div>{"ID:"+item.id}</div>
+                    <div>{"姓名："+item.name}</div>
+                    <div>{"住址："+item.address}</div>
+                    <div>{item.text}</div>
+                    <hr/>
+                </div>
+            )
+        })
+        return (
             <div>
-                <Prompt when={this.state.val.length>0} message="You sure???"/>
-                <input type="text" onChange={this.change.bind(this)}/>
-                <button>Submit</button>
+                {com}
             </div>
         )
     }
 }
-const Class8 =()=>{
-    return(
-        <div>
-            <Router>
-                <div>
-                    <div>
-                        <Link to="/one">One</Link>
-                    </div>
-                    <div>
-                        <Link to="/two">Two</Link>
-                    </div>
-                    <div>
-                        <Link to="/form">Form</Link>
-                    </div>
-                    <hr/>
-                    <Route path="/one" component={One}/>
-                    <Route path="/two" component={Two}/>
-                    <Route path="/form" component={Form}/>
-                </div>
-            </Router>
-        </div>
-    )
-}
-export default Class8

@@ -29,7 +29,6 @@
 export default {
     data() {
         return {
-<<<<<<< HEAD
             nowTitle:"电影",
             activeClass:"movie",
             navList:[
@@ -51,27 +50,6 @@ export default {
                 className:"chat"
             }
         ]
-=======
-            navList:[
-                {
-                    name:"电影",
-                    routerPath:"/",
-                    activeClass:"movie",
-                },{
-                    name:"音乐",
-                    routerPath:"/music",
-                    activeClass:"music",
-                },{
-                    name:"书籍",
-                    routerPath:"/book",
-                    activeClass:"book",
-                },{
-                    name:"唠嗑",
-                    routerPath:"/chat",
-                    activeClass:"chat",
-                }
-            ]
->>>>>>> 26b2b5da26324dbfb6f776d4246f5c398be825a6
         }
     },
     methods: {

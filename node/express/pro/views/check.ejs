@@ -8,11 +8,14 @@
 </head>
 <body>
     <h1>hello world</h1>
-   <% data.forEach(function(item,index){%>
+    <div>账户：<%=unanme%></div>
+    <div>密码：<%=upwd%></div>
+
+    <% data.forEach(function(item,index){%>
         <span>ID:<%= item.id%></span>
         <span>name:<%=item.name%></span>
         <span>age:<%=item.age%></span>
         <br/>
-   <% })%>
+    <% })%>
 </body>
 </html>

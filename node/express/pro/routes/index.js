@@ -9,8 +9,14 @@ router.get('/login', function(req, res, next) {
   res.render('login');
 });
 
-router.get('/check', function(req, res, next) {
+router.post('/check', function(req, res, next) {
+  var uname = req.body.username;
+  var upwd = req.body.password;
+  console.log(uname);
+  console.log(upwd);
   res.render('check',{
+    'unanme':uname,
+    'upwd':upwd,
     'data':[{
       'id':0,
       'name':'zhangsan',
@@ -19,10 +25,6 @@ router.get('/check', function(req, res, next) {
       'id':1,
       'name':'lisi',
       'age':11
-    },{
-      'id':2,
-      'name':'zhaowu',
-      'age':13
     }]
   });
 });

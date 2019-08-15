@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box" data-img="img.jpg">
+        <div class="div1">hello</div>
+        <div class="div2">world</div>
+    </div>
+
+    <script>
+        var aBox = document.querySelector(".box")
+        console.log(aBox.dataset.img) //img.jpg data设置一个img属性
+        var aDiv1 = document.querySelector(".div1")
+        aDiv1.setAttribute("hi","123") //aDiv1设置一个属性 abc = 123 可以看到
+        aDiv1.hello = "321" ////aDiv1设置一个属性 abc = 321 看不到
+        console.log(aDiv1)
+    </script>
+</body>
+</html>

@@ -9,14 +9,36 @@
 </head>
 <body>
     <div id="app">
-        {{ message }}
+        <div v-if="isShow == 1">{{ message }}</div>
+        <div v-else-if="isShow == 2"> {{ msg2 }}</div>
+        <ul>
+            <li v-for = "(val,index) in arr">{{val}} &nbsp&nbsp {{index}}</li>
+        </ul>
+        <ul>
+            <li v-for = "(val,key) in obj">{{val}} &nbsp&nbsp {{key}}</li>
+        </ul>
+        <button v-on:click="anniu">按钮</button>
+        <h1>{{msg3}}</h1>
     </div>
     <script>
         var app = new Vue({
             el: '#app',
             data: {
-            message: 'Hello Vue!'
-            }
+            message: 'Hello Vue!',
+            msg2:'Hello Wolrd',
+            isShow: 2,
+            arr:['one' , 'two' ,'three'],
+            obj:{
+                name:'zs',
+                age:'10'
+            },
+            msg3:null,
+            },
+            methods: {
+                anniu(){
+                    this.msg3="hi vue"     
+                },                   
+            },
         })
     </script>
 </body>

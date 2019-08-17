@@ -26,11 +26,18 @@
                         <li>2</li>  
                         <li>3</li>   
                     </ul>
+                    <chuang></chuang>/* 组件嵌套 全局嵌套全局 */
                 </div>
             `,
             props:[
                 'msg'
             ]
+        })
+        Vue.component('chuang',{
+            template:
+            `
+                <h1>Hi Vue</h1>
+            `
         })
         new Vue({
             el:"#app",

@@ -3,7 +3,11 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
-      <router-link to="/heal">Heal</router-link>
+      <router-link to="/heal">Heal</router-link> |
+      <router-link to="/test">test</router-link> |
+      <router-link :to="{name:'test1',params:{name:'zs'}}">test1</router-link> |
+      <router-link to="/test/test2/ls/20">test2</router-link> |
+       <router-link to="/home">返回首页</router-link> 
     </div>
     <router-view/>
   </div>

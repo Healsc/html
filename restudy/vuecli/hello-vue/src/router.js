@@ -22,6 +22,27 @@ export default new Router({
       path: '/heal',
       name: 'heal',
       component: () => import('./views/Heal.vue')
-    }
+    }, {
+      path: '/test',
+      name: 'test',
+      component: () => import('./views/Test.vue'),
+      children:[
+        {
+          path: '/test/test1',
+          name: 'test1',
+          component: () => import('./views/Test1.vue')
+        },{
+          path: '/test/test2/:name/:age',
+          name: 'test2',
+          component: () => import('./views/Test2.vue')
+        }
+      ]
+    },{
+      path:"/home",
+      redirect:"/"/* 路径显示的也是/ */
+    },{
+      path:"*",
+      component:()=>import('./views/404.vue')
+    },
   ]
 })

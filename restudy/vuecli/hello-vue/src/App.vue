@@ -7,7 +7,10 @@
       <router-link to="/test">test</router-link> |
       <router-link :to="{name:'test1',params:{name:'zs'}}">test1</router-link> |
       <router-link to="/test/test2/ls/20">test2</router-link> |
-       <router-link to="/home">返回首页</router-link> 
+      <router-link to="/home">返回首页</router-link> 
+      <button @click="back">返回首页</button>
+      <button @click="backone">返回</button>
+      <button @click="forward">前进</button>
     </div>
     <transition name="fade">
       <router-view/>
@@ -44,3 +47,19 @@
   opacity: 0;
 }
 </style>
+
+<script>
+export default {
+  methods:{
+    back(){
+      this.$router.push('/')
+    },
+    backone(){
+      this.$router.go(-1)
+    },
+    forward(){
+      this.$router.go(1)
+    }
+  }
+}
+</script>

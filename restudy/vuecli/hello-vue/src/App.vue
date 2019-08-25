@@ -11,6 +11,7 @@
       <button @click="back">返回首页</button>
       <button @click="backone">返回</button>
       <button @click="forward">前进</button>
+      
     </div>
     <transition name="fade">
       <router-view/>

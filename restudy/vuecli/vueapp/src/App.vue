@@ -5,6 +5,7 @@
       <router-link to="/about">About</router-link>
     </div>
     <router-view/>
+    <navigation/>
   </div>
 </template>
 
@@ -18,3 +19,11 @@
   margin-top: 60px;
 }
 </style>
+<script>
+import navigation from '@/components/Navigation.vue'
+export default {
+  components:{
+    navigation
+  }
+}
+</script>

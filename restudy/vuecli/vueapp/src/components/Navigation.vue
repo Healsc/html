@@ -1,12 +1,12 @@
 <template>
-    <div>
+    <div :class="activeName"> 
        <header>
            <span @click="routerPush(navList[0])">首页</span>
            <h1>{{title}}</h1>
         </header> 
         <nav>
             <ul>
-                <li v-for="(item , index) in navList" :key="index" @click="routerPush(item)">{{item.name}}</li>
+                <li :class="{navClass:item.className == activeName}" v-for="(item , index) in navList" :key="index" @click="routerPush(item)">{{item.name}}</li>
             </ul>
         </nav>
     </div>
@@ -16,19 +16,24 @@ export default {
     data() {
         return {
             title:"电影",
+            activeName:'movie',
             navList:[
                 {
                     path:'/movie',
-                    name:"电影"
+                    name:"电影",
+                    className:'movie'
                 },{
                     path:'/music',
-                    name:"音乐"
+                    name:"音乐",
+                    className:'music'
                 },{
                     path:'/book',
-                    name:"书籍"
+                    name:"书籍",
+                    className:'book'
                 },{
                     path:'/chat',
-                    name:"聊天"
+                    name:"聊天",
+                    className:'chat'
                 }
             ]
         }
@@ -37,6 +42,7 @@ export default {
         routerPush(e){
             this.$router.push(e.path)
             this.title = e.name
+            this.activeName = e.className
         }
     },
 }
@@ -75,6 +81,22 @@ export default {
         float: left;
         height: 1rem;
         line-height: 1rem;
+    }
+    .movie header,.movie nav{
+        background-color: #A0EEE1;
+    }
+    .music header,.music nav{
+        background-color:  #E6CEAC;
+    }
+    .book header,.book nav{
+        background-color: #ECAD9E;
+    }
+    .chat header,.chat nav{
+        background-color: #F4606C;
+    }
+    nav .navClass{
+        font-size:.4rem;
+        font-weight: bolder;
     }
 </style>
 

@@ -2,7 +2,7 @@
     <div :class="activeName"> 
        <header>
            <span @click="routerPush(navList[0])">首页</span>
-           <h1>{{title}}</h1>
+            <h1>{{activeNav.title}}</h1>
         </header> 
         <nav>
             <ul>
@@ -43,6 +43,18 @@ export default {
             this.$router.push(e.path)
             this.title = e.name
             this.activeName = e.className
+        }
+    },
+    props:['activeNav'],
+    computed: {
+        prosVal(){
+            return this.activeNav.title
+        }
+    },
+    watch: {
+        propsVal(){
+            this.title = this.activeNav.title
+            this.activeName = this.activeNav.activeClass
         }
     },
 }

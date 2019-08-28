@@ -47,7 +47,7 @@ export default {
         }
     },
     props:['activeNav'],
-    computed: {
+  /*   computed: {
         prosVal(){
             return this.activeNav.title
         }
@@ -57,6 +57,17 @@ export default {
             this.title = this.activeNav.title;
             this.activeName = this.activeNav.activeClass;
             this.$router.push(this.activeNav.path)
+        }
+    }, */
+    computed: {
+        propsVal(){
+        return this.activeNav.title
+        }
+    },
+    watch: {
+        propsVal(){
+        this.activeClass = this.activeNav.activeClass;
+        this.title = this.activeNav.title
         }
     },
 }

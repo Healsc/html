@@ -43,22 +43,9 @@ export default {
             this.$router.push(e.path)
             this.title = e.name
             this.activeName = e.className
-            console.log(this.activeNav)
         }
     },
     props:['activeNav'],
-  /*   computed: {
-        prosVal(){
-            return this.activeNav.title
-        }
-    },
-    watch: {
-        propsVal(){
-            this.title = this.activeNav.title;
-            this.activeName = this.activeNav.activeClass;
-            this.$router.push(this.activeNav.path)
-        }
-    }, */
     computed: {
         propsVal(){
         return this.activeNav.title
@@ -66,12 +53,11 @@ export default {
     },
     watch: {
         propsVal(){
-        this.activeClass = this.activeNav.activeClass;
+        this.activeName = this.activeNav.activeClass;
         this.title = this.activeNav.title
         }
     },
 }
-    
 </script>
 <style scoped>
     header,nav{
@@ -115,10 +101,10 @@ export default {
         background-color:  #E6CEAC;
     }
     .book header,.book nav{
-        background-color: #ECAD9E;
+        background-color: #F4606C;
     }
     .chat header,.chat nav{
-        background-color: #F4606C;
+        background-color:#ECAD9E ;
     }
     nav .navClass{
         font-size:.4rem;

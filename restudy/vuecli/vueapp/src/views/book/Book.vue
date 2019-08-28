@@ -8,8 +8,7 @@ export default {
     created() {
         let obj = {
             title:"书籍",
-            activeName:"book",
-            path:"/book"
+            activeName:"book"
         }
         this.$emit("changeNav",obj)
     }

@@ -27,8 +27,7 @@ export default {
     return {
       activeNav:{
         title:"电影",
-        activeClass:"movie",
-        path:"/movie"
+        activeClass:"movie"
       }
     }
   },
@@ -36,7 +35,6 @@ export default {
     change(obj){
       this.activeNav.title = obj.title;
       this.activeNav.activeClass = obj.activeName;
-      this.activeNav.path = obj.path;
     }  
   },
 }

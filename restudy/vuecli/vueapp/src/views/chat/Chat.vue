@@ -10,7 +10,7 @@ export default {
             title:"聊天",
             activeName:"chat"
         }
-        this.$emit("changNav",obj)
+        this.$emit("changeNav",obj)
     }
 }
 </script>

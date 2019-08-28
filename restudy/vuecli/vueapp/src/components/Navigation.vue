@@ -43,6 +43,7 @@ export default {
             this.$router.push(e.path)
             this.title = e.name
             this.activeName = e.className
+            console.log(this.activeNav)
         }
     },
     props:['activeNav'],
@@ -53,11 +54,13 @@ export default {
     },
     watch: {
         propsVal(){
-            this.title = this.activeNav.title
-            this.activeName = this.activeNav.activeClass
+            this.title = this.activeNav.title;
+            this.activeName = this.activeNav.activeClass;
+            this.$router.push(this.activeNav.path)
         }
     },
 }
+    
 </script>
 <style scoped>
     header,nav{

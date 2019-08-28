@@ -1,9 +1,7 @@
 <template>
   <div id="app">
     <navigation :activeNav="activeNav"/>
-    <div id="nav">
-    </div>
-    <router-view @changNav = "change"/>
+    <router-view @changeNav = "change"/>
   
   </div>
 </template>
@@ -29,7 +27,8 @@ export default {
     return {
       activeNav:{
         title:"电影",
-        activeClass:"movie"
+        activeClass:"movie",
+        path:"/movie"
       }
     }
   },
@@ -37,6 +36,7 @@ export default {
     change(obj){
       this.activeNav.title = obj.title;
       this.activeNav.activeClass = obj.activeName;
+      this.activeNav.path = obj.path;
     }  
   },
 }

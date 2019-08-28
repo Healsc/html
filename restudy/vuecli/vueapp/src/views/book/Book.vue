@@ -8,9 +8,10 @@ export default {
     created() {
         let obj = {
             title:"书籍",
-            activeName:"book"
+            activeName:"book",
+            path:"/book"
         }
-        this.$emit("changNav",obj)
+        this.$emit("changeNav",obj)
     }
 }
 </script>

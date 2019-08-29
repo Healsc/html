@@ -73,6 +73,7 @@ export default {
     }
     header h1{
         line-height: 1rem;
+        text-align: center;
     }
     header span{
         position: absolute;

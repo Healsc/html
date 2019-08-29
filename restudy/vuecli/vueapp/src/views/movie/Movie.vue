@@ -1,8 +1,19 @@
 <template>
     <div>
-        <div class="movie-show">
-            <div class="left-img"><img src="" alt=""></div>
-            <div class="right-content"></div>
+        <div class="movie-list">
+            <div class="list-left"><img src="" alt=""></div>
+            <div class="list-right">
+                <div>
+                    <h4> {{showList.title}}</h4>
+                    <div>
+                        主演：<span v-for="(item,index) in showList.actors" :key="index">{{item}}/</span>
+                    </div>
+                    <div>
+                        年份：{{showList.year}}
+                    </div>
+                    <div></div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -38,7 +49,7 @@ export default {
             this.$ajax.get(proxy+url)
          
             .then(function(res){ 
-                that.showList = res.data.subject_collection_items
+                that.showList = res.data.subject_collection_items[0]
                 console.log(that.showList)       
             })  
             .catch(function(){
@@ -49,9 +60,22 @@ export default {
 }
 </script>
 <style  scoped>
-    .movie-show{
+    .movie-list{
         width: 100%;
         height: 3rem;
+        text-align: center;
+    }
+    .movie-list .list-left,.movie-list .list-right{
+        height: 3rem;
+    }
+    .movie-list .list-left{
+        float: left;
         background-color: #ddd;
+        width: 40%;
+    }
+    .movie-list .list-right{
+        float: right;
+        width: 60%;
+       
     }
 </style>

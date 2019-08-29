@@ -11,7 +11,9 @@
                     <div>
                         年份：{{showList.year}}
                     </div>
-                    <div></div>
+                    <div>
+                        
+                    </div>
                 </div>
             </div>
         </div>
@@ -47,13 +49,12 @@ export default {
             })   
             let that = this
             this.$ajax.get(proxy+url)
-         
             .then(function(res){ 
                 that.showList = res.data.subject_collection_items[0]
-                console.log(that.showList)       
+                   
             })  
             .catch(function(){
-                console.log("error")
+               
             })
         }
     },

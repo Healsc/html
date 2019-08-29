@@ -88,6 +88,7 @@ export default {
     }
     nav ul{
         width: 100%;
+        text-align: center;
     }
     nav ul li{
         width: 25%;

@@ -11,28 +11,43 @@
 </head>
 <body>
     <div id="root"></div>
-    
     <script type="text/babel">
-    class Heal extends React.Component{
-        constructor(props){
+    class Dialog extends React.Component{
+        constructor(props) {
             super(props);
             this.state = {
-                count:0
+                count:1
             }
+        }
+        render(){
+            return (
+                <div>
+                  <DiaBtn name={'登录'}/>
+                  <DiaBtn name={'注册'}/>
+                </div>
+            )
+        }
+        
+    }
+    class DiaBtn extends React.Component{
+        constructor(props) {
+            super(props);
+            
         }
         render(){
             return(
                 <div>
-                    <h1>1</h1>
-                    <h1>2</h1>
+                    <button>{this.props.name}</button>
                 </div>
             )
-        }  
+        }
+        
     }
-        ReactDOM.render(
-            <Heal/>,
-            document.getElementById('root')
-        )
+
+    ReactDOM.render(
+        <Dialog/>,
+        document.getElementById("root")
+    )    
     </script>
 </body>
 </html>

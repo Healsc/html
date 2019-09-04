@@ -46,13 +46,16 @@
                 dataList:this.props.list,
             }
         }
-        componentWillReceiveProps(nextProps){
-                
-                
-                console.log(nextProps)
-        } 
+        componentDidMount(){
+            
+        }
+        UNSAFE_componentWillReceiveProps(nextProps){
+            console.log("hel")
+            console.log(nextProps)
+        }
         del(id){
            this.props.delP(id)
+           //console.log(this.state.dataList)
         }
     
         render(){

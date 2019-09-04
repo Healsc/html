@@ -37,14 +37,40 @@
                     </form>
                 </div>
             )
-        }
-        
+        }   
     }
     class   TodoTable extends React.Component{
         constructor(props){
             super(props);
+            this.state={
+                dataList:this.props.list,
+            }
         }
+        componentWillReceiveProps(nextProps){
+                
+                
+                console.log(nextProps)
+        } 
+        del(id){
+           this.props.delP(id)
+        }
+    
         render(){
+            let mapList = this.state.dataList.map((item,index)=>{
+                return(
+                    <tr>
+                        <th scope="row">
+                            <input type="checkbox"/>
+                        </th>
+                        <td>{item.title}</td>
+                        <td>{item.time}</td>
+                        <td>{item.count}</td>
+                        <td>
+                            <button type="button" class="btn btn-info btn-sm" onClick={this.del.bind(this,item.id)}>delete</button>
+                        </td>
+                    </tr>
+                )
+            })
             return(
                 <div class="">
                     <table class="table table-dark">
@@ -58,28 +84,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                            <th scope="row">
-                                <input type="checkbox"/>
-                            </th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>
-                                <button type="button" class="btn btn-info btn-sm">delete</button>
-                            </td>
-                            </tr>
-                            <tr>
-                            <th scope="row">
-                                <input type="checkbox"/>
-                            </th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>
-                                <button type="button" class="btn btn-info btn-sm">delete</button>
-                            </td>
-                            </tr>
+                          {mapList}
                           <tr>
                             <td colspan="1">
                                 <button type="button" class="btn btn-danger ">Danger</button>
@@ -98,12 +103,44 @@
     class   TodoList extends React.Component{
         constructor(props){
             super(props);
+            this.state={
+                dataList:[
+                {
+                    id:20190904,
+                    title:"吃饭",
+                    count:2,
+                    time:'2018-09-14',
+                    isActive:false,
+                   },
+                   {
+                    id:20190905,
+                    title:"睡觉",
+                    count:2,
+                    time:'2018-09-15',
+                    isActive:false,
+                   }
+                ]
+            }
+        }
+        del(id){
+            let list = this.state.dataList;
+            list = list.filter((item,index)=>{
+                if(item.id!=id){
+                    return item
+                }
+            })
+            this.setState={
+                dataList:list
+            }
+            console.log(id)
+            console.log("1",list)
+            console.log("2",this.state.dataList)
         }
         render(){
             return(
                 <div>
                     <div class="container"><TodoForm/></div>
-                    <div class="container"><TodoTable/></div>
+                    <div class="container"><TodoTable list={this.state.dataList} delP={this.del.bind(this)}/></div>
                 </div>
             )
         }

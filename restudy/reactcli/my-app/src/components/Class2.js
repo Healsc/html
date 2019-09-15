@@ -4,7 +4,7 @@ export default class componentName extends Component {
   render() {
     return (
       <div>
-          <h1>hello react</h1>
+          <h1>hello world</h1>
       </div>
     )
   }

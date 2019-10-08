@@ -1,5 +1,5 @@
 <template>
-  <div>hme</div>
+  <div>wode</div>
 </template>
 
 <script>

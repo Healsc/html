@@ -16,6 +16,8 @@ import { NavBar } from 'vant';
 Vue.use(NavBar);
 import { Icon } from 'vant';
 Vue.use(Icon);
+import { Tabbar, TabbarItem } from 'vant';
+Vue.use(Tabbar).use(TabbarItem);
 
 Vue.config.productionTip = false
 

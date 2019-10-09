@@ -15,13 +15,30 @@
      
     </van-swipe>
   </div>
+  <div class="hot">
+    <p>
+
+    </p>
+    <!-- <swiper class="hot-swiper">
+      <swiper-slide class="">
+        <div class="">
+            <div></div>
+            <img src="" alt="">
+            <div></div>
+        </div>
+      </swiper-slide>
+    </swiper> -->
+    
+  </div>
+
   </div>
   
 </template>
 
 <script>
 // @ is an alias to /src
-
+import 'swiper/dist/css/swiper.css'
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
  data(){

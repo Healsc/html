@@ -19,7 +19,7 @@
     <p>
 
     </p>
-    <swiper class="hot-swiper">
+    <!-- <swiper class="hot-swiper">
       <swiper-slide class="">
         <div class="">
             <div></div>
@@ -27,7 +27,7 @@
             <div></div>
         </div>
       </swiper-slide>
-    </swiper>
+    </swiper> -->
     
   </div>
 

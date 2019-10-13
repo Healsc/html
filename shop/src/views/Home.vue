@@ -10,7 +10,7 @@
   <div class="carousel">
     <van-swipe class="carousel-item" :autoplay="3000" indicator-color="white">
       <van-swipe-item v-for="(item,index) in carouseItem" :key="index">
-        <img :src="item.imsUrl" alt="">
+        <img v-lazy="item.imsUrl" alt="">
       </van-swipe-item>
      
     </van-swipe>
@@ -48,10 +48,10 @@ export default {
          name:'1',
          imsUrl:'http://zgnjw.cunn.cn/file/upload/201401/09/14-31-12-93-1.jpg.middle.jpg'
        }, {
-         name:'1',
+         name:'2',
          imsUrl:'https://img.nongji360.com/n/edition/2016/05/05/185605528414.jpg'
        }, {
-         name:'1',
+         name:'3',
          imsUrl:'https://img.nongji360.com/n/edition/2016/05/13/114203861263.jpg'
        }
      ]

@@ -20,6 +20,8 @@ import { Tabbar, TabbarItem } from 'vant';
 Vue.use(Tabbar).use(TabbarItem);
 import { Swipe, SwipeItem } from 'vant';
 Vue.use(Swipe).use(SwipeItem);
+import { Lazyload } from 'vant';
+Vue.use(Lazyload);
 
 Vue.config.productionTip = false
 

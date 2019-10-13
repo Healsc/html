@@ -1,38 +1,30 @@
 <template>
   <div>
-   <van-nav-bar
-      title="首页"
-     >
-    <van-icon name="search" slot="left" />  
-    <van-icon name="cart" slot="right"></van-icon>
+   <van-nav-bar title="首页">
+      <van-icon name="search" slot="left" />  
+      <van-icon name="cart" slot="right"></van-icon>
 
-  </van-nav-bar>
-  <div class="carousel">
-    <van-swipe class="carousel-item" :autoplay="3000" indicator-color="white">
-      <van-swipe-item v-for="(item,index) in carouseItem" :key="index">
-        <img v-lazy="item.imsUrl" alt="">
-      </van-swipe-item>
-     
-    </van-swipe>
-  </div>
-  <div class="hot">
-    <p>
-
-    </p>
-    <!-- <swiper class="hot-swiper">
-      <swiper-slide class="">
-        <div class="">
-            <div></div>
-            <img src="" alt="">
-            <div></div>
-        </div>
-      </swiper-slide>
-    </swiper> -->
-    
-  </div>
-
-  </div>
-  
+    </van-nav-bar>
+    <div class="carousel">
+      <van-swipe class="carousel-item" :autoplay="3000" indicator-color="white">
+        <van-swipe-item v-for="(item,index) in carouseItem" :key="index">
+          <img v-lazy="item.imsUrl" alt="">
+        </van-swipe-item>
+      </van-swipe>
+    </div>
+    <div class="hot">
+        <p class="hot-title">热门商品</p>
+      <swiper class="hot-swiper" :options="swiperOption">
+        <swiper-slide v-for="(item,index) in hotProduces" :key="index">
+          <div class="hot-swiper-content">
+            <img :src="item.img" alt="">
+            <div>{{item.name}}</div>
+            <div>￥{{item.price}}</div>
+          </div>
+        </swiper-slide>
+      </swiper>
+    </div>
+  </div> 
 </template>
 
 <script>
@@ -54,9 +46,44 @@ export default {
          name:'3',
          imsUrl:'https://img.nongji360.com/n/edition/2016/05/13/114203861263.jpg'
        }
-     ]
+     ],
+     hotProduces:[
+         {
+            name:'1',
+            price:"123",
+            img:'http://zgnjw.cunn.cn/file/upload/201401/09/14-31-12-93-1.jpg.middle.jpg'
+          }, {
+            name:'2',
+            price:"1234",
+            img:'https://img.nongji360.com/n/edition/2016/05/05/185605528414.jpg'
+          }, {
+            name:'3',
+            price:"1232",
+            img:'https://img.nongji360.com/n/edition/2016/05/13/114203861263.jpg'
+          },
+           {
+            name:'4',
+            price:"1213",
+            img:'http://zgnjw.cunn.cn/file/upload/201401/09/14-31-12-93-1.jpg.middle.jpg'
+          }, {
+            name:'5',
+            price:"12134",
+            img:'https://img.nongji360.com/n/edition/2016/05/13/114203861263.jpg'
+          }, {
+            name:'6',
+            price:"12132",
+            img:'https://img.nongji360.com/n/edition/2016/05/05/185605528414.jpg'
+          },
+     ],
+     swiperOption: {
+          slidesPerView:3
+     }
    }
- }
+ },
+   components: {
+    swiper,
+    swiperSlide
+  }
 }
 </script>
 <style lang="scss">
@@ -67,6 +94,26 @@ export default {
        width: 100%;
        height: 3rem;
      }
+    }
+  }
+  .hot{
+    &-title{
+      width: 100%；
+      height  .5rem;
+      padding-left: .2rem;
+      line-height: .5rem;
+      text-align: center;
+      box-sizing: border-box;//怪异盒模型
+    }
+    &-swiper{
+      &-content{
+        width: 2rem;
+        text-align: center;
+        img{
+          width: 2rem;
+          height: 2rem;
+        }
+      }
     }
   }
 </style>

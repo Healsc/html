@@ -49,10 +49,10 @@ export default {
          imsUrl:'http://zgnjw.cunn.cn/file/upload/201401/09/14-31-12-93-1.jpg.middle.jpg'
        }, {
          name:'1',
-         imsUrl:'http://zgnjw.cunn.cn/file/upload/201401/09/14-31-12-93-1.jpg.middle.jpg'
+         imsUrl:'https://img.nongji360.com/n/edition/2016/05/05/185605528414.jpg'
        }, {
          name:'1',
-         imsUrl:'http://zgnjw.cunn.cn/file/upload/201401/09/14-31-12-93-1.jpg.middle.jpg'
+         imsUrl:'https://img.nongji360.com/n/edition/2016/05/13/114203861263.jpg'
        }
      ]
    }

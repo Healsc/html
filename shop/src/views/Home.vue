@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
    <van-nav-bar title="首页">
       <van-icon name="search" slot="left" />  
       <van-icon name="cart" slot="right"></van-icon>
@@ -23,6 +23,16 @@
           </div>
         </swiper-slide>
       </swiper>
+    </div>
+    <div class="variety">
+      <p>推荐商品</p>
+        <ul>
+          <li class="variety-item" v-for="(item,index) in verietyItem" :key="index">
+            <img :src="item.img" alt="">
+            <p>{{item.name}}</p>
+            <p>￥{{item.price}}</p>
+          </li>
+        </ul>
     </div>
   </div> 
 </template>
@@ -76,7 +86,35 @@ export default {
      ],
      swiperOption: {
           slidesPerView:3
-     }
+     },
+     verietyItem:[
+      {
+        name:'1',
+        price:"123",
+        img:'http://zgnjw.cunn.cn/file/upload/201401/09/14-31-12-93-1.jpg.middle.jpg'
+      }, {
+        name:'2',
+        price:"1234",
+        img:'https://img.nongji360.com/n/edition/2016/05/05/185605528414.jpg'
+      }, {
+        name:'3',
+        price:"1232",
+        img:'https://img.nongji360.com/n/edition/2016/05/13/114203861263.jpg'
+      },
+        {
+        name:'4',
+        price:"1213",
+        img:'http://zgnjw.cunn.cn/file/upload/201401/09/14-31-12-93-1.jpg.middle.jpg'
+      }, {
+        name:'5',
+        price:"12134",
+        img:'https://img.nongji360.com/n/edition/2016/05/13/114203861263.jpg'
+      }, {
+        name:'6',
+        price:"12132",
+        img:'https://img.nongji360.com/n/edition/2016/05/05/185605528414.jpg'
+      },
+     ]
    }
  },
    components: {
@@ -86,6 +124,9 @@ export default {
 }
 </script>
 <style lang="scss">
+  .container{
+    background-color: #ccc;
+  }
   .carousel{
     height: 3rem;
     &-item{
@@ -96,6 +137,7 @@ export default {
     }
   }
   .hot{
+    background: #fff;
     margin-top:.1rem;
     &-title{
       width: 100%；
@@ -114,6 +156,23 @@ export default {
           height: 2rem;
         }
       }
+    }
+  }
+  .variety{
+    margin-top: .1rem;
+    background: #fff;
+    text-align: center;
+    ul{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;//水平居中
+    }
+    &-item{
+      flex-basis: 45%;
+    }
+    img{
+      width: 2rem;
+      height: 2rem;
     }
   }
 </style>

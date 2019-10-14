@@ -96,6 +96,7 @@ export default {
     }
   }
   .hot{
+    margin-top:.1rem;
     &-title{
       width: 100%；
       height  .5rem;

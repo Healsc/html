@@ -1,10 +1,12 @@
 <template>
   <div class="container">
-   <van-nav-bar title="首页">
-      <van-icon name="search" slot="left" />  
-      <van-icon name="cart" slot="right"></van-icon>
+    <div  class="nav-title">
+        <van-nav-bar title="首页">
+          <van-icon name="search" slot="left" />  
+          <van-icon name="cart" slot="right"></van-icon>
+        </van-nav-bar>
+    </div>
 
-    </van-nav-bar>
     <div class="carousel">
       <van-swipe class="carousel-item" :autoplay="3000" indicator-color="white">
         <van-swipe-item v-for="(item,index) in carouseItem" :key="index">
@@ -126,6 +128,13 @@ export default {
 <style lang="scss">
   .container{
     background-color: #ccc;
+  }
+  .nav-title{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999!important;//权重值最大
+    width: 100%;
   }
   .carousel{
     height: 3rem;

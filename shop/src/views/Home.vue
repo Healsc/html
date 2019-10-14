@@ -122,8 +122,12 @@ export default {
    components: {
     swiper,
     swiperSlide
-  }
+  },
+  created() {
+    console.log('hello');
+  },
 }
+
 </script>
 <style lang="scss">
   .container{
@@ -169,6 +173,7 @@ export default {
   }
   .variety{
     margin-top: .1rem;
+    margin-bottom: 1rem;
     background: #fff;
     text-align: center;
     ul{

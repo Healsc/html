@@ -42,7 +42,7 @@
 <script>
 import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
-
+import axios from "axios"
 export default {
  data(){
    return{
@@ -125,6 +125,10 @@ export default {
   },
   created() {
     console.log('hello');
+    //let url1 = 'http://www.baidu.com/getList';
+    axios.get('https://bird.ioliu.cn/v2?url=https://douban.uieee.com/v2/movie/top250').then(res=>{
+      console.log(res)
+    });
   },
 }
 

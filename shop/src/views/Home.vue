@@ -43,6 +43,7 @@
 import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import axios from "axios"
+import url from "@/servie.config"
 export default {
  data(){
    return{
@@ -130,7 +131,7 @@ export default {
     //let url2 = 'http://www.baidu.com/getInfo';
     //let url3 = 'http://www.baidu.com/regxp';
     //let url4 = 'http://www.baidu.com/list';
-    let url5 = 'http://www.shop.com/getVarietyItem';
+    let url5 = url.getVarietyItem;
     /*axios.get('https://bird.ioliu.cn/v2?url=https://douban.uieee.com/v2/movie/top250').then(res=>{
       console.log(res)
     });*/

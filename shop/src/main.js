@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import '@/assets/css/reset.css'
 import '@/assets/js/rem.js'
-
+import '@/mock/mock.js'//引入mockjs 否则报跨域问题
 
 /* import Vant from 'vant';
 import 'vant/lib/index.css';

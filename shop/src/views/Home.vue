@@ -124,11 +124,14 @@ export default {
     swiperSlide
   },
   created() {
-    console.log('hello');
-    //let url1 = 'http://www.baidu.com/getList';
-    axios.get('https://bird.ioliu.cn/v2?url=https://douban.uieee.com/v2/movie/top250').then(res=>{
+    //console.log('hello');
+    let url1 = 'http://www.baidu.com/getList';
+    /*axios.get('https://bird.ioliu.cn/v2?url=https://douban.uieee.com/v2/movie/top250').then(res=>{
       console.log(res)
-    });
+    });*/
+    axios.get(url1).then(res=>{
+      console.log(res)
+    })
   },
 }
 
@@ -145,6 +148,7 @@ export default {
     width: 100%;
   }
   .carousel{
+    margin-top: 1rem;
     height: 3rem;
     &-item{
      img{

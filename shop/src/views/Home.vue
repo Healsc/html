@@ -89,7 +89,7 @@ export default {
      swiperOption: {
           slidesPerView:3
      },
-     verietyItem:[
+     /* verietyItem:[
       {
         name:'1',
         price:"123",
@@ -116,7 +116,8 @@ export default {
         price:"12132",
         img:'https://img.nongji360.com/n/edition/2016/05/05/185605528414.jpg'
       },
-     ]
+     ] */
+     verietyItem:[]
    }
  },
    components: {
@@ -125,12 +126,19 @@ export default {
   },
   created() {
     //console.log('hello');
-    let url1 = 'http://www.baidu.com/getList';
+    //let url1 = 'http://www.baidu.com/getList';
+    //let url2 = 'http://www.baidu.com/getInfo';
+    //let url3 = 'http://www.baidu.com/regxp';
+    //let url4 = 'http://www.baidu.com/list';
+    let url5 = 'http://www.shop.com/getVarietyItem';
     /*axios.get('https://bird.ioliu.cn/v2?url=https://douban.uieee.com/v2/movie/top250').then(res=>{
       console.log(res)
     });*/
-    axios.get(url1).then(res=>{
-      console.log(res)
+    
+    axios.get(url5).then(res=>{
+     
+      this.verietyItem = res.data;
+       console.log(this.verietyItem);
     })
   },
 }

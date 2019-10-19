@@ -22,6 +22,8 @@ import { Swipe, SwipeItem } from 'vant';
 Vue.use(Swipe).use(SwipeItem);
 import { Lazyload } from 'vant';
 Vue.use(Lazyload);
+import { Tab, Tabs ,CellGroup,Field} from 'vant';
+Vue.use(Tab).use(Tabs).use(CellGroup).use(Field);
 
 Vue.config.productionTip = false
 

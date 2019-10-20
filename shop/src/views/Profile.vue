@@ -17,7 +17,7 @@
           <van-field label="密码" type="password" required clearable placeholder="请输入密码" v-model="registPassword"></van-field>
         </van-cell-group>
         <div>
-          <van-button type="primary" size="large">注册</van-button>
+          <van-button type="primary" @click="registHandler" size="large">注册</van-button>
         </div>
       </van-tab>
     </van-tabs>
@@ -26,10 +26,25 @@
 
 <script>
 // @ is an alias to /src
-
-
+import url from '@/servie.config.js'
+import axios from 'axios'
 export default {
- 
+  methods: {
+    registHandler(){
+      axios({
+        url:url.registUser,
+        method:'post',
+        data:{
+          userName:this.registUserName,
+          password:this.registPassword,
+        }
+      }).then(res=>{
+        console.log(res)
+      }).catch(err=>{
+        console.log(err)
+      })
+    }
+  },
   components: {
     
   },

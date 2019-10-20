@@ -39,9 +39,15 @@ export default {
           password:this.registPassword,
         }
       }).then(res=>{
-        console.log(res)
+        if(res.data.code == 200){
+          this.Toast.success("注册成功");
+          this.registUsername = this.registPassword = "";
+        }else{
+           //this.$toast.fail("注册失败");
+        }
       }).catch(err=>{
-        console.log(err)
+         this.Toast.fail("注册失败");
+         console.log(err)
       })
     }
   },

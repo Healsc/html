@@ -7,6 +7,13 @@ app.use(cors({
     credentials:true
 }))
 
+//接收前端请求
+const bodyParser = require('koa-bodyparser')
+app.use(bodyParser());
+
+
+
+
 
 const {connect,initSchemas} = require('./init.js')
 connect();
@@ -17,7 +24,7 @@ initSchemas();
 })(); */
 
 const Router = require('koa-router')
-let user = require('./contriller/user.js')
+let user = require('./controller/user.js')
 
 let router = new Router()
 router.use('/user',user.routes())

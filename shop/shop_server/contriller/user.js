@@ -5,7 +5,9 @@ const mongoose = require('mongoose')
 
 
 router.post('/registUser', async (ctx) => {
-    // 获取model
+    console.log('请求成功');
+    ctx.body = '请求成功';
+    /* // 获取model
     const User = mongoose.model('User');
     // 接收post请求封装成user对象
     let newUser = new User(ctx.request.body);
@@ -20,5 +22,7 @@ router.post('/registUser', async (ctx) => {
             code: 500,
             message: err
         };
-    });
+    }); */
 });
+
+module.exports = router;

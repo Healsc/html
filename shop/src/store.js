@@ -9,6 +9,9 @@ export default new Vuex.Store({
       userName:"未登录"
     }
   },
+  getters:{
+    
+  },
   mutations: {
     changeLogin(state,status){
       state.userInfo = status;

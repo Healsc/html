@@ -8,7 +8,7 @@
           <van-field label="密码" type="password" required clearable placeholder="请输入密码" v-model="loginPassword"></van-field>
         </van-cell-group>
         <div>
-          <van-button type="primary" size="large">登录</van-button>
+          <van-button type="primary" @click="loginHandler" size="large">登录</van-button>
         </div>
       </van-tab>
       <van-tab title="注册">
@@ -48,6 +48,20 @@ export default {
       }).catch(err=>{
          this.Toast.fail("注册失败");
          console.log(err)
+      })
+    },
+    loginHandler(){
+      axios({
+        url:url.loginUser,
+        method:'post',
+        data:{
+          userName:this.loginUserName,
+          password:this.loginPassword
+        }
+      }).then(res=>{
+
+      }).catch(err=>{
+
       })
     }
   },

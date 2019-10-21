@@ -3,7 +3,8 @@
     <div  class="nav-title">
         <van-nav-bar title="首页">
           <van-icon name="search" slot="left" />  
-          <van-icon name="cart" slot="right"></van-icon>
+          <van-icon @click="$router.push('/profile')" slot="right">{{userInfo.userName}}</van-icon>
+           <!-- <van-icon name="cart" slot="right">{{userInfo.userName}}</van-icon> -->
         </van-nav-bar>
     </div>
 
@@ -44,6 +45,7 @@ import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import axios from "axios"
 import url from "@/servie.config"
+import { mapState } from 'vuex'
 export default {
  data(){
    return{
@@ -141,6 +143,9 @@ export default {
       this.verietyItem = res.data;
        //console.log(this.verietyItem);
     })
+  },
+  computed: {
+    ...mapState(['userInfo'])
   },
 }
 

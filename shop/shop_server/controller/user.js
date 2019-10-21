@@ -14,7 +14,8 @@ router.post('/registUser', async (ctx) => {
     await newUser.save().then(() => {
         ctx.body = {
             code: 200,
-            message: '注册成功'
+            message: '注册成功',
+            
         };
     }).catch(err => {
         ctx.body = {

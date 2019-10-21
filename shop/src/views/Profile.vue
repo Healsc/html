@@ -26,10 +26,12 @@
 
 <script>
 // @ is an alias to /src
-import url from '@/servie.config.js'
-import axios from 'axios'
+import url from '@/servie.config.js';
+import axios from 'axios';
+import {mapActions} from 'vuex';
 export default {
   methods: {
+    ...mapActions(['loginAction']),
     registHandler(){
       axios({
         url:url.registUser,
@@ -40,7 +42,7 @@ export default {
         }
       }).then(res=>{
         if(res.data.code == 200){
-           this.$toast.success('注册成功');
+          this.$toast.success('注册成功');
           this.registUsername = this.registPassword = "";
           console.log(res)
           
@@ -53,26 +55,40 @@ export default {
          console.log(err)
       })
     },
-    loginHandler(){
+    loginHandler() {
       axios({
-        url:url.loginUser,
-        method:'post',
-        data:{
-          userName:this.loginUserName,
-          password:this.loginPassword
+        url: url.loginUser,
+        method: "post",
+        data: {
+          userName: this.loginUserName,
+          password: this.loginPassword
         }
-      }).then(res=>{
-        console.log(res)
-         //this.$toast.success('成功')
-          
-         if(res.data.code == 200){
-           
-           this.$toast.success('登录成功');
-         }
-      }).catch(err=>{
-        console.log(err);
-        this.$toast.fail('登录失败')
       })
+        .then(res => {
+          // console.log(res);
+          if (res.data.code == 200) {
+            // 模拟
+            new Promise((resolve, reject) => {
+              setTimeout(() => {
+                resolve();
+              }, 1000);
+            })
+              .then(() => {
+                this.$toast.success("登录成功");
+                // 保存登录状态
+                this.loginAction(res.data.userInfo);
+                this.$router.go(-1);
+              })
+              .catch(err => {
+                this.$toast.fail("保存登录状态失败");
+                console.log(err);
+              });
+          }
+        })
+        .catch(err => {
+          console.log(err);
+          this.$toast.fail("登录失败");
+        });
     }
   },
   components: {

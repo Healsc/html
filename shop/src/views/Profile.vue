@@ -40,10 +40,13 @@ export default {
         }
       }).then(res=>{
         if(res.data.code == 200){
-          this.Toast.success("注册成功");
+           this.$toast.success('注册成功');
           this.registUsername = this.registPassword = "";
+          console.log(res)
+          
         }else{
-           //this.$toast.fail("注册失败");
+           this.$toast.fail("注册失败");
+           console.log(res)
         }
       }).catch(err=>{
          this.Toast.fail("注册失败");
@@ -59,9 +62,16 @@ export default {
           password:this.loginPassword
         }
       }).then(res=>{
-
+        console.log(res)
+         //this.$toast.success('成功')
+          
+         if(res.data.code == 200){
+           
+           this.$toast.success('登录成功');
+         }
       }).catch(err=>{
-
+        console.log(err);
+        this.$toast.fail('登录失败')
       })
     }
   },

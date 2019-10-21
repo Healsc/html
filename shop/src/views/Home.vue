@@ -139,7 +139,7 @@ export default {
     axios.get(url5).then(res=>{
      
       this.verietyItem = res.data;
-       console.log(this.verietyItem);
+       //console.log(this.verietyItem);
     })
   },
 }

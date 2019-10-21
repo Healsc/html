@@ -24,6 +24,8 @@ import { Lazyload } from 'vant';
 Vue.use(Lazyload);
 import { Tab, Tabs ,CellGroup,Field} from 'vant';
 Vue.use(Tab).use(Tabs).use(CellGroup).use(Field);
+import { Toast } from 'vant';
+Vue.use(Toast);
 
 Vue.config.productionTip = false
 

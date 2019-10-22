@@ -1,6 +1,6 @@
 import Mock from 'mockjs'
 import data from './data.json'
-import url from "@/servie.config"
+import url from "@/service.config"
 Mock.mock('http://www.baidu.com/getList',{data:data.list});
 Mock.mock('http://www.baidu.com/getInfo',{
     'name|2':"zhangsam",
@@ -37,6 +37,7 @@ let productData = req =>{
         }
         productList.push(product);
     }
+  
     return productList;
 }
  

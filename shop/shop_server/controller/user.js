@@ -1,11 +1,8 @@
-const Router = require('koa-router')
-let router = new Router()
-
-const mongoose = require('mongoose')
-
+const Router = require('koa-router');
+let router = new Router();
+const mongoose = require('mongoose');
 
 router.post('/registUser', async (ctx) => {
-
     // 获取model
     const User = mongoose.model('User');
     // 接收post请求封装成user对象
@@ -14,8 +11,7 @@ router.post('/registUser', async (ctx) => {
     await newUser.save().then(() => {
         ctx.body = {
             code: 200,
-            message: '注册成功',
-            
+            message: '注册成功'
         };
     }).catch(err => {
         ctx.body = {
@@ -24,6 +20,7 @@ router.post('/registUser', async (ctx) => {
         };
     });
 });
+
 
 router.post('/loginUser', async (ctx) => {
     // 接收前端发送的数据

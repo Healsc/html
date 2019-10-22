@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const db = 'mongodb://localhost/shop';
 
+// 引入 schema
 const glob = require('glob');
 const path = require('path');
 exports.initSchemas = () => {

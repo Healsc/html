@@ -120,7 +120,7 @@ export default {
           id: id
         }
       }); */
-
+      console.log(id)
       this.$router.push(`/detail/${id}`);
     }
   }

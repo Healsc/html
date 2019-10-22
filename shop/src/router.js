@@ -27,6 +27,11 @@ export default new Router({
       path: '/category',
       name: 'category',
       component: () => import('./views/Category.vue')
+    },
+    {
+      path: '/detail/:id',
+      name: 'detail',
+      component: () => import('./views/Detail.vue')
     }
   ]
 })

@@ -26,6 +26,9 @@ import { Tab, Tabs ,CellGroup,Field} from 'vant';
 Vue.use(Tab).use(Tabs).use(CellGroup).use(Field);
 import { Toast } from 'vant';
 Vue.use(Toast);
+import { Row, Col ,List} from 'vant';
+Vue.use(Row).use(Col).use(List);
+
 
 Vue.config.productionTip = false
 

@@ -28,7 +28,8 @@ import { Toast } from 'vant';
 Vue.use(Toast);
 import { Row, Col ,List} from 'vant';
 Vue.use(Row).use(Col).use(List);
-
+import { PullRefresh } from 'vant';
+Vue.use(PullRefresh);
 
 Vue.config.productionTip = false
 

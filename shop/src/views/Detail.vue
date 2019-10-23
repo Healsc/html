@@ -62,7 +62,10 @@ export default {
           }
         }).then(res=>{
           console.log(res)
-          this.$toast.success('加购成功')
+          if(res.data.code == 200){
+            this.$toast.success('加购成功')
+          }
+
         }).catch(err=>{
           this.$toast.fail('加购失败')
           conosl.log(err)

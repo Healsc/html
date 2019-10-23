@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-
+import FooterBar from '@/components/FooterBar.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -11,22 +11,34 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      components: {
+        default: Home,
+        'footer-bar': FooterBar
+      },
     },
     {
       path: '/cart',
       name: 'cart',
-      component: () => import('./views/Cart.vue')
+      components:{
+        default: () => import('./views/Cart.vue'),
+        'footer-bar':FooterBar
+      },
     },
     {
       path: '/profile',
       name: 'profile',
-      component: () => import('./views/Profile.vue')
+      components:{
+        default:() => import('./views/Profile.vue'),
+        'footer-bar':FooterBar
+      },
     },
     {
       path: '/category',
       name: 'category',
-      component: () => import('./views/Category.vue')
+      components:{
+        default:() => import('./views/Category.vue'),
+        'footer-bar':FooterBar
+      },
     },
     {
       path: '/detail/:id',

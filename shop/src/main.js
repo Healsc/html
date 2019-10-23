@@ -39,9 +39,10 @@ Vue
   .use(GoodsAction)
   .use(GoodsActionIcon)
   .use(GoodsActionButton);
+import { Card } from 'vant';
+Vue.use(Card);
 
 
-  
 Vue.config.productionTip = false
 
 new Vue({

@@ -1,5 +1,13 @@
 <template>
-  <div>gouwuche</div>
+  <div>
+    <van-nav-bar title="购物车"></van-nav-bar>
+    <div class="card">
+      <van-card v-for="(item, index) in pruductList" :key="index" :price="item.price" :desc="item.company" :title="item.name" :thumb="item.img">
+
+      </van-card>
+    </div>
+
+  </div>
 </template>
 
 <script>
@@ -9,10 +17,10 @@ import axios from 'axios'
 import url from "@/service.config.js"
 
 export default {
-   data() {
+  data() {
     return {
-      productList:[]
-    }
+      pruductList: []
+    };
   },
   computed: {
     ...mapState(['userInfo'])
@@ -34,9 +42,13 @@ export default {
           userId:this.userInfo._id
         }
       }).then(res=>{
-        console.log(res)
+        //console.log(res.data)
+        for (let item of res.data) {
+          this.pruductList.push(item.productId);
+        }
+       
       }).catch(err=>{
-        console.log(err)
+        //console.log(err)
       })
     }
   },

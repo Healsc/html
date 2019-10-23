@@ -98,12 +98,16 @@ export default {
                 this.$toast.success("登录成功");
                 // 保存登录状态
                 this.loginAction(res.data.userInfo);
-                this.$router.go(-1);
+                setTimeout(()=>{
+                  this.$router.go(-1);
+                },2000)
               })
               .catch(err => {
                 this.$toast.fail("保存登录状态失败");
                 console.log(err);
               });
+          }else{
+            this.$toast.success("用户名或密码错误");
           }
         })
         .catch(err => {

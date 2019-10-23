@@ -14,8 +14,12 @@
             return {
                 active: 0
             };
-  },
+        },
+        methods: {
+            change(){}
+        },
     }
+  
 </script>
 
 <style lang="scss" scoped>

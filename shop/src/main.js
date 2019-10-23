@@ -30,7 +30,18 @@ import { Row, Col ,List} from 'vant';
 Vue.use(Row).use(Col).use(List);
 import { PullRefresh } from 'vant';
 Vue.use(PullRefresh);
+import {
+  GoodsAction,
+  GoodsActionIcon,
+  GoodsActionButton
+} from 'vant';
+Vue
+  .use(GoodsAction)
+  .use(GoodsActionIcon)
+  .use(GoodsActionButton);
 
+
+  
 Vue.config.productionTip = false
 
 new Vue({

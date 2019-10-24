@@ -8,7 +8,11 @@
         </div>
       </van-card>
     </div>
-
+      <van-submit-bar class="submit-bar"
+        :price="totalPrice"
+        button-text="提交订单"
+        @submit="onSubmit"
+      />
   </div>
 </template>
 
@@ -27,11 +31,16 @@ export default {
   computed: {
     ...mapState(['userInfo']),
     totalPrice(){
-      
+        return this.pruductList.reduce((sum, elem)=>{
+            sum += elem.price;
+            return sum;
+        }, 0) * 10 * 10;
     }
   },
   methods: {
-    
+    onSubmit(){
+
+    }
   },
   created() {
     if(JSON.stringify(this.userInfo) == '{}' ){
@@ -60,6 +69,9 @@ export default {
 
 }
 </script>
-<style lang="">
-  
+<style lang="scss">
+.submit-bar{
+  margin-bottom: 1rem;
+ 
+}
 </style>

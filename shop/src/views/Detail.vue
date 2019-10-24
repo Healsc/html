@@ -68,7 +68,7 @@ export default {
 
         }).catch(err=>{
           this.$toast.fail('加购失败')
-          conosl.log(err)
+          console.log(err)
         })
       }
     }

@@ -3,7 +3,9 @@
     <van-nav-bar title="购物车"></van-nav-bar>
     <div class="card">
       <van-card v-for="(item, index) in pruductList" :key="index" :price="item.price" :desc="item.company" :title="item.name" :thumb="item.img">
-
+        <div slot="footer">
+            <van-button size="mini" @click="delCart(item._id, index)">删除</van-button>
+        </div>
       </van-card>
     </div>
 
@@ -23,7 +25,10 @@ export default {
     };
   },
   computed: {
-    ...mapState(['userInfo'])
+    ...mapState(['userInfo']),
+    totalPrice(){
+      
+    }
   },
   methods: {
     

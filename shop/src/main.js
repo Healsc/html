@@ -30,6 +30,8 @@ import { Row, Col ,List} from 'vant';
 Vue.use(Row).use(Col).use(List);
 import { PullRefresh } from 'vant';
 Vue.use(PullRefresh);
+import { SubmitBar } from 'vant';
+Vue.use(SubmitBar);
 import {
   GoodsAction,
   GoodsActionIcon,

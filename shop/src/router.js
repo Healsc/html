@@ -44,6 +44,9 @@ export default new Router({
       path: '/detail/:id',
       name: 'detail',
       component: () => import('./views/Detail.vue')
+    },{
+      path:'*',
+      component: () => import('./views/Error.vue')
     }
   ]
 })

@@ -23,7 +23,7 @@
           <van-field
             label="密码"
             type="password"
-            required
+            
             clearable
             placeholder="请输入密码"
             v-model="registPassword"

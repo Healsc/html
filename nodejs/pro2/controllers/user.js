@@ -9,6 +9,7 @@ exports.do_reg=function(req,res,next){
     var pass = req.body.password;
     console.log(name);
     console.log(pass);
+    
     User_model.insert_data(function(error,data){
         console.log(data);
     });

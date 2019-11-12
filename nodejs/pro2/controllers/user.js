@@ -10,7 +10,7 @@ exports.do_reg=function(req,res,next){
     console.log(name);
     console.log(pass);
     
-    User_model.insert_data(function(error,data){
-        console.log(data);
+    User_model.inset_data(name,pass,function(error,data){
+        console.log(data)
     });
 }

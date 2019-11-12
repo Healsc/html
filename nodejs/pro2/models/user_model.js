@@ -1,4 +1,11 @@
-var mysql=require('mysql');
+var db=require('./db.js');
+exports.insert_data=function(name,pass,callback){
+  var sql="insert into t_users(pass,name) values(?,?)";
+  db.query(sql,[name,pass],callback)
+}
+
+
+/* var mysql=require('mysql');
 
 var connection = mysql.createConnection({
   host     : 'localhost',
@@ -12,7 +19,7 @@ var pool  = mysql.createPool({
   user            : 'root',
   password        : '',
   database        : 'blog'
-});
+}); */
 /* exports.insert_data=function(callback){
     connection.connect();
     connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
@@ -22,7 +29,7 @@ var pool  = mysql.createPool({
     connection.end();
     })
 } */
-exports.inset_data=function(name,pass,callback){
+/* exports.inset_data=function(name,pass,callback){
   pool.getConnection(function(err, connection) {
     if (err) throw err; // not connected!
    
@@ -37,4 +44,4 @@ exports.inset_data=function(name,pass,callback){
       // Don't use the connection here, it has been returned to the pool.
     });
   });
-}
+} */

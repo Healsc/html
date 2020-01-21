@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <P>this is paragraph</P>
+    <p>2</p>
+    <!-- 浏览器会自动地在段落的前后添加空行。（<p> 是块级元素） -->
+    <div>1</div>
+    <div>2</div>
+    <a href="http://www.w3school.com.cn" target="_blank">w3school</a>
+    <!-- href后面是url -->
+    <!-- 如果把链接的 target 属性设置为 "_blank"，该链接会在新窗口中打开 -->
+    <br/>
+    <!-- 使用<br/>换行 -->
+    <img src="../img/huluwa.jpg" alt="" width="50px" height="50px">
+    <p>图像 <img src="../img/huluwa.jpg"  width="50px" height="50px"> 在文本默认</p>
+    <p>图像 <img src="../img/huluwa.jpg" align="bottom" width="50px" height="50px"> 在文本底</p>
+    <p>图像 <img src="../img/huluwa.jpg" align="top" width="50px" height="50px"> 在文本上</p>
+    <p>图像 <img src="../img/huluwa.jpg" align="middle" width="50px" height="50px"> 在文本中</p>
+
+    <table border="1">
+        <tr>
+            <th>姓名</th><!-- th表头 -->
+            <th>电话</th>
+        </tr>
+        <tr><!-- tr行 -->
+            <td colspan="2">1</td>
+            <!-- td 列 -->
+            <!-- colspan跨行 -->
+        </tr>
+        <tr>
+            <td rowspan="2">3</td><!-- rowspan跨列 -->
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>5</td>
+        </tr>
+    </table>
+    <ul><!-- ul无序列表 -->
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+    </ul>
+    <ol><!-- ol有序列表 -->
+        <li>004</li>
+        <li>005</li>
+        <li>006</li>
+    </ol>
+    <div>hello html</div><!--  <div> 元素是块级元素，它是可用于组合其他 HTML 元素的容器。 -->
+    <div>hello css</div>
+    <span>hi html</span><!-- <span> 元素是内联元素，可用作文本的容器。 -->
+    <span>hi css</span>
+
+    <form action="xxx.php">
+        name:<br/>
+        <input type="text" name="name">
+        <br/>
+        password:<br/>
+        <input type="text" name="password">
+        <br/>
+        <input type="radio" name="sex" value="male" checked>male
+        <br/>
+        <input type="radio" name="sex" value="female">female
+        <br/>
+        <select name="cars"><!-- <select> 元素定义下拉列表 -->
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+        </select>
+        <br/>
+        <textarea name="message" rows="10" cols="30"><!-- <textarea> 元素定义多行输入字段（文本域） -->
+            The cat was playing in the garden.
+        </textarea>
+        <br/>
+        <button type="button" onclick="alert('Hello World!')">Click Me!</button>
+        <br/>
+        <input type="checkbox" name="vehicle" value="Bike">I have a bike
+        <br>
+        <input type="checkbox" name="vehicle" value="Car">I have a car 
+        <!-- <input type="checkbox"> 定义复选框。 -->
+        <br/>
+        <input type="submit" value="submit">
+        <br/>
+    </form>
+</body>
+</html>

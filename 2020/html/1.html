@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <video src="" controls="controls"></video><!-- controls 属性供添加播放、暂停和音量控件。 -->
+    <audio src="" controls="controls"></audio>
+    <canvas id="myCanvas" width="200" height="200"></canvas>
+
+
+    <script>
+        var c=document.getElementById("myCanvas");
+        var ctx=c.getContext("2d");
+        ctx.fillStyle="FF0000";
+        ctx.fillRect(0,0,150,75);
+        localStorage.lastname="张三";
+        /* localStorage 方法存储的数据没有时间限制。第二天、第二周或下一年之后，数据依然可用。 */
+        document.write(localStorage.lastname);
+    </script>
+</body>
+</html>

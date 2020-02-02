@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var cars = ["BWM","Aodi","volvo"];
+        
+        console.log(cars[0])    // BWM
+        console.log(typeof(cars))   //object
+        console.log(cars.length)    // 3
+       /*  for(i = 0;i< cars.length;i++){
+            console.log(cars[i])
+           
+        } */
+        console.log(Array.isArray(cars))    // true
+        //var str = cars.toString();
+        //console.log(str)     // BWM,Aodi,volvo
+        var str = cars.join("-")
+        console.log(str)    // BWM-Aodi-volvo
+    </script>
+</body>
+</html>

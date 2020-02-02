@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = "Apple, Banana, Mango";
+        var res = str.slice(7,13);
+        console.log(str.slice(7,13))    //Banana
+        /* 如果某个参数为负，则从字符串的结尾开始计数。 */
+        console.log(str.slice(-13,-7))  //Banana
+        console.log(str.substring(7,13))    //Banana
+        str = "Please visit Microsoft and Microsoft!";
+        var n = str.replace("Microsoft", "W3School");
+        console.log(n) //Please visit W3School and Microsoft!
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //console.log('hi')
+        var x = 'It\'s good to see you again';
+        console.log(x)
+        var x = "bill";
+        var y = new String("bill");
+        console.log(typeof(x)); //string
+        console.log(typeof(y)); //object
+        console.log(x==y)   //true
+        console.log(x===y)  //false
+        var str = "The full name of China is the People's Republic of China.";
+        //var pos = str.indexOf("China");
+        console.log(str.indexOf("China"))   //17
+        console.log(str.indexOf("haha"))    //-1
+        console.log(str.lastIndexOf("China",30))    //17
+        console.log(str.lastIndexOf("China"))       //51
+        console.log(str.search('locate'))   //-1
+        console.log(str.search('name'))     //9
+    </script>
+</body>
+</html>

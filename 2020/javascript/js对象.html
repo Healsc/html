@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var person = {
+            name : "bill",
+            age : 17,
+            color : "red",
+            personFunction:function(){
+                return this.name+" "+this.age;
+            }
+        }
+        console.log(person.name)    //bill
+        console.log(person["name"]) //bill
+        console.log(person.personFunction()) //bill 17
+
+        var x = new String();
+        console.log(typeof(x)); //object
+        var y = new Number();
+        console.log(typeof(y)); //object
+        var z = new Boolean();
+        console.log(typeof(z))  //object
+    </script>
+</body>
+</html>

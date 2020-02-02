@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function testfunction(p1,p2){
+            return p1 * p2;
+        }
+    console.log(testfunction(3,6));
+    var x = myFunction(4,3);
+    function myFunction(a,b){
+        return a * b;
+    }
+    console.log(x)
+    /* 当 JavaScript 到达 return 语句，函数将停止执行。
+
+    如果函数被某条语句调用，JavaScript 将在调用语句之后“返回”执行代码。
+
+    函数通常会计算出返回值。这个返回值会返回给调用者： */
+    function testFunction0(){
+        var carName = 'volvo';
+        console.log("内部："+carName)
+    }
+    testFunction0();    //内部：volvo
+    console.log(carName)//carName is not defined
+    </script>
+</body>
+</html>

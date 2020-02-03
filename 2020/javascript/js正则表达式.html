@@ -16,6 +16,12 @@
         var patt1 = /is/g;
         var result = str.match(patt1);
         console.log(result) //  ["is", "is"]
+        var b2 = /e/.test("The best things in life are free!");
+        console.log(b2)
+        var b3 = /[1][3,5,6,7,8,9]/.test("15636214551")
+        var b4 = /[1][3,5,6,7,8,9][0-9]/.exec("11636214551")
+        console.log(b3)
+        console.log(b4)  // ["15", index: 0, input: "15636214551", groups: undefined]
     </script>
 </body>
 </html>

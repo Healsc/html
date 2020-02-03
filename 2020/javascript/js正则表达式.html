@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var reg = /e/;
+        var str = "hello,js";
+        var b1 = reg.test(str);
+        console.log(b1) // true
+        var str = "Is this all there is?";
+        var patt1 = /is/g;
+        var result = str.match(patt1);
+        console.log(result) //  ["is", "is"]
+    </script>
+</body>
+</html>

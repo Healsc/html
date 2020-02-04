@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var person = {
+            firstName: "Bill",
+            lastName : "Gates",
+            id       : 678,
+            fullName : function() {
+               
+                return this.firstName + " " + this.lastName;            
+            }
+        };
+        person.fullName();
+        function myFunction() {
+            return this;
+        }
+        myFunction();
+    </script>
+</body>
+</html>

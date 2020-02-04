@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>请输入1-10之间的数字</p>
+        <input type="text" id="num">
+        <button onclick="myFunction()">提交</button>
+        <p id="reminder"></p>
+    </div>
+    <script>
+        function myFunction(){
+            var x,text;
+            x = document.getElementById("num").value;
+            if(isNaN(x) || x < 1 || x > 10){
+                text = "输入错误";
+            }else{
+                text = "输入正确";
+            }
+            document.getElementById("reminder").innerHTML = text;
+        }
+    </script>
+</body>
+</html>

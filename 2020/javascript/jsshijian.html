@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       #myDIV {
+            background-color: coral;
+            border: 1px solid;
+            padding: 50px;
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="myDIV">
+        <p>这个 div 元素有一个 onmousemove 事件处理程序，每次在这个橙色字段中移动鼠标时都会显示一个随机数。</p>
+        <p>单击按钮以删除 div 的事件处理程序。</p>
+        <button onclick="removeHandler()" id="myBtn">删除</button>
+    </div>
+    <p id="demo"></p>
+<script>
+    document.getElementById("myDIV").addEventListener("mousemove", myFunction);
+    function myFunction() {
+        document.getElementById("demo").innerHTML = Math.random();
+    }
+
+    function removeHandler() {
+        document.getElementById("myDIV").removeEventListener("mousemove", myFunction);
+    }
+</script>
+</body>
+</html>

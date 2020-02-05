@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #demo{
+            width: 400px;
+            height: 400px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="demo" onmouseover="myFunction()" onmouseout="mOut()"></div>
+    <script>
+        function myFunction(){
+            console.log("chufa")
+            var demo = document.getElementById("demo");
+            demo.style.width = "500px"
+        }
+        function mOut(){
+            console.log("quxiao")
+            var demo = document.getElementById("demo");
+            demo.style.width = "400px"
+        }
+    </script>
+</body>
+</html>

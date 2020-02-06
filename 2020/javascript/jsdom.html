@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        <p id="p1">这是一个段落。</p>
+        <p id="p2">这是另一个段落。</p>
+        <p id="demo"></p>
+        <p id="demo1"></p>
+    </div>
+        
+    <script>
+        var parent = document.getElementById("div1");
+        var child = document.getElementById("p1");
+        parent.removeChild(child);
+        document.getElementById("demo").innerHTML = "Screen Width: " + screen.width;
+        document.getElementById("demo1").innerHTML = "Screen Height: " + screen.height;
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>11</li>
+        <li>22</li>
+        <li>33</li>
+    </ul>
+    <script>
+        function foo1(val){
+            var a = 2020;
+            return function(){
+                a++;
+                console.log(a,val)
+            }
+        }
+        var f = foo1('Hello');
+        f();
+
+        /* 函数套函数 闭包 下级函数引用上级函数的变量 */
+        var aLi = document.getElementsByTagName('li');
+        for(var i = 0;i < aLi.length;i++){
+            (function(i){
+                aLi[i].onclick = function(){
+                    console.log(i)
+            }
+            })(i)
+           
+        }
+    </script>
+</body>
+</html>

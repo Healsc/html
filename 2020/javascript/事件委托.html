@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">add</button>
+    <ul id="ul1">
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+    <script>
+        var oBtn = document.getElementById("btn")
+        var aLi = document.getElementsByTagName('li');
+        var oUl = document.getElementById('ul1')
+        /* for(var i=0;i<aLi.length;i++){
+            aLi[i].onclick=function(){
+                console.log(this.innerHTML)
+            }
+        } */
+        oBtn.onclick=function(){
+            var aLi = document.createElement('li');
+            aLi.innerHTML = Math.random();
+            oUl.appendChild(aLi)
+        }
+        //将事件绑定在已经存在的父元素上，点击子元素时候，通过时间冒泡到父元素上
+        oUl.onclick=function(e){
+            //console.log(e.target.tagName)
+            
+            if(e.target.tagName == 'LI'){
+                
+                console.log(e.target.innerHTML)
+            }
+        }
+
+    </script>
+</body>
+</html>

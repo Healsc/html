@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{message}}</h1>
+        <h2 v-if="isShow == 1">ishow =1</h2>
+        <h2 v-else-if="isShow == 2">ishow=2</h2>
+        <h2 v-else>其他</h2>
+        <ul>
+            <li v-for="(val,index) in arr">value:{{val}}  index:{{index}}</li>
+        </ul>
+        <ul>
+            <li v-for="(val,key) in obj">value:{{val}}   key:{{key}}</li>
+        </ul>
+    </div>
+    <script>
+        let app = new Vue({
+            el:"#app",
+            data:{
+                message:"Hello Vue!",
+                message2:"Hello World",
+                isShow:1,
+                arr:[1,2,3,4,5],
+                obj:{
+                    name:"zs",
+                    school:"NEAU"
+                }
+            }
+        })
+        // console.log(app )
+    </script>
+</body>
+</html>

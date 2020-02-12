@@ -9,32 +9,28 @@
 </head>
 <body>
     <div id="app">
-        <h1>{{message}}</h1>
-        <h2 v-if="isShow == 1">ishow =1</h2>
-        <h2 v-else-if="isShow == 2">ishow=2</h2>
-        <h2 v-else>其他</h2>
         <ul>
-            <li v-for="(val,index) in arr">value:{{val}}  index:{{index}}</li>
+            <li v-for="(val,index) in arr">index:{{index}} 
+                value{{val}}</li>
         </ul>
-        <ul>
-            <li v-for="(val,key) in obj">value:{{val}}   key:{{key}}</li>
-        </ul>
+        <ol>
+            <li v-for="(val,key) in obj">key:{{key}}
+                value:{{val}}
+            </li>
+        </ol>
     </div>
     <script>
-        let app = new Vue({
+        new Vue({
             el:"#app",
             data:{
-                message:"Hello Vue!",
-                message2:"Hello World",
-                isShow:1,
                 arr:[1,2,3,4,5],
                 obj:{
                     name:"zs",
-                    school:"NEAU"
+                    school:"NEAU",
+                    sex:"man"
                 }
             }
         })
-        // console.log(app )
     </script>
 </body>
 </html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .active{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <select name="" id="" v-model="check">
+            <option v-bind:value="val" v-for="(val,index) in arr" :key="index">{{val}}</option>
+        </select>
+        {{check}}
+
+        <div :class="className">hello vue</div>
+        <div :class="{active:isTrue}">hello vue</div>
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                arr:[1,2,3,4,5,6],
+                check:"3",
+                className:"active",
+                isTrue:true
+            },
+            methods:{
+
+            },
+            computed:{
+
+            }
+        })
+    </script>
+</body>
+</html>

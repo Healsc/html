@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button @click="btn">TE</button>
+        <ul>
+            <li v-for="(val,index) in arr" :key="index">{{val}}</li>
+        </ul>
+
+    </div>
+
+    <script>
+        Vue.directives
+        new Vue({
+            el:"#app",
+            data:{
+                arr:[1,2,3,4,5]
+            },
+            methods:{
+                btn(){
+                    console.log(2)
+                    this.arr[2] = 10;
+                    Vue.set(this.arr,1,1000)
+                }
+            },
+            computed:{
+
+            }
+        })
+
+    </script>
+</body>
+</html>

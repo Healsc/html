@@ -18,6 +18,33 @@ const routes = [
     path:'/mine',
     name:'Mine',
     component:()=>import('../views/Mine.vue')
+  },{
+    path:'/test',
+    name:'Test',
+    component:()=>import('../views/Test.vue'),
+    children:[
+      {
+        path:'/test/test1',
+        name:'Test1',
+        component:()=>import('../views/Test1.vue')
+      },
+      {
+        path:'/test/test2',
+        name:'Test2',
+        component:()=>import('../views/Test2.vue')
+      },
+      {
+        path:'/test/test3/:name/:age',
+        name:'Tets3',
+        component:()=>import('../views/Test3.vue')
+      }
+    ]
+  },{
+    path:"/home",
+    redirect:"/"
+  },{
+    path:"*",
+    component:()=>import('../views/404.vue')
   }
 ]
 

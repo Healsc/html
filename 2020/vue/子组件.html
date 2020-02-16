@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+    <script>
+        /* 声明子组件 */
+        var AppName={
+            data(){
+                return{
+
+                }
+            },
+            template:`
+                <div>
+                    <h1>子组件</h1>
+                    <div>hello vue</div>
+                </div>
+            `
+        }
+        new Vue({
+            el:"#app",
+            data:function(){
+                return{
+                    
+                }
+            },
+             /* 挂载子组件 */
+            components:{
+                AppName
+                /* APP：App 键值对方式。同名的话可以简写*/
+            },
+            /* 调用子组件 */
+            template:`
+            
+                <AppName/>             
+            `
+        })
+
+    </script>
+</body>
+</html>

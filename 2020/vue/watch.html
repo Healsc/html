@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="masg">
+        <h1>{{masg}}</h1>
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data() {
+                return {
+                    masg:"" 
+                }
+            },
+            watch: {
+                masg:function(newV,oldV){
+                    console.log(newV)
+                    console.log(oldV)
+                    console.log("masg:"+this.masg)
+                }
+            },
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+    <script>
+        /* 全局组件 */
+       Vue.component('Vq',{
+           template:`
+                <h1>hello 全局组件</h1>
+           `
+       })
+       var AppName = {
+           data(){
+               return{
+
+               }
+           },
+           template:`
+                <div>
+                    <Vq/>
+                <div>
+                <div> hello 局部组件</div>
+           `
+       }
+        new Vue({
+            el:"#app",
+            data:function(){
+                return{
+                    
+                }
+            },
+           
+            components:{
+                AppName
+                /* APP：App 键值对方式。同名的话可以简写*/
+            },
+            /* 调用子组件 */
+            template:`
+                <div>
+                    <AppName/> 
+                    <Vq/>  
+                </div>     
+            `
+        })
+
+    </script>
+</body>
+</html>

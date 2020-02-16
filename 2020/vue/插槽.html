@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+    <script>
+        
+       Vue.component('Vbtn',{
+           data(){
+               return{
+                    msg:"父组件数据"
+               }
+           },
+          
+           template:`
+               <div>
+                   <button>
+                        <slot></slot>
+                   </button>
+               </div>
+           `
+       })
+       Vue.component('AppName',{
+           data(){
+               return{
+
+               }
+           },
+           template:`
+               <div>
+                  <Vbtn>按钮</Vbtn>
+                  <Vbtn>ANNIU</Vbtn>
+               </div>
+           `
+       })
+     
+        new Vue({
+            el:"#app",
+            data:function(){
+                return{
+                    
+                }
+            },
+           
+            components:{
+               
+            },
+            
+            template:`
+               <AppName/>
+            `
+        })
+
+    </script>
+</body>
+</html>

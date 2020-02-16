@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+    <script>
+        /* 在父组件绑定自定义的时间 */
+       Vue.component('Parent',{
+           data(){
+               return{
+                    msg:"父组件数据"
+               }
+           },
+           template:`
+               <div>
+                    <h1>父组件</h1>
+                    <div>
+                        <Child :childData="msg" @childHandler="childHandler"/>
+                    </div>
+               </div>
+           `,
+           methods: {
+               childHandler(val){
+                    console.log(val)
+               }
+           },
+       })
+       /* 在子组件触发原生事件 在函数中使用$emit触发自定义的childHandler */
+       Vue.component('Child',{
+           data(){
+               return{
+                    msg:""
+               }
+           },
+           props:['childData'],
+           methods: {
+                changeVal(val){
+                    /* 两个参数 自定义事件名 ， 消息 */
+                    this.$emit('childHandler',val)
+                }
+           },
+           template:`
+               <div>
+                    <h1>子组件</h1>
+                    <h3>{{childData}}</h3>
+                    <input type="text" v-model="childData" @input="changeVal(childData)">
+                    <br/>
+                    <input type="text"  @input="changeVal(msg)" v-model="msg">
+               </div>
+           `
+       })
+     
+        new Vue({
+            el:"#app",
+            data:function(){
+                return{
+                    
+                }
+            },
+           
+            components:{
+               
+            },
+            /* 调用子组件 */
+            template:`
+               <Parent/>
+            `
+        })
+
+    </script>
+</body>
+</html>

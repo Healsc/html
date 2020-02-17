@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script src="./node_modules/vue-router/dist/vue-router.js"></script>
+    <div id="app">
+        <h1>Hello VueRouter</h1>
+        <router-link to="/login">login</router-link>
+        <router-link to="/resgiter">resgiter</router-link>
+        <router-view></router-view>
+    </div>
+    <script>
+        var Login ={
+            template:`
+                <div><h3>hello Login</h3></div>
+            `
+        }
+        var Resgiter ={
+            template:`
+                <div>
+                    <h3>hello Resgiter</h3>
+                </div>
+            `
+        }
+        Vue.use(VueRouter)
+        const router = new VueRouter({
+            routes:[
+                {
+                    path:'/login',
+                    component:Login
+                },{
+                    path:'/resgiter',
+                    component:Resgiter
+                }
+            ]
+        })
+        
+      
+        new Vue({
+            el:"#app",
+            router
+        })
+    </script>
+</body>
+</html>

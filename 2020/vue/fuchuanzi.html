@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        
+    </div>
+    <script>
+       Vue.component('Parent',{
+           data() {
+               return {
+                   msg:"hello vue"
+               }
+           },
+           template:`
+           <div>
+                <Child :childData="msg"/>
+            </div>
+           `
+       })
+       Vue.component('Child',{
+           props:['childData'],
+           template:`
+            <div>
+                <h1>{{childData}}</h1>    
+            </div>
+           `
+       })
+       new Vue({
+           el:"#app",
+           data() {
+               return {
+                   
+               }
+           },
+           template:`
+            <Parent/>
+           `
+       })
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        Vue.component('Parent',{
+            data(){
+                return{
+                    msg:"Hello vue"
+                }
+            },
+            methods: {
+                praentHander(val){
+                    console.log(val)
+                }
+            },
+            template:`
+                <div>
+                    <Child/ @childHandler="praentHander">
+                </div>
+            `
+        })
+        Vue.component('Child',{
+            data() {
+                return {
+                    msg:""
+                }
+            },
+            methods: {
+                changeVal(val){
+                    this.$emit('childHandler',val)
+                }
+            },
+            template:`
+                <div>
+                    <input type="text" @input="changeVal(msg)" v-model="msg">
+                </div>
+            `
+        })
+    </script>
+</body>
+</html>

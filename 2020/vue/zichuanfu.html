@@ -12,17 +12,22 @@
         Vue.component('Parent',{
             data(){
                 return{
-                    msg:"Hello vue"
+                    msg:""
                 }
             },
             methods: {
                 praentHander(val){
+                   
+                    this.msg=val;
+                    //console.log(this.val)
                     console.log(val)
+                    console.log(this.msg)
                 }
             },
             template:`
                 <div>
-                    <Child/ @childHandler="praentHander">
+                    <Child @childHandler="praentHander"/>
+                    <h1>{{msg}}</h1>
                 </div>
             `
         })
@@ -40,6 +45,15 @@
             template:`
                 <div>
                     <input type="text" @input="changeVal(msg)" v-model="msg">
+                </div>
+            `
+        })
+        new Vue({
+            el:"#app",
+            template:`
+            
+                <div>
+                    <Parent/>
                 </div>
             `
         })

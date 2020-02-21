@@ -18,6 +18,22 @@ const routes = [
     path:"/mine",
     name:"Mine",
     component:()=>import('../views/Mine.vue')
+  },{
+    path:"/movie",
+    name:"Movie",
+    component:()=>import('../views/movie/Movie.vue')
+  },{
+    path:"/book",
+    name:"Book",
+    component:()=>import('../views/book/Book.vue')
+  },{
+    path:"/music",
+    name:"Music",
+    component:()=>import('../views/music/Music.vue')
+  },{
+    path:"/chat",
+    name:"Chat",
+    component:()=>import('../views/chat/Chat.vue')
   }
 ]
 

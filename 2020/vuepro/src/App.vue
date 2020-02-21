@@ -3,7 +3,11 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
-      <router-link to="/mine">mine</router-link>
+      <router-link to="/mine">mine</router-link> |
+      <router-link to="/music">music</router-link> | 
+      <router-link to="/chat">chat</router-link> | 
+      <router-link to="/movie">movie</router-link> | 
+      <router-link to="/book">book</router-link> | 
     </div>
     <router-view/>
   </div>

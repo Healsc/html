@@ -5,7 +5,17 @@
 </template>
 <script>
 export default {
-    
+    data(){
+        return{
+            refresh:{
+                name:"音乐",
+                activeClass:"music"
+            }
+        }
+    },
+    mounted() {
+      this.$emit('changVal',this.refresh)  
+    },
 }
 </script>
 <style scoped>

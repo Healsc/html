@@ -6,7 +6,17 @@
 </template>
 <script>
 export default {
-    
+    data() {
+        return {
+            obj:{
+                name:"聊天",
+                activeClass:"chat"
+            }
+        }
+    },
+    mounted() {
+        this.$emit("changVal",this.obj)
+    },
 }
 </script>
 <style scoped>

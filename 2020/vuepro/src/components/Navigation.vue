@@ -13,6 +13,9 @@
 </template>
 <script>
 export default {
+    props:[
+        'refresh'
+    ],
     name:"Navigation", 
     data(){
         return{
@@ -46,6 +49,21 @@ export default {
             this.title = obj.name;
         }
     },
+    computed: {
+        refreshName(){
+            return this.refresh.name
+        },
+        refreshActiveClass(){
+            return this.refresh.activeClass
+        }
+    },
+    watch: {
+        refreshName(){
+            this.title=this.refresh.name,
+            this.active=this.refresh.activeClass
+        }
+    },
+    
 }
 </script>
 <style scoped>

@@ -1,6 +1,7 @@
 <template>
     <div>
-        chat
+        <h1> chat</h1>
+       
     </div>
 </template>
 <script>
@@ -9,5 +10,7 @@ export default {
 }
 </script>
 <style scoped>
-
+    div h1{
+        margin-top: 2rem
+    }
 </style>

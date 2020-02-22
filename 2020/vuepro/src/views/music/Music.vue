@@ -1,6 +1,6 @@
 <template>
     <div>
-        music
+        <h1>music</h1>
     </div>
 </template>
 <script>
@@ -9,5 +9,7 @@ export default {
 }
 </script>
 <style scoped>
-
+    div h1{
+        margin-top: 2rem
+    }
 </style>

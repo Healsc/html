@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
     <div :class="activeClass">
         <header>
             <span @click="routerPush(navList[0])">首页</span>
@@ -10,16 +9,6 @@
                 <li v-for="(item,index) in navList" :key="index" :class="{'active':item.className == activeClass}" @click="routerPush(item)">
                     {{item.name}}
                 </li>
-=======
-    <div>
-        <header class="header">
-            <span>首页</span>
-            <h1>电影</h1>
-        </header>
-        <nav class="nav">
-            <ul>
-                <li v-on:click="routerPush(item)" v-for="(item,index) in navList" :key=index>{{item.name}}</li>
->>>>>>> 26b2b5da26324dbfb6f776d4246f5c398be825a6
             </ul>
         </nav>
     </div>

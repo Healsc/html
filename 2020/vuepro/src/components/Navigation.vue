@@ -1,6 +1,17 @@
 <template>
     <div>
-        <h1>HELLO VUE</h1>
+        <header > 
+            <h1>电影</h1>
+            <span>首页</span>
+        </header>
+       <footer>
+           <ul>
+               <li>电影</li>
+                <li>电影</li>
+                 <li>电影</li>
+                  <li>电影</li>
+           </ul>
+       </footer>
     </div>
 </template>
 <script>

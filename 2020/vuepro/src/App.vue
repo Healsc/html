@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app">
     <Navigation :refresh="refresh"/>
     <router-view @changVal="change"></router-view >
   </div>
@@ -33,3 +33,6 @@ export default {
 }
 
 </script>
+<style scoped>
+
+</style>

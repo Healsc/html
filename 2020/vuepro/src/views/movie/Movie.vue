@@ -6,7 +6,7 @@
           <img :src="item.cover.url" alt="">
         </div>
         <div class="list-right">
-          <h4>{{item.title}}</h4>
+          <h5>{{item.title}}</h5>
           <span>主演：</span>
           <span v-for="(item,index) in item.actors" :key="index">{{item}} </span>
           <p>{{item.year}}年</p>
@@ -46,12 +46,18 @@ export default {
   },
   methods: {
     getData(){
+      //console.log(this.dataList.length)
       let proxy = 'https://bird.ioliu.cn/v2?url='
-      let url = `https://m.douban.com/rexxar/api/v2/subject_collection/movie_showing/items?start=${this.listStart}&count=10`
+      let url = `https://m.douban.com/rexxar/api/v2/subject_collection/movie_showing/items?start=${this.dataList.length}&count=15`
       this.isLoading = false;
-      this.$axios.get(proxy+url)
+      this.$axios.get(proxy+url,{
+       headers: {
+										"Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+									},
+
+      })
       .then((res)=>{
-        console.log(res.data.subject_collection_items);
+        console.log(res.data);
         this.dataList = this.dataList.concat(res.data.subject_collection_items);
         this.isLoading = true;
       })

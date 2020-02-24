@@ -23,7 +23,7 @@ const routes = [
     component:()=>import('../views/chat/Chat.vue')
   },{
     path:"*",
-    component:()=>import('./views/404.vue')
+    component:()=>import('../views/404.vue')
   }
 ]
 

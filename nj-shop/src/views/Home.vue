@@ -1,18 +1,35 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+       <div class="clearfix">
+          <div class="header">
+              <van-nav-bar title="商城">
+                <van-icon name="search" slot="left"></van-icon>
+                <van-icon name="cart" slot="right"></van-icon>
+              </van-nav-bar>
+          </div>
+      </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    
   }
 }
 </script>
+<style lang="scss" scoped>
+.clearfix{
+  height: 1rem;
+}
+.header{
+  position: fixed;
+  top: 0;
+  height: 2rem;
+  width: 100%;
+}
+</style>

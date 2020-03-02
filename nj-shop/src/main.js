@@ -6,11 +6,18 @@ import '@/assets/js/rem.js'
 import '@/assets/css/reset.css'
 Vue.config.productionTip = false
 
-import { Button ,NavBar,Icon,Tabbar,TabbarItem} from 'vant';
+
+
+
+
+import { Button ,NavBar,Icon,Tabbar,TabbarItem,Swipe, SwipeItem ,Lazyload } from 'vant';
 
 Vue.use(Button).use(NavBar).use(Icon)
 .use(Tabbar)
-.use(TabbarItem)
+.use(TabbarItem).use(Swipe).use(SwipeItem)
+.use(Lazyload )
+
+
 new Vue({
   router,
   store,

@@ -10,12 +10,14 @@ Vue.config.productionTip = false
 
 
 
-import { Button ,NavBar,Icon,Tabbar,TabbarItem,Swipe, SwipeItem ,Lazyload } from 'vant';
+import { Button ,NavBar,Icon,Tabbar,TabbarItem,Swipe, SwipeItem ,Lazyload ,
+  CellGroup, Field, Tab, Tabs
+} from 'vant';
 
 Vue.use(Button).use(NavBar).use(Icon)
 .use(Tabbar)
 .use(TabbarItem).use(Swipe).use(SwipeItem)
-.use(Lazyload )
+.use(Lazyload ).use(CellGroup).use(Field).use(Tab).use(Tabs)
 
 
 new Vue({

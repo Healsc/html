@@ -62,17 +62,16 @@ export default {
       })
         .then( (res)=> {
             console.log(res)
-         /*  if (res.data.code == 200) {
+          if (res.data.code == 200) {
             this.$toast.success("注册成功");
             this.registUsername = this.registPassword = "";
           } else {
             this.$toast.fail("注册失败");
-          } */
+          }
         })
         .catch((err) => {
-            console.log(err)
-         /*  console.log(err);
-          this.$toast.fail("注册失败"); */
+          console.log('错误：'+err);
+          this.$toast.fail("注册失败");
         });
     },
     // 登录的处理方法

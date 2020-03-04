@@ -41,7 +41,7 @@
 </template>
 <script>
 import axios from "axios";
-
+import { mapActions } from "vuex";
 
 export default {
   data() {
@@ -53,6 +53,7 @@ export default {
     };
   },
   methods: {
+    ...mapActions(["loginAction"]),
     // 注册的处理方法
     registHandler() {
       axios({
@@ -69,7 +70,7 @@ export default {
             this.$toast.success("注册成功");
             this.registUsername = this.registPassword = "";
           } else {
-            this.$toast.fail("注册失败");
+            this.$toast.fail("用户名已存在");
           }
         })
         .catch((err) => {
@@ -86,7 +87,21 @@ export default {
           userName:this.loginUsername,
           password:this.loginPassword
         }
-      }).then().catch()
+      }).then(res=>{
+        if(res.data.code == 200){
+          console.log(res.data)
+          this.$toast.success('登录成功');
+          this.loginAction(res.data.userInfo);
+          this.$router.push('/')
+        }else if(res.data.code == 201){
+          this.$toast.fail('密码错误')
+        }else if(res.data.code == 202){
+          this.$toast.fail('用户不存在')
+        }
+      }).catch(err=>{
+        this.$toast.fail('失败')
+        console.log(err)
+      })
     }
   }
 };

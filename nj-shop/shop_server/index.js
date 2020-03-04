@@ -15,12 +15,16 @@ app.use(bodyParser());
 // 加载路由
 const Router = require('koa-router');
 let user = require('./controller/user.js');
+let product = require('./controller/product.js');
+let type = require('./controller/type.js')
 /* let product = require('./controller/product.js');
 let type = require('./controller/type.js');
 let cart = require('./controller/cart'); */
 
 let router = new Router();
 router.use('/user', user.routes());
+router.use('/product', product.routes());
+router.use('/type', type.routes())
 /* router.use('/product', product.routes());
 router.use('/type', type.routes());
 router.use('/cart', cart.routes()) */

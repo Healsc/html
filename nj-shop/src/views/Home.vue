@@ -3,8 +3,8 @@
        <div class="clearfix">
           <div class="header">
               <van-nav-bar title="商城">
-                <van-icon name="search" slot="left"></van-icon>
-                <van-icon name="cart" slot="right" @click="$router.push('/cart')"></van-icon>
+                <van-icon  slot="left" name="search"></van-icon>
+                <van-icon name="" slot="right" @click="$router.push('/profile')">{{JSON.stringify(userInfo) === '{}' ? '未登录' : userInfo.userName}}</van-icon>
               </van-nav-bar>
           </div>
       </div>
@@ -47,7 +47,11 @@ import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import axios from "axios";
 import '@/mock/mock.js';
+import { mapState } from "vuex";
 export default {
+    computed: {
+      ...mapState(["userInfo"])
+    },
     data() {
     return {
       recommedshowList:[],

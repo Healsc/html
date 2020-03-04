@@ -1,8 +1,31 @@
 const Koa = require('koa')
 const app = new Koa()
+const bodyParser = require('koa-bodyparser')
+app.use(koa-bodyparser())
+// 解决跨域问题
+const cors = require('koa2-cors');
+app.use(cors({
+    origin: ['http://localhost:8080'],
+    credentials: true
+}));
+
+const Router = require('koa-router')
+let user = require('./controller/user.js')
+ 
+let router = new Router();
+router.use('./user',user.routes());
+
+app.use(router.routes());
+app.use(router.allowedMethods()) 
+
+const { connect, initSchemas } = require('./init.js');
+(async () => {
+    await connect();
+    initSchemas();
+})();
 
 app.use(async ctx=>{
-    ctx.body = "hah"
+    ctx.body = ""
 })
 
 app.listen(3000,()=>{

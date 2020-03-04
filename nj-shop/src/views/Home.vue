@@ -181,8 +181,6 @@ export default {
   created() {
     let url = "healsc.cn/getList"
     axios.get(url).then(res=>{
-      console.log(res)
-      console.log("123")
       this.recommedshowList=res.data
     })
   },

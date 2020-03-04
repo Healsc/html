@@ -3,7 +3,9 @@
          <van-tabs>
       <van-tab title="登录">
         <van-cell-group>
-          <van-field label="用户名" required clearable placeholder="请输入用户名" v-model="loginUsername"></van-field>
+          <van-field label="用户名" 
+            required clearable placeholder="请输入用户名" 
+            v-model="loginUsername"></van-field>
           <van-field
             label="密码"
             type="password"
@@ -19,7 +21,8 @@
       </van-tab>
       <van-tab title="注册">
         <van-cell-group>
-          <van-field label="用户名" required clearable placeholder="请输入用户名" v-model="registUsername"></van-field>
+          <van-field label="用户名" required clearable placeholder="请输入用户名" 
+            v-model="registUsername"></van-field>
           <van-field
             label="密码"
             type="password"
@@ -76,7 +79,14 @@ export default {
     },
     // 登录的处理方法
     loginHandler() {
-     
+      axios({
+        url:'http://localhost:3000/user/loginUser',
+        method:"post",
+        data:{
+          userName:this.loginUsername,
+          password:this.loginPassword
+        }
+      }).then().catch()
     }
   }
 };

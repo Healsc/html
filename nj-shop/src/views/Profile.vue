@@ -92,7 +92,7 @@ export default {
           console.log(res.data)
           this.$toast.success('登录成功');
           this.loginAction(res.data.userInfo);
-          this.$router.push('/')
+          this.$router.go(-1)
         }else if(res.data.code == 201){
           this.$toast.fail('密码错误')
         }else if(res.data.code == 202){

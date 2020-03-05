@@ -69,20 +69,19 @@ export default {
           this.$toast.success('进入付款页面');
       },
       delCart(id, index){
-          console.log(id)
+          //console.log(id)
           axios({
               url:'http://localhost:3000/cart/delCart',
               method:'post',
               data:{
                   id:id
               }
-          }).then((res)=>{
-              console.log(res)
+          }).then(()=>{
+              //console.log(res)
+              this.pruductList.splice(index, 1);
           }).catch((err)=>{
               console.log(err)
           })
-          // 删除数据库中的数据如果删除成功，进入回调函数，在回调函数中，如下代码
-          this.pruductList.splice(index, 1);
       }
   }
 };

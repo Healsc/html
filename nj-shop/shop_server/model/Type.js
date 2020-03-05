@@ -7,4 +7,5 @@ const typeSchema = new Schema({
     typeName: String
 });
 
+
 mongoose.model('Type', typeSchema);

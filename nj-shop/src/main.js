@@ -11,14 +11,14 @@ Vue.config.productionTip = false
 
 
 import { Button ,NavBar,Icon,Tabbar,TabbarItem,Swipe, SwipeItem ,Lazyload ,
-  CellGroup, Field, Tab, Tabs,Toast 
+  CellGroup, Field, Tab, Tabs,Toast  ,Col, Row,List ,PullRefresh 
 } from 'vant';
 
 Vue.use(Button).use(NavBar).use(Icon)
 .use(Tabbar)
 .use(TabbarItem).use(Swipe).use(SwipeItem)
 .use(Lazyload ).use(CellGroup).use(Field).use(Tab).use(Tabs)
-.use(Toast )
+.use(Toast ).use(Col).use(Row).use(List ).use(PullRefresh )
 
 new Vue({
   router,

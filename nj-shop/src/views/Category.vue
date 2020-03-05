@@ -1,5 +1,6 @@
 <template>
   <div>
+    <van-nav-bar title="商品分类" ></van-nav-bar>
     <van-row>
     <van-col span="6" class="nav">
       <ul>
@@ -14,7 +15,8 @@
     <van-col span="18" class="container">
       <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
           <van-list class="content" @load="onLoad" v-model="isLoading">
-            <div class="content-item" v-for="(item,index) in productList" :key ="index">
+            <div class="content-item" v-for="(item,index) in productList" 
+            :key ="index" @click="getDetail(item._id)">
               <img :src="item.img" alt=""> 
               <p class="content-item-name">{{item.name}}</p>
               <p>￥{{item.price}}</p>
@@ -43,6 +45,17 @@ export default {
     }
   },
   methods: {
+
+    getDetail(id){
+      //console.log(id)
+      /* this.$router.push({
+        path:"/detail",
+        query:{
+          id:id
+        }
+      }) */
+      this.$router.push(`/detail/${id}`);
+    },
     getProductList(){
       this.isLoading = true;
       axios({
@@ -57,7 +70,7 @@ export default {
         this.isLoading = false;
         this.productList = this.productList.concat(res.data)
         //this.selectCategory(this.typeId,this.active)
-        console.log(res)
+        //console.log(res)
       }).catch((err)=>{
         console.log(err)
       })

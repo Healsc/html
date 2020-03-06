@@ -3,7 +3,7 @@
        <div class="clearfix">
           <div class="header">
               <van-nav-bar title="商城">
-                <van-icon  slot="left" name="search"></van-icon>
+                <van-icon  slot="left" name="cart" @click="$router.push('/cart')"></van-icon>
                 <van-icon name="" slot="right" @click="$router.push('/profile')">{{JSON.stringify(userInfo) === '{}' ? '未登录' : userInfo.userName}}</van-icon>
               </van-nav-bar>
           </div>

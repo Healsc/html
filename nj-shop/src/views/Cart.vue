@@ -52,15 +52,14 @@ export default {
         }
       })
         .then(res => {
-            console.log(res.data)
             this.cartList = res.data
           for (let item of res.data) {
             this.pruductList.push(item.productId);
             this.cartId.push(item._id)
           }
         })
-        .catch(err => {
-          console.log(err);
+        .catch(() => {
+         
         });
     }
   },
@@ -69,7 +68,7 @@ export default {
           this.$toast.success('进入付款页面');
       },
       delCart(id, index){
-          //console.log(id)
+          
           axios({
               url:'http://localhost:3000/cart/delCart',
               method:'post',
@@ -77,10 +76,10 @@ export default {
                   id:id
               }
           }).then(()=>{
-              //console.log(res)
+             
               this.pruductList.splice(index, 1);
-          }).catch((err)=>{
-              console.log(err)
+          }).catch(()=>{
+             
           })
       }
   }

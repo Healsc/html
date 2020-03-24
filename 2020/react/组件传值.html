@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <div id="root"></div>
+    <script type="text/babel">
+        class Foo1 extends React.Component {
+            constructor(props) {
+                super(props)
+            }
+            change() {
+                console.log('hello')
+                this.props.changeC();
+            }
+            render() {
+                return (
+                    <div>
+                        <button onClick={this.change.bind(this)}>CHANGE</button>
+                    </div>
+                )
+            }
+        }
+        class Foo extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    count: 0
+                }
+                //this.add = this.add.bind(this);
+                this.changeP = this.changeP.bind(this)
+            }
+            add() {
+                this.setState({
+                    count: ++this.state.count
+                })
+            }
+            changeP() {
+                this.setState({
+                    count:++this.state.count
+                })
+            }
+            render() {
+                return (
+                    <div>
+
+                        <h1>{this.state.count}</h1>
+                        <Foo1 changeC={this.changeP} />
+                        <button onClick={this.add.bind(this)}>Add</button>
+                    </div>
+                )
+            }
+        }
+        let root = document.getElementById('root')
+        ReactDOM.render(
+            <Foo />, root
+        )
+    </script>
+</body>
+
+</html>

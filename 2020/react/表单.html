@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <div id="root"></div>
+    <script type="text/babel">
+        let root = document.getElementById('root')
+
+        class Form extends React.Component{
+            constructor(props){
+                super(props)
+                this.state = {
+                    inp:""
+                }
+            }
+            change(e){
+                //console.log(e.target.value)
+                this.setState({
+                   inp:e.target.value
+                })
+            }
+            render(){
+                return(
+                    <div>
+                        <form action="">
+                            <label htmlFor="userName">姓名：</label>
+                            <input id="userName" onChange={this.change.bind(this)} type="text"/>    
+                        </form>    
+                        {this.state.inp}
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(<Form/>,root)
+
+    </script>
+</body>
+</html>

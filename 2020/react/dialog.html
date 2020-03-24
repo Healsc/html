@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dia-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ddd;
+            opacity: .6;
+            display: none;
+        }
+
+        .dia-box {
+            width: 400px;
+            height: 200px;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .dia-header {
+            height: 60px;
+            width: 100%;
+            background-color: #554455;
+            line-height: 60px;
+            padding: 0 10px 0 10px;
+            box-sizing: border-box;
+        }
+
+        .dia-header .dia-header-left {
+            float: left;
+        }
+
+        .dia-header .dia-header-right {
+            float: right;
+        }
+
+        .actice {
+            display: block !important;
+        }
+
+        .dia-body {}
+        .container{
+           position: absolute;
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%,-50%);
+        }
+        .btn{
+            width: 150px;
+            height: 60px;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <div id="root"></div>
+    <script type="text/babel">
+        let root = document.getElementById('root')
+        class Dialog extends React.Component {
+            constructor(props) {
+                super(props)
+                this.state = {
+                    isShow: false,
+                    title: ""
+                }
+            }
+            changePa(title) {
+                this.setState({
+                    isShow: true,
+                    title: title
+                })
+            }
+            changePb(title) {
+                this.setState({
+                    isShow: true,
+                    title: title
+                })
+            }
+            hiddenP() {
+                this.setState({
+                    isShow: false
+                })
+            }
+            render() {
+                return (
+                    <div>
+                        <div className="container">
+                            <DiaBtn changC={this.changePa.bind(this, '登录')} name={'登录'} />
+                            <DiaBtn changC={this.changePb.bind(this,'注册')} name={'注册'} />
+                            <DiaContent title={this.state.title} hiddenC={this.hiddenP.bind(this)} isShow={this.state.isShow} />
+                        </div>
+                    </div>
+                )
+            }
+        }
+        class DiaContent extends React.Component {
+            constructor(props) {
+                super(props)
+                this.state = {
+                    isShow: ""
+                }
+            }
+            hidden() {
+                console.log('hidden')
+                this.props.hiddenC()
+            }
+            render() {
+                let style = {
+                    display: this.props.isShow ? 'block' : 'none'
+                }
+                return (
+                    <div className="dia-bg" style={style}>
+                        <div className="dia-box">
+                            <div className="dia-header">
+                                <div className="dia-header-left">{this.props.title}</div>
+                                <div onClick={this.hidden.bind(this)} className="dia-header-right">X</div>
+                            </div>
+                            <div className="dia-body"></div>
+                        </div>
+                    </div>
+                )
+            }
+        }
+        class DiaBtn extends React.Component {
+            constructor(props) {
+                super(props)
+            }
+            change() {
+                this.props.changC()
+               
+            }
+            render() {
+                return (
+                    <div>
+                        <button className="btn" onClick={this.change.bind(this)}>{this.props.name}{this.props.isShow}</button>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(<Dialog />, root)
+    </script>
+</body>
+
+</html>

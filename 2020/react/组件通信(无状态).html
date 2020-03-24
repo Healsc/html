@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <div id="root"></div>
+    <script type="text/babel">
+        let root = document.querySelector('#root')
+        const Add = (props) => {
+            return (
+                <div>
+                    <h1>Hello {props.msg} </h1>
+                    <h2>{props.children}</h2>
+                </div>
+            )
+        }
+        ReactDOM.render(
+            <Add msg={"World"} >hi react</Add>, root
+        )
+    </script>
+</body>
+
+</html>

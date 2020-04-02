@@ -13,7 +13,6 @@
             right: 0;
             bottom: 0;
             background-color: #ddd;
-            opacity: .6;
             display: none;
         }
 
@@ -49,13 +48,14 @@
         }
 
         .dia-body {}
-        .container{
+
+          .container{
            position: absolute;
            top: 50%;
            left: 50%;
            transform: translate(-50%,-50%);
         }
-        .btn{
+          .btn{
             width: 150px;
             height: 60px;
             font-size: 20px;
@@ -100,9 +100,12 @@
             render() {
                 return (
                     <div>
-                        <div className="container">
-                            <DiaBtn changC={this.changePa.bind(this, '登录')} name={'登录'} />
-                            <DiaBtn changC={this.changePb.bind(this,'注册')} name={'注册'} />
+                        <div >
+                            <div className="container">
+                                <DiaBtn changC={this.changePa.bind(this, '登录')} name={'登录'} />
+                                <DiaBtn changC={this.changePb.bind(this, '注册')} name={'注册'} />
+                            </div>
+
                             <DiaContent title={this.state.title} hiddenC={this.hiddenP.bind(this)} isShow={this.state.isShow} />
                         </div>
                     </div>
@@ -143,7 +146,7 @@
             }
             change() {
                 this.props.changC()
-               
+
             }
             render() {
                 return (

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .active {
+            font-weight: 600;
+            background-color: #030;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        class Foo extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    active: 'active'
+                }
+            }
+
+            render() {
+                let style = {
+                    color: '#AEEEE1'
+                }
+                return (
+                    <div>
+                        <h2 className={this.state.active} style={style}>hello react</h2>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <div>
+                <Foo />
+            </div>, document.querySelector('#root')
+        )
+    </script>
+</body>
+
+</html>

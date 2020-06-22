@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
+
 <body>
+
+    <template id="temp">
+        <div>
+            <slot name="title"></slot>
+            hello slot
+        
+        </div>
+    </template>
     <div id="app">
 
     </div>
-
     <script>
-        Vue.component('com',{
-            data(){
-                return{
+        Vue.component('com', {
+            data() {
+                return {
 
                 }
             },
-            methods:{
+            methods: {
 
             },
-            template:`
-            <div>
-                com  
-                <slot></slot>  
-            </div>
-            `
+            template: "#temp"
         })
         let vm = new Vue({
-            el:'#app',
-            template:`
-                <com>asdasdsa</com>
+            el: '#app',
+            template: `
+                <com >
+                 <h1 slot="title">这是个标题</h1>    
+                    
+                </com>
             `
         })
     </script>
 </body>
+
 </html>

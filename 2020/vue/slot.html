@@ -5,28 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    
 </head>
 <body>
     <div id="app">
 
     </div>
+
     <script>
-        new Vue({
-            el:"#app",
-            data:function(){
+        Vue.component('com',{
+            data(){
                 return{
-                    msg:"hello vue"
+
                 }
             },
+            methods:{
+
+            },
             template:`
-                <div>
-                    <h1>{{msg}}</h1>
-                    <h2 v-text="msg"></h2>
-                </div>
+            <div>
+                com  
+                <slot></slot>  
+            </div>
             `
         })
-
+        let vm = new Vue({
+            el:'#app',
+            template:`
+                <com>asdasdsa</com>
+            `
+        })
     </script>
 </body>
 </html>

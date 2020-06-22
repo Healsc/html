@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{message}}
+        <ul>
+            <li v-for="(item,index) in arr" >{{item}}</li>
+        </ul>
+        <button @click="testHandler">test</button>
+        <input type="text" v-model="xinxi">
+        <h1>{{xinxi}}</h1>
+    </div>
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                message:"hello vue",
+                arr:[1,2,3],
+                xinxi:''
+            },
+            methods:{
+                testHandler(){
+                    console.log('kjsjjk')
+                }
+            },
+            computed:{
+
+            },
+            watch:{
+
+            }
+        })
+
+    </script>
+</body>
+</html>

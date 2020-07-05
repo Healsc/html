@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*  for (let i = 0; i < 5; i++) {
+             setTimeout(function(){
+                 console.log(i);
+             },1000 * i)
+         } */
+        for (var i = 1; i < 3; i++) {
+            (function (i) {
+                setTimeout(function () {
+                    console.log(i);
+                }, 1000 * i)
+            })(i)
+        }
+        let promise1 = new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                resolve('ok')
+            }, 1000)
+        })
+        promise1.then(function success(val) {
+            console.log(val)
+        })
+        class PromiseM {
+            constructor(process) {
+                this.status = 'pending'
+                this.msg = ''
+                process(this.resolve.bind(this), this.reject.bind(this))
+                return this
+            }
+            resolve(val) {
+                this.status = 'fulfilled'
+                this.msg = val
+            }
+            reject(err) {
+                this.status = 'rejected'
+                this.msg = err
+            }
+            then(fufilled, reject) {
+                if (this.status === 'fulfilled') {
+                    fufilled(this.msg)
+                }
+                if (this.status === 'rejected') {
+                    reject(this.msg)
+                }
+            }
+        }
+
+       
+    </script>
+</body>
+
+</html>

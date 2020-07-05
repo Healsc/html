@@ -10,17 +10,14 @@
 
 <body>
     <script>
-        var add = (function () {
-            var counter = 0;
-            return function () {
-                console.log(counter)
-                return counter += 1;
-            }
+        for (var i = 0; i < 10; i++) {
+            (function (j) {
+                setTimeout(function () {
+                    console.log(j)
+                }, 1000)
+            })(i)
 
-        })();
-        add();
-        add();
-        add();
+        }//
     </script>
 </body>
 

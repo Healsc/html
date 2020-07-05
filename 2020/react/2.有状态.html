@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="./js/browser.min.js"></script>
+
+    <script type="text/babel">
+        class Ele extends React.Component {
+            //状态初始化
+            constructor(params) {
+                super(params)
+            }
+            render() {
+                return (
+                    <div>
+                        <h1>hello component</h1>
+                        {this.props.info.name}
+                        <br />
+                        {this.props.info.age}
+                        <br />
+                    </div>
+                )
+            }
+        }
+        let root = document.querySelector("#root");
+        ReactDOM.render(<div><Ele info={{ name: "zhangsirui", age: 2021 }} /></div>, root)
+    </script>
+</body>
+
+</html>

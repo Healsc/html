@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="./js/browser.min.js"></script>
+
+    <script type="text/babel">
+        class Com extends React.Component {
+            constructor(props) {
+                super(props)
+                this.state = {
+
+                }
+            }
+            render() {
+
+                return (
+                    <div>
+                        {this.props.num}
+                    </div>
+                )
+            }
+        }
+        class Parent extends React.Component {
+            constructor(props) {
+                super(props)
+                this.state = {
+                    num: 0
+                }
+            }
+            add() {
+                this.setState({
+                    num: this.state.num + 1
+                })
+            }
+            render() {
+                return (
+                    <div>
+                        <button onClick={this.add.bind(this)}>add+1</button>
+                        <Com num={this.state.num} />
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(<Parent />, document.getElementById('root'));
+    </script>
+</body>
+
+</html>

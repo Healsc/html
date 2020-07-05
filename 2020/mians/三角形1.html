@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #triangle02 {
+            width: 0;
+            height: 0;
+            border-top: 50px solid blue;
+            border-right: 50px solid red;
+            border-bottom: 50px solid green;
+            border-left: 50px solid yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id=""></div>
+
+
+
+    <script>
+
+        function deepClone(obj) {
+            var newObj = obj instanceof Array ? [] : {};
+            for (var item in obj) {
+                var temple = typeof obj[item] == 'object' ? deepClone(obj[item]) : obj[item];
+                newObj[item] = temple;
+            }
+            return newObj;
+        }
+
+        var myNewAjax = function (url) {
+            return new Promise(function (resolve, reject) {
+                var xhr = new XMLHttpRequest();
+                xhr.open('get', url);
+                xhr.send(data);
+                xhr.onreadystatechange = function () {
+                    if (xhr.status == 200 && readyState == 4) {
+                        var json = JSON.parse(xhr.responseText);
+                        resolve(json)
+                    } else if (xhr.readyState == 4 && xhr.status != 200) {
+                        reject('error');
+                    }
+                }
+            })
+        }
+        Function.prototype.bind = function (obj, arg) {
+            var arg = Array.prototype.slice.call(arguments, 1);
+            var context = this;
+            return function (newArg) {
+                arg = arg.concat(Array.prototype.slice.call(newArg));
+                return context.apply(obj, arg);
+            }
+        }
+
+        Function.prototype.bind = function (obj, arg) {
+            var arg = Array.prototype.slice.call(arguments, 1);
+            var context = this;
+            var bound = function (newArg) {
+                arg = arg.concat(Array.prototype.slice.call(newArg));
+                return context.apply(obj, arg);
+            }
+            var F = function () { };
+            F.prototype = context.prototype;
+            bound.prototype = new F();
+            return bound;
+        }
+    </script>
+</body>
+
+</html>
